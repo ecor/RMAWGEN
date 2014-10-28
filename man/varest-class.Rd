@@ -1,0 +1,25 @@
+\docType{class}
+\name{varest-class}
+\alias{varest}
+\alias{varest-class}
+\title{varest-class}
+\description{
+\code{varest} S3 class (formal definition) see
+\code{\link{VAR}}
+}
+\details{
+\describe{ The details of the class are reported on
+\code{\link{VAR}} documentation in "vars" package }
+}
+\note{
+Formal definition with \code{\link{setOldClass}} for the S3
+class \code{varest}
+}
+\examples{
+showClass("varest")
+}
+\author{
+Bernhard Pfaff
+}
+\keyword{classes}
+

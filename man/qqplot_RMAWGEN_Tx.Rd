@@ -1,0 +1,100 @@
+\name{qqplot_RMAWGEN_Tx}
+\alias{qqplot_RMAWGEN_Tn}
+\alias{qqplot_RMAWGEN_Tx}
+\alias{qqplot_RMAWGEN_deltaT}
+\alias{qqplot_RMAWGEN_prec}
+\title{It makes the Q-Q plots observed vs generated time series of daily maximum, minimum temperature and daily thermal range for a list of collected stochastic generations}
+\usage{
+qqplot_RMAWGEN_Tx(Tx_mes, Tx_gen, Tn_gen, Tn_mes, Tx_spline = NULL,
+  Tn_spline = NULL, xlab = "observed", ylab = "simulated",
+  when = 1:nrow(Tx_mes), main = names(Tx_gen), station, pdf = NULL,
+  xlim = range(Tx_mes), ylim = xlim, cex = 0.4, cex.main = 1,
+  cex.lab = 1, cex.axis = 1)
+
+qqplot_RMAWGEN_Tn(Tx_mes, Tx_gen, Tn_gen, Tn_mes, Tx_spline = NULL,
+  Tn_spline = NULL, xlab = "observed", ylab = "simulated",
+  when = 1:nrow(Tn_mes), main = names(Tn_gen), station, pdf = NULL,
+  xlim = range(Tn_mes), ylim = xlim, cex = 0.4, cex.main = 1,
+  cex.lab = 1, cex.axis = 1)
+
+qqplot_RMAWGEN_deltaT(Tx_mes, Tx_gen, Tn_gen, Tn_mes, xlab = "observed",
+  ylab = "simulated", when = 1:nrow(Tx_mes), main = names(Tx_gen),
+  station, pdf = NULL, xlim = range(Tx_mes - Tn_mes), ylim = xlim,
+  cex = 0.4, cex.main = 1, cex.lab = 1, cex.axis = 1)
+
+qqplot_RMAWGEN_prec(prec_mes, prec_gen, xlab = "observed",
+  ylab = "simulated", when = 1:nrow(prec_mes), main = names(prec_gen),
+  station, pdf = NULL, xlim = range(prec_mes), ylim = xlim, cex = 0.4,
+  cex.main = 1, cex.lab = 1, cex.axis = 1, lag = 1)
+}
+\arguments{
+  \item{Tx_mes}{data frame containing measured daily
+  maximum temperature}
+
+  \item{Tn_mes}{data frame containing measured daily
+  minimum temperature}
+
+  \item{prec_mes}{data frame containing measured daily
+  precipitation (in millimeters)}
+
+  \item{Tx_spline}{data frame containing
+  spline-interpolated daily maximum temperature. Default is
+  \code{NULL} and not considered for Q-Q plot.}
+
+  \item{Tn_spline}{data frame containing
+  spline-interpolated daily minimum temperature Default is
+  \code{NULL} and not considered for Q-Q plot.}
+
+  \item{Tx_gen}{data frame containing generated daily
+  maximum temperature}
+
+  \item{Tn_gen}{data frame containing generated daily
+  minimum temperature}
+
+  \item{prec_gen}{data frame containing generated daily
+  precipitation (in millimeters)}
+
+  \item{when}{day indices on which the data frame are
+  extracted for Q-Q plot. Default is \code{1:nrow(Tn_mes)}
+  (in \code{qqplot_RMAWGEN_Tn}) or \code{1:nrow(Tx_mes)}
+  (otherwise)}
+
+  \item{xlab,ylab}{lables of \code{x} and \code{y} axes.
+  See \code{\link{qqplot}}.}
+
+  \item{station}{identification name (ID) of the station
+  used for the Q-Q plot}
+
+  \item{main}{main titles for each plot. Default is
+  \code{names(Tn_gen)} (in \code{qqplot_RMAWGEN_Tn}) or
+  \code{names(Tx_gen)} (otherwise)}
+
+  \item{pdf}{name of pdf file if output is written in a pdf
+  file}
+
+  \item{xlim}{see \code{\link{qqplot}}. Default is
+  \code{range(Tn_mes)} (in \code{qqplot_RMAWGEN_Tn}) or
+  \code{range(Tx_mes)} (in \code{qqplot_RMAWGEN_Tx}) .or
+  \code{range(Tx_mes-Tn_mes)} (in
+  \code{qqplot_RMAWGEN_deltaT})}
+
+  \item{ylim,cex,cex.main,cex.lab,cex.axis}{see
+  \code{\link{qqplot}} and \code{\link{plot}}}
+
+  \item{lag}{lag (current index included) on whose value
+  the precipitation addition is made. See
+  \code{\link{qqplot.lagged}}.}
+}
+\description{
+It makes the Q-Q plots observed vs generated time series of
+daily maximum, minimum temperature and daily thermal range
+for a list of collected stochastic generations
+}
+\note{
+\code{Tx_gen},{Tn_gen} and \code{main} must have an even
+number of elements.
+}
+\author{
+Emanuele Cordano
+}
+

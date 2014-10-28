@@ -1,0 +1,63 @@
+\name{GPCA_iteration}
+\alias{GPCA_iteration}
+\title{This function makes an iteration of PCA-Gaussianization process}
+\usage{
+GPCA_iteration(x_prev, extremes = TRUE)
+}
+\arguments{
+  \item{x_prev}{previous set of random variable \code{x}}
+
+  \item{extremes}{see
+  \code{\link{normalizeGaussian_severalstations}}}
+}
+\value{
+A \code{GPCA_iteration} S3 object which contains the
+following objects:
+
+\code{x_prev} Previous set of random variable,
+\code{x_prev} input variable
+
+\code{x_gauss_prev} Marginal Gaussianization of
+\code{x_prev} obtained through
+\code{\link{normalizeGaussian_severalstations}}
+
+\code{B_prev} rotation matrix (i. e. eigenvector matrix of
+the covariance matrix of \code{x_gauss_prev}
+
+\code{x_next} results obtained by multiplying \code{B_prev}
+by \code{x_gauss_prev} (see equation 1 of the reference)
+}
+\description{
+This function makes an iteration of PCA-Gaussianization
+process
+}
+\note{
+This function is based on equation (1) of "PCA
+Gaussianization for One-Class Remote Sensing Image" by V.
+Laparra et al.,
+\url{www.uv.es/lapeva/papers/SPIE09_one_class.pdf} and
+\url{http://dx.doi.org/doi/10.1117/12.834011}
+}
+\examples{
+library(RMAWGEN)
+set.seed(1222)
+N <- 20
+x <- rexp(N)
+y <- x+rnorm(N)
+df <- data.frame(x=x,y=y)
+
+GPCA <- GPCA_iteration(df,extremes=TRUE)
+
+x <- rnorm(N)
+y <- x+rnorm(N)
+dfn <- data.frame(x=x,y=y)
+
+GPCAn <- GPCA_iteration(dfn,extremes=TRUE)
+}
+\author{
+Emanuele Cordano
+}
+\seealso{
+\code{\link{GPCA}},\code{\link{GPCA_iteration}},\code{\link{inv_GPCA_iteration}},\code{\link{inv_GPCA}}
+}
+

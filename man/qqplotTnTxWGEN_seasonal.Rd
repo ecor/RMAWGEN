@@ -1,0 +1,53 @@
+\name{qqplotTnTxWGEN_seasonal}
+\alias{qqplotTnTxWGEN_seasonal}
+\title{Makes four seasonal qqplots  (winter, spring, summer and autumn) of measured and simulated data for several stations.}
+\usage{
+qqplotTnTxWGEN_seasonal(measured, simulated, origin = "1961-1-1",
+  xlab = "simulated[degC]", ylab = "measured[degC]",
+  titles = c("Q-Qplot_An._Tx", "Q-Qplot_An._Tn"), directorypdf,
+  station = NULL)
+}
+\arguments{
+  \item{measured}{matrix containing measured data (each
+  station corresponds to a column)}
+
+  \item{simulated}{matrix containing respective generated
+  data (each station corresponds to a column)}
+
+  \item{xlab,ylab}{see
+  \code{\link{plot.default}},\code{\link{qqplotWGEN}}}
+
+  \item{titles}{titles that will be added}
+
+  \item{station}{character vector containing IDs of
+  analyzed station. If \code{NULL} (default) all station
+  (columns of \code{simulated} and \code{measured}) are
+  considered}
+
+  \item{directorypdf}{name of the directory (path included)
+  where to seva the outputs}
+
+  \item{origin}{first day of data, see
+  \code{\link{extractmonths}} for format and other
+  information}
+}
+\value{
+0 in case of success
+}
+\description{
+Makes four seasonal qqplots (winter, spring, summer and
+autumn) of measured and simulated data for several
+stations.
+}
+\note{
+Uses \code{\link{qqplotTnTxWGEN}} for each seasons of
+collected data and saves the output on pdf files. See the R
+code for further details.
+}
+\author{
+Emanuele Cordano, Emanuele Eccel
+}
+\seealso{
+\code{\link{qqplotTnTxWGEN}},\code{\link{extractmonths}}
+}
+

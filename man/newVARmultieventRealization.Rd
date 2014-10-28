@@ -1,0 +1,46 @@
+\name{newVARmultieventRealization}
+\alias{newVARmultieventRealization}
+\title{Generates several realizations of a VAR model}
+\usage{
+newVARmultieventRealization(var, xprev = rnorm(var@VAR$K * var@VAR$p),
+  exogen = NULL, nrealization = 10, B = t(chol(cov(residuals(var)))),
+  extremes = TRUE, type = 3, noise = NULL)
+}
+\arguments{
+  \item{var}{A VAR model represented by a \code{varest2}
+  object as returned by \code{\link{getVARmodel}}}
+
+  \item{xprev}{previous status of the random variable}
+
+  \item{exogen}{matrix containing the values of the
+  "exogen" variables (predictor) for the generation}
+
+  \item{nrealization}{number of realization (e.g. days to
+  simulate). If \code{exogen} is not \code{NULL} and it is
+  a matrix, it must be lower or equal to the number of rows
+  of \code{exogen}}
+
+  \item{B}{matrix of coefficients for the vector
+  white-noise component}
+
+  \item{extremes,type}{see \code{\link{inv_GPCA}}}
+
+  \item{noise}{stochastic noise to add for variabile
+  generation. Default is \code{NULL} and it is
+  automatically randomly genereted accordind to matrix
+  \code{B}. If the VAR model (\code{var} argument) does not
+  fit well the residuals (e.g. non-normality, non-serialty
+  or heteroskesticity) and the white noise is manually
+  inserted, in this case argument \code{B} is not taken
+  into account.}
+}
+\value{
+a matrix of values
+}
+\description{
+Generates several realizations of a VAR model
+}
+\author{
+Emanuele Cordano, Emanuele Eccel
+}
+

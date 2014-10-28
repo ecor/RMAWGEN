@@ -1,0 +1,34 @@
+\name{acvWGEN}
+\alias{acvWGEN}
+\title{Plots the auto- and cross- covariance functions between measured and simulated data for several stations}
+\usage{
+acvWGEN(measured, simulated, titles = c("Sim.", "Mes."), station = NULL)
+}
+\arguments{
+  \item{measured}{matrix containing measured time series}
+
+  \item{simulated}{matrix containing simulated time series}
+
+  \item{titles}{title suffixes for the simulated and
+  measured data respectively c("Sim.","Mes.")}
+
+  \item{station}{string vector containing the IDs of the
+  meteorological stations where the autocovariance is
+  calculated. If it is \code{NULL} (default) all stations
+  (corresponding to the columns of "simulated" and
+  "measured") are applied}
+}
+\value{
+0 in case of success
+}
+\description{
+Plots the auto- and cross- covariance functions between
+measured and simulated data for several stations
+}
+\note{
+It uses \code{\link{acf}} function
+}
+\author{
+Emanuele Cordano, Emanuele Eccel
+}
+

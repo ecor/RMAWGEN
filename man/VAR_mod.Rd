@@ -1,0 +1,22 @@
+\name{VAR_mod}
+\alias{VAR_mod}
+\title{Modified version of \code{\link{VAR}} function allowing to describe white-noise as VAR-(0) model (i. e. \code{varest} objects)}
+\usage{
+VAR_mod(y, p = 1, type = c("const", "trend", "both", "none"),
+  season = NULL, exogen = NULL, lag.max = NULL, ic = c("AIC", "HQ",
+  "SC", "FPE"))
+}
+\arguments{
+  \item{y,p,type,season,exogen,lag.max,ic}{see
+  \code{\link{VAR}} function}
+}
+\value{
+a Vector Auto-Regeressive model (VAR) as \code{varest}
+object
+}
+\description{
+Modified version of \code{\link{VAR}} function allowing to
+describe white-noise as VAR-(0) model (i. e. \code{varest}
+objects)
+}
+

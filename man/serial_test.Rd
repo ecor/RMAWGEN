@@ -1,0 +1,18 @@
+\name{serial_test}
+\alias{serial_test}
+\title{\code{serial.test} function for \code{varest2} object}
+\usage{
+serial_test(object, ...)
+}
+\arguments{
+  \item{object}{a \code{varest2} object}
+
+  \item{...}{passed arguments}
+}
+\description{
+\code{serial.test} function for \code{varest2} object
+}
+\seealso{
+\code{\link{serial.test}}
+}
+

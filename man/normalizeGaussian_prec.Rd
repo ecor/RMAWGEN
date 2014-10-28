@@ -1,0 +1,84 @@
+\name{normalizeGaussian_prec}
+\alias{normalizeGaussian_prec}
+\title{Converts precipitation values to "Gaussinized" normally-distributed values taking into account the probability of no precipitation occurences. values
+or vice versa in case \code{inverse} is \code{TRUE}}
+\usage{
+normalizeGaussian_prec(x = 0, data = x, cpf = NULL, mean = 0, sd = 1,
+  inverse = FALSE, type = 3, extremes = TRUE, sample = NULL,
+  qnull = 0, valmin = 1)
+}
+\arguments{
+  \item{x}{value or vector of values to be converted}
+
+  \item{data}{a sample of data on which a non-parametric
+  probability distribution is estimated}
+
+  \item{cpf}{cumulative probability distribution. If
+  \code{NULL} (default) is calculated as
+  \code{\link{ecdf}(data)}}
+
+  \item{mean}{mean (expected value) of the normalized
+  random variable. Default is 0.}
+
+  \item{sd}{standard deviation of the normalized random
+  variable. Default is 1.}
+
+  \item{inverse}{logical value. If \code{TRUE} the function
+  works inversely (the opposite way). Default is
+  \code{FALSE}.}
+
+  \item{qnull}{probability of no precipitation occurence}
+
+  \item{valmin}{minimum value of precipitation to consider
+  a wet day}
+
+  \item{type}{see \code{\link{quantile}}}
+
+  \item{extremes}{logical variable.  If \code{TRUE}
+  (default) the probability or frequency is multiplied by
+  \deqn{\frac{N}{N+1}} where \eqn{N} is the length of
+  \code{data}}
+
+  \item{sample}{a character string or \code{NULL}
+  containing sample or probability distribution
+  information. Default is \code{NULL}}
+}
+\value{
+the normalized variable or its inverse
+}
+\description{
+Converts precipitation values to "Gaussinized"
+normally-distributed values taking into account the
+probability of no precipitation occurences. values or vice
+versa in case \code{inverse} is \code{TRUE}
+}
+\note{
+In the version 1.2.5 of \pkg{RMAWGEN} This function is
+deprecated and not used.
+}
+\examples{
+library(RMAWGEN)
+NDATA <- 1000
+occurence <- as.logical(runif(NDATA)>0.5)
+prec <- rexp(NDATA,rate=1/3)
+prec[!occurence] <- 0
+valmin <- 0.5 #0.01
+x <- normalizeGaussian_prec(x=prec,valmin=valmin)
+prec2 <- normalizeGaussian_prec(x=x,data=prec,valmin=valmin,inverse=TRUE)
+qqplot(prec,prec2)
+
+occurence3 <- as.logical(runif(NDATA)>0.5)
+prec3 <- rexp(NDATA,rate=1/3)
+prec3[!occurence3] <- 0
+x3 <- normalizeGaussian_prec(x=prec3,valmin=valmin)
+
+qqplot(x,x3)
+abline(0,1)
+}
+\author{
+Emanuele Cordano, Emanuele Eccel
+}
+\seealso{
+\code{\link{normalizeGaussian}}
+}
+

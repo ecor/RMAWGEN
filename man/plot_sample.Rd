@@ -1,0 +1,147 @@
+\name{plot_sample}
+\alias{plot_sample}
+\title{It makes a plot by sampling (e.g. monthly) the variables \code{x} and \code{y}}
+\usage{
+plot_sample(x,
+ y = normalizeGaussian_severalstations(x = as.data.frame(x),
+  data = as.data.frame(data), origin_x = origin_x, origin_data = origin_data,
+  sample = sample, step = step, prec = prec)[, 1],
+ xlim = range(x, na.rm = TRUE),
+ legend_position = "topleft",
+ ylim = range(y, na.rm = TRUE), pch = 1, col = 1,
+ col_max = 0.9, col_min = 0.1, origin, sample = NULL,
+ xhist = hist(x, breaks = breaks, plot = FALSE),
+ yhist = hist(y, breaks = breaks, plot = FALSE),
+ axes = FALSE, step = NULL, prec = 1e-04, breaks = 50,
+ origin_x = origin, origin_data = origin, data = x,
+ xlab = "", ylab = "", color = FALSE, gray = TRUE,
+ sort = FALSE, valmin_x = valmin, valmin_y = valmin,
+ valmin = -9999, abline = c(0, 1), ...)
+}
+\arguments{
+  \item{x}{vector of input data}
+
+  \item{y}{vector of second input data. Default is
+  \code{normalizeGaussian_severalstations(x=as.data.frame(x),data=as.data.frame(data),origin_x=origin_x,origin_data=origin_data,sample=sample,step=step,prec=prec)[,1]}}
+
+  \item{xlim,ylim,xlab,ylab}{see \code{\link{plot.default}}
+  (Graphic)}
+
+  \item{legend_position}{legend position. Default is
+  \code{"topleft"}. See \code{\link{legend}}.}
+
+  \item{pch}{integer single or multi values for \code{pch}
+  (see \code{\link{plot.default}}). Default is 1.}
+
+  \item{col}{integer single or multi values for \code{col}
+  (see \code{\link{plot.default}}). Default is 1.}
+
+  \item{col_max}{maximum value for color scale to apply to
+  \code{\link{rainbow}} or \code{\link{rainbow}}. Utilized
+  if \code{col} is not a vector and both \code{gray} or
+  \code{color} are \code{TRUE}. Default is 0.9 .}
+
+  \item{col_min}{minimum value for color scale to apply to
+  \code{\link{rainbow}} or \code{\link{rainbow}}. Utilized
+  if \code{col} is not a vector and both \code{gray} or
+  \code{color} are \code{TRUE}. Default is 0.1 .}
+
+  \item{origin}{date of the first row of \code{x}. See
+  \code{\link{normalizeGaussian_severalstations}}.}
+
+  \item{sample}{string character containg informatio how to
+  sample \code{x} and \code{y}. Default is NULL. If
+  \code{NULL} no sampling is done.see
+  \code{\link{normalizeGaussian_severalstations}}.  Only
+  \code{NULL} or \code{"monthly"} options are implemented.}
+
+  \item{xhist}{frequency histogram for \code{x}. Default is
+  \code{hist(x,breaks=breaks,plot=FALSE)}. If it is
+  \code{NULL}, no marginal histograms appear.}
+
+  \item{yhist}{frequency histogram for \code{y}. Default is
+  \code{hist(y,breaks=breaks,plot=FALSE)}. If it is
+  \code{NULL}, no marginal histograms appear.
+  =hist(y,breaks=breaks,plot=FALSE),}
+
+  \item{axes}{see \code{\link{barplot}}}
+
+  \item{step,prec}{see
+  \code{\link{normalizeGaussian_severalstations}}}
+
+  \item{breaks}{see \code{\link{hist}}}
+
+  \item{origin_x}{see
+  \code{\link{normalizeGaussian_severalstations}}. Default
+  value is set equal to \code{origin}.}
+
+  \item{origin_data}{\code{\link{normalizeGaussian_severalstations}}.
+  Default value is set equal to \code{origin}.}
+
+  \item{data}{\code{\link{normalizeGaussian_severalstations}}.
+  Default value is set equal to \code{x}.}
+
+  \item{color}{logical value. If \code{TRUE} and if
+  \code{col} is unspecified, a color scale is applied
+  according to \code{col_min} and \code{col_max} (see
+  \code{\link{rainbow}}). Default is \code{FALSE}.}
+
+  \item{gray}{logical value. If \code{TRUE} and if
+  \code{col} is unspecified, a color scale is applied
+  according to \code{col_min} and \code{col_max} (see
+  \code{\link{gray}}). Default is \code{TRUE}.}
+
+  \item{sort}{logical value. If \code{TRUE}, \code{x} and
+  \code{y} are sorted and a Q-Q plot is presented.
+  Deafault is \code{FALSE}.}
+
+  \item{valmin_x}{numerical threshold value over which the
+  variable \code{x} is plotted. It is enabled only if
+  \code{sort} is set \code{TRUE}.}
+
+  \item{valmin_y}{numerical threshold value over which the
+  variable \code{y} is plotted. It is enabled only if
+  \code{sort} is set \code{TRUE}.}
+
+  \item{valmin}{numerical threshold value for
+  \code{valmin_y} and \code{valmin_x} if there are not
+  specified.}
+
+  \item{abline}{arguments for \code{\link{abline}}
+  function. Default is \code{c(0,1)}. If it is \code{NULL},
+  \code{\link{abline}} is disabled and not called.}
+
+  \item{...}{see graphical parametes on
+  \code{\link{plot.default}}}
+}
+\value{
+0 in case of success
+}
+\description{
+It makes a plot by sampling (e.g. monthly) the variables
+\code{x} and \code{y}
+}
+\note{
+It makes a plot betwee \code{x} and \code{y} and shows
+thair respective probibilty histograms. If \code{y} is
+missing, it is automatically calculated as one-dimensional
+Gaussianization of \code{x} through the function
+\code{\link{normalizeGaussian_severalstations}}.
+}
+\examples{
+library(RMAWGEN)
+data(trentino)
+plot_sample(x=TEMPERATURE_MIN$T0090,sample="monthly",
+ origin="1958-1-1",axes=FALSE,xlab="Tn [ degC]",
+ ylab="x")
+
+set.seed(123456)
+z <- rexp(10000,rate=0.5)
+x <- normalizeGaussian(x=z,data=z)
+plot_sample(x=z,xlab="z",ylab="x")
+}
+\seealso{
+\code{\link{plot.default}},\code{\link{extractmonths}}, see
+\code{\link{normalizeGaussian_severalstations}}
+}
+

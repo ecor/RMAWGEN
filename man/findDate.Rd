@@ -1,0 +1,53 @@
+\name{findDate}
+\alias{findDate}
+\title{Finds the date  corresponding a row index of a matrix given the  date (origin) of the first row}
+\usage{
+findDate(k, origin = "1961-1-1", data.frame = TRUE, decimal = FALSE,
+  character = FALSE)
+}
+\arguments{
+  \item{k}{integer or decimal value corresponding to number
+  of days since \code{origin}}
+
+  \item{origin}{origin date. See also
+  \code{\link{extractdays}}}
+
+  \item{data.frame}{logical variable. If \code{TRUE}
+  (default) the date is returned as data frame (like
+  \code{data} in \code{\link{extractyears}}), otherwise it
+  is returned as character or POSIXct.}
+
+  \item{decimal}{logical variable. If \code{FALSE}
+  (default) k is integer and starts from 1, otherwise is
+  consider as the decimal julian day since \code{origin}
+  (deprecated)}
+
+  \item{character}{logical variable. It is used if
+  \code{data.frame} is \code{FALSE}, if it is \code{FALSE},
+  the date is returned as POSIXct, otherwise it is a
+  character in the following form: \code{YYYY-MM-DD}}
+}
+\value{
+the date(s) corresponding to \code{k} under different
+formats
+}
+\description{
+Finds the date corresponding a row index of a matrix given
+the date (origin) of the first row
+}
+\note{
+It uses functions of \code{\link{time}} package. It works
+like an inverse functions of \code{\link{extractdays}}. If
+\code{k} is a vector, the function returns several dates
+for each element of \code{k}
+}
+\examples{
+findDate <- findDate(100,origin="1961-1-1",data.frame=FALSE,character=TRUE)
+}
+\author{
+Emanuele Cordano, Emanuele Eccel
+}
+\seealso{
+\code{\link{date.mdy}},\code{\link{extractdays}}
+}
+
