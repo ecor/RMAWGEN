@@ -27,6 +27,14 @@ lagged precipitation occurence
 
 \code{nooccurence} : joint probability of \code{lag}-day
 lagged no precipitation occurence.
+
+\code{noccurence_occurence} : joint probability of
+\code{lag}-day lagged no precipitation and precipitation
+occurence respectively.
+
+\code{ccurence_nooccurence} : joint probability of
+\code{lag}-day lagged precipitation and no precipitation
+occurence respectively.
 }
 \description{
 Calculates the continuity ratio of a set of precipitation

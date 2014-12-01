@@ -23,6 +23,10 @@ NULL
 #' 
 #' \code{nooccurence} : joint probability of \code{lag}-day lagged no precipitation occurence.
 #' 
+#' \code{noccurence_occurence} : joint probability of \code{lag}-day lagged no precipitation and precipitation occurence respectively.
+#' 
+#' \code{ccurence_nooccurence} : joint probability of \code{lag}-day lagged precipitation and no precipitation occurence respectively.
+#' 
 
 
 
@@ -35,8 +39,11 @@ continuity_ratio <- function(data,lag=0,valmin=0.5) {
 	nrows <- nrow(data)
 	out <- new.env()
 	out$continuity_ratio <- array(NA,c(ncols,ncols))
+	out$occurence_continuity_ratio <- array(NA,c(ncols,ncols))
 	out$occurence <- array(NA,c(ncols,ncols))
 	out$nooccurence <- array(NA,c(ncols,ncols))
+	out$nooccurence_occurence <- array(NA,c(ncols,ncols))
+	out$occurence_nooccurence <- array(NA,c(ncols,ncols))
 	lagp <- abs(lag)
 	for (i in 1:ncols) {
 		for (j in 1:ncols) {
@@ -44,25 +51,32 @@ continuity_ratio <- function(data,lag=0,valmin=0.5) {
 			d1 <- data[(lagp+1):nrows,i]
 			d2 <- data[1:(nrows-lagp),j]
 			
-			e1 <- mean(d1[d2>valmin],na.rm=TRUE)## e1 <- mean(d1[d1>valmin & d2>valmin],na.rm=TRUE)
-			e2 <- mean(d1[d2<=valmin],na.rm=TRUE) ##e2 <- mean(d1[d1>valmin & d2<=valmin],na.rm=TRUE) ## something is wrong here!!!!
-			l1 <- length(d1[d2>valmin])  ##length(d1[d1>valmin & d2>valmin])
-			l2 <- length(d1[d2<=valmin]) ##length(d1[d1>valmin & d2<=valmin])
-	
-			nrowsa <- length(d1[!is.na(d1) & !is.na(d2)])
-
-			out$continuity_ratio[i,j] <- e2/e1
-			out$occurence[i,j] <- length(d1[d1>valmin & d2>valmin & !is.na(d1) & !is.na(d2)])/nrowsa
-			out$nooccurence[i,j] <- length(d1[d1<=valmin & d2<=valmin & !is.na(d1) & !is.na(d2)])/nrowsa
+			e1 <- mean(d1[which((d2>=valmin) & (d1>=valmin))],na.rm=TRUE)## e1 <- mean(d1[d1>valmin & d2>valmin],na.rm=TRUE)
+			e2 <- mean(d1[which((d2<valmin) & (d1>=valmin))],na.rm=TRUE) ##e2 <- mean(d1[d1>valmin & d2<=valmin],na.rm=TRUE) ## something is wrong here!!!!
+			l1 <- length(d1[which(d2>=valmin)])  ##length(d1[d1>valmin & d2>valmin])
+			l2 <- length(d1[which(d2<valmin)]) ##length(d1[d1>valmin & d2<=valmin])
 			
+			el1 <- mean(as.vector(d1[which(d2>=valmin)])>=valmin,na.rm=TRUE)
+			el2 <- mean(as.vector(d1[which(d2<valmin)])>=valmin,na.rm=TRUE)
+			nrowsa <- length(d1[!is.na(d1) & !is.na(d2)])
+			
+			out$continuity_ratio[i,j] <- e2/e1
+			out$occurence_continuity_ratio[i,j] <- el2/el1
+			out$occurence[i,j] <- length(d1[d1>=valmin & d2>=valmin & !is.na(d1) & !is.na(d2)])/nrowsa
+			out$nooccurence[i,j] <- length(d1[d1<valmin & d2<valmin & !is.na(d1) & !is.na(d2)])/nrowsa
+			out$nooccurence_occurence[i,j] <- length(d1[d1<valmin & d2>=valmin & !is.na(d1) & !is.na(d2)])/nrowsa
+			out$occurence_nooccurence[i,j] <- length(d1[d1>=valmin & d2<valmin & !is.na(d1) & !is.na(d2)])/nrowsa
 		}
 		
 	}
 	if (lag<0) {
 		
 		out$continuity_ratio <- t(out$continuity_ratio)
+		out$probability_continuity_ratio <- t(out$probability_continuity_ratio)
 		out$occurence <- t(out$occurence)
 		out$nooccurence <- t(out$nooccurence)
+		out$noccurence_occurence <- t(out$noccurence_occurence)
+		out$occurence_noccurence <- t(out$occurence_noccurence)
 		
 	} 
 	return(as.list(out))
