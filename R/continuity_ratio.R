@@ -25,7 +25,7 @@ NULL
 #' 
 #' \code{noccurence_occurence} : joint probability of \code{lag}-day lagged no precipitation and precipitation occurence respectively.
 #' 
-#' \code{ccurence_nooccurence} : joint probability of \code{lag}-day lagged precipitation and no precipitation occurence respectively.
+#' \code{occurence_nooccurence} : joint probability of \code{lag}-day lagged precipitation and no precipitation occurence respectively.
 #' 
 
 
@@ -61,7 +61,7 @@ continuity_ratio <- function(data,lag=0,valmin=0.5) {
 			nrowsa <- length(d1[!is.na(d1) & !is.na(d2)])
 			
 			out$continuity_ratio[i,j] <- e2/e1
-			out$occurence_continuity_ratio[i,j] <- el2/el1
+			out$probability_continuity_ratio[i,j] <- el2/el1
 			out$occurence[i,j] <- length(d1[d1>=valmin & d2>=valmin & !is.na(d1) & !is.na(d2)])/nrowsa
 			out$nooccurence[i,j] <- length(d1[d1<valmin & d2<valmin & !is.na(d1) & !is.na(d2)])/nrowsa
 			out$nooccurence_occurence[i,j] <- length(d1[d1<valmin & d2>=valmin & !is.na(d1) & !is.na(d2)])/nrowsa

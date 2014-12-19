@@ -32,7 +32,7 @@ lagged no precipitation occurence.
 \code{lag}-day lagged no precipitation and precipitation
 occurence respectively.
 
-\code{ccurence_nooccurence} : joint probability of
+\code{occurence_nooccurence} : joint probability of
 \code{lag}-day lagged precipitation and no precipitation
 occurence respectively.
 }

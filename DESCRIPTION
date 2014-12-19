@@ -23,7 +23,7 @@ Depends:
     R (>= 2.10),chron,date,vars,methods
 Suggests:
     RgoogleMaps
-URL: https://github.com/ecor/RMAWGENCodeCorner,
+URL: https://github.com/ecor/RMAWGEN,
     https://docs.google.com/file/d/0B66otCUk3Bv6V3RPbm1mUG4zVHc/edit,
     http://cri.gmpf.eu/Research/Sustainable-Agro-Ecosystems-and-Bioresources/Dynamics-in-the-agro-ecosystems,
     http://presentations.copernicus.org/EGU2012-14026_presentation.pdf,
