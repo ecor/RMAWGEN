@@ -2,7 +2,7 @@ NULL
 #'
 #'  Inserts three columns (year,month,day) passing dates  to a matrix or to a dataframe
 #' 
-#' @author  Emanuele Cordano, Emanuele Eccel
+#' 
 #' 
 #' @param data matrix of daily data 
 #' @param origin character string containing the date of the first row of \code{data} as YYYY-MM-DD

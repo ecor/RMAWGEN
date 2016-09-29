@@ -9,7 +9,7 @@ NULL
 #' @rdname print
 #' @export
 #' @method print GPCAiteration
-#' @S3method print GPCAiteration
+#### @S3method print GPCAiteration
 #' @aliases print
 # @usage print(x, rmin = 1, rmax = 4, cmin = rmin,
 #     cmax = rmax, ...)

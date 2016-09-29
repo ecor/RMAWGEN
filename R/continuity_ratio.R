@@ -23,7 +23,7 @@ NULL
 #' 
 #' \code{nooccurence} : joint probability of \code{lag}-day lagged no precipitation occurence.
 #' 
-#' \code{noccurence_occurence} : joint probability of \code{lag}-day lagged no precipitation and precipitation occurence respectively.
+#' \code{nooccurence_occurence} : joint probability of \code{lag}-day lagged no precipitation and precipitation occurence respectively.
 #' 
 #' \code{occurence_nooccurence} : joint probability of \code{lag}-day lagged precipitation and no precipitation occurence respectively.
 #' 
@@ -55,7 +55,7 @@ NULL
 #' prec_mes <- prec_mes[,1:2]
 #' 
 #' continuity_ratio <-continuity_ratio(data=prec_mes,lag=0,valmin=0.5)
-#' 
+#' continuity_ratio1 <-continuity_ratio(data=prec_mes,lag=-1,valmin=0.5)
 #' 
 #' 
 
@@ -105,8 +105,8 @@ continuity_ratio <- function(data,lag=0,valmin=0.5) {
 		out$probability_continuity_ratio <- t(out$probability_continuity_ratio)
 		out$occurence <- t(out$occurence)
 		out$nooccurence <- t(out$nooccurence)
-		out$noccurence_occurence <- t(out$noccurence_occurence)
-		out$occurence_noccurence <- t(out$occurence_noccurence)
+		out$nooccurence_occurence <- t(out$nooccurence_occurence)
+		out$occurence_nooccurence <- t(out$occurence_nooccurence)
 		
 	} 
 	return(as.list(out))

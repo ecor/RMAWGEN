@@ -9,7 +9,7 @@ NULL
 #' 
 #' 
 #' 
-#' @author  Emanuele Cordano, Emanuele Eccel
+#' 
 #'    
 #'  
 #'

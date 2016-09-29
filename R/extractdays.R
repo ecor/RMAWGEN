@@ -11,7 +11,7 @@ NULL
 #' @param ndim_max maximum (integer) number of rows in \code{data} where to find \code{when}. 
 #' Default is 100000 and works if \code{data} is missing.
 #' 
-#' @author  Emanuele Cordano, Emanuele Eccel
+#' 
 #'   
 #' @export 
 #' @note It uses \code{\link{julian}}

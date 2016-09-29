@@ -12,7 +12,7 @@ NULL
 #' 
 #' @rdname print
 #' @method print GPCA
-#' @S3method print GPCA
+#### @S3method print GPCA
 #' @aliases print
 # @usage print(x, rmin = 1, rmax = 4, cmin = rmin,
 #     cmax = rmax, ...)

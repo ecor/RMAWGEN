@@ -10,7 +10,7 @@ NULL
 #' @export
 #' @rdname residuals
 #' @method residuals varest2 
-#' @S3method residuals varest2
+#### @S3method residuals varest2
 #' @aliases residuals
 #'
 #' @return residuals of  \code{object} as a data frame. In case \code{squared=TRUE} , the squared residauls are returned, otherwise simple residuals are returned. The squared residuals can be useful in case of ARCH analysis. 

@@ -7,7 +7,7 @@ NULL
 #' 
 #' 
 #' 
-#'  @author  Emanuele Cordano, Emanuele Eccel
+#'  
 #'   
 #' @param data a data input matrix
 #'  

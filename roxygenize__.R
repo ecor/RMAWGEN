@@ -1,6 +1,4 @@
-#! /usr/bin/Rscript
-
-# file roxigenize.R
+# file geogr1.R
 #
 # This file roxygenizes all documentation wriiten in "Roxygen" format.
 #
@@ -22,10 +20,7 @@
 ###############################################################################
 library(roxygen2)
 
-options(repos = c(CRAN="http://cran.r-project.org"))
-
-
-path <- "/home/ecor/Dropbox/R-packages" 
+path <- "/Users/ecor/Dropbox/R-packages"
 pkg_name <- "RMAWGEN"
 pkg_dir <- paste(path,pkg_name,sep="/")
 cran_pkg_path <- paste(path,"toCran",sep="/")
@@ -72,19 +67,8 @@ if (toCran) {
 			system(paste("rm -rf",cran_pkg_unuseful,sep=" "))
 			cran_pkg_unuseful <- paste(cran_pkg_dir,"Read-and-delete-me",sep="/")
 			system(paste("rm -rf",cran_pkg_unuseful,sep=" "))
-			cran_pkg_unuseful <- paste(cran_pkg_dir,"roxygenize*",sep="/")
+			cran_pkg_unuseful <- paste(cran_pkg_dir,"roxygenize.R",sep="/")
 			system(paste("rm -rf",cran_pkg_unuseful,sep=" "))
-			
-			
-			toremove <- c(".DS_Store","inst/.DS_Store","inst/doc/.DS_Store","inst/doc/examples/.DS_Store","inst/doc/examples/snowstuff/.DS_Store","inst/template/.DS_Store","inst/template/friuli/.DS_Store", ".Rapp.history")
-			cran_pkg_unuseful <- paste(cran_pkg_dir,toremove,sep="/")
-			for (it in cran_pkg_unuseful) {
-				
-				system(paste("rm -rf",it,sep=" "))
-				
-				
-			}
-			
 	}
 
 
