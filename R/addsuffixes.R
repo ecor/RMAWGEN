@@ -10,7 +10,7 @@ NULL
 #' @param suffix suffixes to add to the first and second groups of column names respectively
 #' @param sep separation element
 #'  
-#'  @export 
+#' @export 
 #'
 #' @seealso \code{\link{getVARmodel}}
 #' 

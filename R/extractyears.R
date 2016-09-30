@@ -4,7 +4,7 @@ NULL
 #' 
 #' Extracts the elements of a data frame corresponding to a period between \code{year_min} and \code{year_max}  for the stations listed in \code{station}
 #' 
-#'  @author  Emanuele Cordano, Emanuele Eccel
+#'  
 #'
 #' @param data a dataframe containing daily data. 
 #' @param year_min start year

@@ -5,24 +5,23 @@ NULL
 #'  
 #'  Returns time series of Daily Maximum and Minimum with a random multi-realization obtained by using \code{\link{newVARmultieventRealization}}. This function is called by  \code{\link{ComprehensiveTemperatureGenerator}}.
 #'  
-#'  @param std_tn vector containing standard deviation of daily minimum temperature anomalies. \code{stdTn} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.
-#' 	@param std_tx vector containing standard deviation of daily maximum temperature anomalies. \code{stdTx} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.
-#' 	@param SplineTx matrix containing the averaged daily maximum temperature  obtained by a spline interpolation of monthly means . \code{SplineAdvTx} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.
-#'  @param SplineTn matrix containing the averaged daily minimum temperature  obtained by a spline interpolation of monthly means . \code{SplineAdvTn} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.
-#'  @param SplineTm matrix containing the averaged daily "mean" temperature   obtained by a spline interpolation of monthly means . \code{SplineAdvTm} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.
-#'  @param SplineDeltaT matrix containing the rescaled averaged daily temperature range obtained by a spline interpolation of monthly means . 
-#'         \code{SplineAdvDelta_T_sim/SplineAdvDelta_T} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.
-#'  @param std_tm vector containing standard deviation of daily "mean" temperature anomalies. \code{stdTn} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.
-#'  @param var A VAR model represented by a \code{varest} object as returned by \code{\link{getVARmodel}} or \code{\link{VAR}}
-#'  @param exogen see \code{\link{VAR}}
-#'  @param normalize logical variable If \code{TRUE} \code{\link{normalizeGaussian_severalstations}} is used, otherwise not. If \code{option} is 2, it is always \code{TRUE}.
-#'  @param sample,origin_x,origin_data,extremes see \code{\link{normalizeGaussian_severalstations}}
-#'  @param type see \code{\link{quantile}}
-#'  @param option integer value. If 1, the generator works with minimum and maximum temperature, if 2 (Default) it works with th average value between maximum and minimum temparature and the respective daily Thermal Range.
-#'  @param original_data matrix containing the measured standardized temperature anomalies
-#'  @param noise stochastic noise to add for variabile generation. Default is \code{NULL}. See \code{\link{newVARmultieventRealization}}. 
+#' @param std_tn vector containing standard deviation of daily minimum temperature anomalies. \code{stdTn} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.
+#' @param std_tx vector containing standard deviation of daily maximum temperature anomalies. \code{stdTx} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.
+#' @param SplineTx matrix containing the averaged daily maximum temperature  obtained by a spline interpolation of monthly means . \code{SplineAdvTx} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.
+#' @param SplineTn matrix containing the averaged daily minimum temperature  obtained by a spline interpolation of monthly means . \code{SplineAdvTn} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.
+#' @param SplineTm matrix containing the averaged daily "mean" temperature   obtained by a spline interpolation of monthly means . \code{SplineAdvTm} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.
+#' @param SplineDeltaT matrix containing the rescaled averaged daily temperature range obtained by a spline interpolation of monthly means. \code{SplineAdvDelta_T_sim/SplineAdvDelta_T} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.
+#' @param std_tm vector containing standard deviation of daily "mean" temperature anomalies. \code{stdTn} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.
+#' @param var A VAR model represented by a \code{varest} object as returned by \code{\link{getVARmodel}} or \code{\link{VAR}}
+#' @param exogen see \code{\link{VAR}}
+#' @param normalize logical variable If \code{TRUE} \code{\link{normalizeGaussian_severalstations}} is used, otherwise not. If \code{option} is 2, it is always \code{TRUE}.
+#' @param sample,origin_x,origin_data,extremes see \code{\link{normalizeGaussian_severalstations}}
+#' @param type see \code{\link{quantile}}
+#' @param option integer value. If 1, the generator works with minimum and maximum temperature, if 2 (Default) it works with th average value between maximum and minimum temparature and the respective daily Thermal Range.
+#' @param original_data matrix containing the measured standardized temperature anomalies
+#' @param noise stochastic noise to add for variabile generation. Default is \code{NULL}. See \code{\link{newVARmultieventRealization}}. 
 #' 
-#'  @export 
+#' @export 
 #' @return  This function returns a list of the following variables: 
 #' 
 #' \code{res_multigen} matrix containing standardized values of daily maximum and minimum temperature anomalies

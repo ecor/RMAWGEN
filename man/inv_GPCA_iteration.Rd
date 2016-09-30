@@ -23,7 +23,7 @@ the non-Gaussian random variable
 This function makes an inverse iteration of PCA-Gaussianization process
 }
 \note{
-This function is based on the inverse of the equation (1) of "PCA Gaussianization for One-Class Remote Sensing Image" by V. Laparra et al.,  \url{http://dx.doi.org/doi/10.1117/12.834011}
+This function is based on the inverse of the equation (1) of "PCA Gaussianization for One-Class Remote Sensing Image" by V. Laparra et al.,  \url{http://ieeexplore.ieee.org/document/5413808/}
 }
 \examples{
 library(RMAWGEN)

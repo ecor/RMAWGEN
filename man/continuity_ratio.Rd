@@ -63,9 +63,6 @@ continuity_ratio1 <-continuity_ratio(data=prec_mes,lag=-1,valmin=0.5)
 
 
 }
-\author{
-Emanuele Cordano, Emanuele Eccel
-}
 \references{
 see the following URL references:  \url{http://onlinelibrary.wiley.com/doi/10.1002/joc.2305/abstract} 
   and \url{http://www.sciencedirect.com/science/article/pii/S0022169498001863}

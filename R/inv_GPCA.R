@@ -13,7 +13,7 @@ NULL
 #' @return the non-Gaussian random variable
 #' 
 #' @seealso \code{\link{GPCA}},\code{\link{GPCA_iteration}},\code{\link{inv_GPCA_iteration}},\code{\link{inv_GPCA}}
-#' @note This function re-iterates the inverse of equation (1) of "PCA Gaussianization for One-Class Remote Sensing Image" by V. Laparra et al.,  \url{http://dx.doi.org/doi/10.1117/12.834011} 
+#' @note This function re-iterates the inverse of equation (1) of "PCA Gaussianization for One-Class Remote Sensing Image" by V. Laparra et al.,  \url{http://ieeexplore.ieee.org/document/5413808/} 
 #' @examples 
 #' library(RMAWGEN)
 #' set.seed(1222)

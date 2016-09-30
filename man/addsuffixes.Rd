@@ -12,9 +12,7 @@ addsuffixes(names = c("T0001", "T0099", "T0001", "T0099"), suffix = c("_Tx",
 
 \item{suffix}{suffixes to add to the first and second groups of column names respectively}
 
-\item{sep}{separation element
-
-@export}
+\item{sep}{separation element}
 }
 \value{
 the vector of names with suffixes added

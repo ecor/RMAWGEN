@@ -7,7 +7,7 @@ NULL
 #' @param valmin threshold precipitation value [mm] for wet/dry day indicator. 
 #' If precipitation is lower than \code{valmin}, day is considered dry. Default is 0.5 mm.
 #' 
-#' @author Emanuele Cordano, Emanuele Eccel 
+#'
 #' 
 #' @export 
 #' 

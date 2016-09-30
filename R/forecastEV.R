@@ -9,8 +9,8 @@ NULL
 #' @param xprev previous status of the random variable
 #' @param exogen vector containing the values of the "exogen" variables (predictor) for the generation
 #' 
-#'  @seealso \code{\link{forecastResidual}}
-#'  @author  Emanuele Cordano, Emanuele Eccel
+#' @seealso \code{\link{forecastResidual}}
+#' 
 #'    
 #'  @export
 #'

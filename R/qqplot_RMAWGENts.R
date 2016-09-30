@@ -46,9 +46,13 @@ NULL
 #' @rdname qqplot_RMAWGEN_Tx
 #' @export
 #' @author Emanuele Cordano
-#' 
-#' 
-#' 
+#'
+#' @importFromg Devices dev.off pdf rainbow
+#' @importFrom graphics abline barplot hist layout layout.show legend lines par plot points
+#' @importFrom stats acf coef cor cov ecdf embed lm pnorm qnorm qqplot quantile residuals rnorm runif sd spline wilcox.test
+#' @importFrom grDevices dev.off pdf rainbow
+
+#'
 #'  
 
 qqplot_RMAWGEN_Tx <- function (Tx_mes,Tx_gen,Tn_gen,Tn_mes,Tx_spline=NULL,Tn_spline=NULL,xlab="observed",ylab="simulated",when=1:nrow(Tx_mes),main=names(Tx_gen),station,pdf=NULL,xlim=range(Tx_mes),ylim=xlim,cex=0.4,cex.main=1.0,cex.lab=1.0,cex.axis=1.0){

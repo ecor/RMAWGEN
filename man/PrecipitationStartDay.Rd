@@ -11,9 +11,7 @@ PrecipitationStartDay(name, station_names, start_day)
 
 \item{station_names}{vector containing the IDs (characters)  of the considered meteorological stations. An example is \code{STATION_NAMES} defined in the \code{\link{trentino}} dataset.}
 
-\item{start_day}{vector containing the precipitation measurement start day. An example is \code{TEMPERATURE_MEASUREMENT_START_DAY} defined in the \code{\link{trentino}} dataset.
-
-@export}
+\item{start_day}{vector containing the precipitation measurement start day. An example is \code{TEMPERATURE_MEASUREMENT_START_DAY} defined in the \code{\link{trentino}} dataset.}
 }
 \value{
 the precipitation measurement start day given the vectors of station IDs and the respective precipitation measurement start days

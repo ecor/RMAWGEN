@@ -15,7 +15,8 @@ NULL
 #' @seealso \code{\link{GPCA}},\code{\link{GPCA_iteration}},\code{\link{inv_GPCA_iteration}},\code{\link{inv_GPCA}},\code{\link{GPCA-class}} for 'GPCA' S3 class
 #' 
 #' 
-#' @note This function re-iterates the equation (1) of "PCA Gaussianization for One-Class Remote Sensing Image" by V. Laparra et al.,  \url{http://dx.doi.org/doi/10.1117/12.834011} 
+#' @note This function re-iterates the equation (1) of "PCA Gaussianization for One-Class Remote Sensing Image" by V. Laparra et al., \url{http://www.uv.es/lapeva/papers/SPIE09_one_class.pdf},\url{http://www.uv.es/vista/vistavalencia/papers/SPIE_09_Gaussianization_presentation.pdf} 
+##### \url{http://dx.doi.org/doi/10.1117/12.834011} 
 #' @examples 
 #' library(RMAWGEN)
 #' set.seed(1222)

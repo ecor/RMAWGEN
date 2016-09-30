@@ -1,7 +1,7 @@
 Package: RMAWGEN
 Maintainer: Emanuele Cordano <emanuele.cordano@gmail.com>
 License: GPL (>= 2)
-Title: Multi-site Auto-regressive Weather GENerator
+Title: Multi-Site Auto-Regressive Weather GENerator
 Type: Package
 Author: Emanuele Cordano, Emanuele Eccel
 Description: S3 and S4 functions are implemented for spatial multi-site

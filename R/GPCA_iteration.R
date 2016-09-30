@@ -19,8 +19,9 @@ NULL
 #' \code{x_next} results obtained by multiplying \code{B_prev} by  \code{x_gauss_prev} (see equation 1 of  the reference) 
 #' 
 #' 
-#' @note This function is based on equation (1) of "PCA Gaussianization for One-Class Remote Sensing Image" by V. Laparra et al.,  \url{www.uv.es/lapeva/papers/SPIE09_one_class.pdf} and  \url{http://dx.doi.org/doi/10.1117/12.834011} 
-#' 
+#' @note This function is based on equation (1) of "PCA Gaussianization for One-Class Remote Sensing Image" by V. Laparra et al.,  \url{www.uv.es/lapeva/papers/SPIE09_one_class.pdf} and  \url{http://ieeexplore.ieee.org/document/5413808/} 
+##### \url{http://www.uv.es/lapeva/papers/SPIE09_one_class.pdf},\url{http://www.uv.es/vista/vistavalencia/papers/SPIE_09_Gaussianization_presentation.pdf} 
+##### \url{http://dx.doi.org/doi/10.1117/12.834011} 
 #' @seealso \code{\link{GPCA}},\code{\link{GPCA_iteration}},\code{\link{inv_GPCA_iteration}},\code{\link{inv_GPCA}}
 #' @examples 
 #' library(RMAWGEN)

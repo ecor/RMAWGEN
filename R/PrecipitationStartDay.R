@@ -10,7 +10,7 @@ NULL
 #' @param station_names  vector containing the IDs (characters)  of the considered meteorological stations. An example is \code{STATION_NAMES} defined in the \code{\link{trentino}} dataset.
 #' @param start_day      vector containing the precipitation measurement start day. An example is \code{TEMPERATURE_MEASUREMENT_START_DAY} defined in the \code{\link{trentino}} dataset.
 #'  
-#'  @export 
+#' @export 
 #'
 #'       
 #' @return  the precipitation measurement start day given the vectors of station IDs and the respective precipitation measurement start days

@@ -17,7 +17,7 @@
 #' transformed into precipitation and/or temperature series. An application dateset is included in the RMAWGEN package as an example; it is presented by
 #' using a dataset with daily weather time series recorded in 59 different sites of Trentino (Italy) and its neighborhoods for the period 1958-2007. The
 #' software is distributed as a Free Software with General Public License (GPL) and is available on CRAN website.
-#' (\url{http://cran.r-project.org/web/packages/RMAWGEN/index.html}) .
+#' (\url{https://cran.r-project.org/package=RMAWGEN}) .
 #' A presentation of the package is available on \url{https://docs.google.com/file/d/0B8xDtMCnW3dJU2JIemVqMnpKTHc/edit}.
 #' Example script files about package usage are available on \url{https://github.com/ecor/RMAWGENCodeCorner}.
 

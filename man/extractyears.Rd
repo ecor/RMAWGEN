@@ -20,7 +20,7 @@ extractyears(data, year_min = 1961, year_max = 1990, station = c("T0001",
 a matrix containing the requested daily data where each day corresponds to a row and each station corresponds to a column
 }
 \description{
-@author  Emanuele Cordano, Emanuele Eccel
+Extracts the elements of a data frame corresponding to a period between \code{year_min} and \code{year_max}  for the stations listed in \code{station}
 }
 \note{
 The input data frame \code{data} must have the following fields: \code{year,month,day,variables_ID1,variables_ID2,...} 

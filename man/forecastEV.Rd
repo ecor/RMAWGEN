@@ -11,17 +11,18 @@ forecastEV(var, xprev = NULL, exogen = NULL)
 
 \item{xprev}{previous status of the random variable}
 
-\item{exogen}{vector containing the values of the "exogen" variables (predictor) for the generation
-
- @seealso \code{\link{forecastResidual}}
- @author  Emanuele Cordano, Emanuele Eccel
-   
- @export}
+\item{exogen}{vector containing the values of the "exogen" variables (predictor) for the generation}
 }
 \value{
 a vector of values
 }
 \description{
 Forecasts the expected value of a VAR realization given the prievious one
+}
+\seealso{
+\code{\link{forecastResidual}}
+
+   
+ @export
 }
 

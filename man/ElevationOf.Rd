@@ -11,9 +11,7 @@ ElevationOf(name, station_names, elevation)
 
 \item{station_names}{vector of the IDs (characters) of the considered meteorological stations. An example is \code{STATION_NAMES}, which is defined in the \code{\link{trentino}} dataset.}
 
-\item{elevation}{vector of the elevation  of the considered meteorological stations. An example is \code{ELEVATION}, which is defined in the \code{\link{trentino}} dataset.
-
-@export}
+\item{elevation}{vector of the elevation  of the considered meteorological stations. An example is \code{ELEVATION}, which is defined in the \code{\link{trentino}} dataset.}
 }
 \value{
 the elevation given the vectors of station IDs and the respective elevations
