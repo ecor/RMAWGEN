@@ -36,4 +36,3 @@ findDate <- findDate(100,origin="1961-1-1",data.frame=FALSE,character=TRUE)
 \seealso{
 \code{\link{date.mdy}},\code{\link{extractdays}}
 }
-

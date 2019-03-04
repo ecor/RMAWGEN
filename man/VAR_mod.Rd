@@ -17,4 +17,3 @@ a Vector Auto-Regeressive model (VAR) as \code{varest} object
 \description{
 Modified version of \code{\link{VAR}} function allowing to describe white-noise as VAR-(0) model (i. e. \code{varest} objects)
 }
-

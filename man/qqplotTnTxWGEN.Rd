@@ -5,8 +5,8 @@
 \title{Makes a qqplot of measured and simulated data for several stations.}
 \usage{
 qqplotTnTxWGEN(measured, simulated, xlab = "simulated[degC]",
-  ylab = "measured[degC]", titles = c("Q-Qplot_An._Tx", "Q-Qplot_An._Tn"),
-  station = NULL, diff = FALSE, quantile = 0)
+  ylab = "measured[degC]", titles = c("Q-Qplot_An._Tx",
+  "Q-Qplot_An._Tn"), station = NULL, diff = FALSE, quantile = 0)
 }
 \arguments{
 \item{measured}{matrix containing measured data (each station corresponds to a column)}
@@ -33,4 +33,3 @@ It uses \code{\link{qqplotWGEN}} and makes a figure for each pair of columns fro
 \author{
 Emanuele Cordano, Emanuele Eccel
 }
-

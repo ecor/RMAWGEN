@@ -6,13 +6,14 @@
 \usage{
 ComprehensiveTemperatureGenerator(station = c("T0001", "T0010", "T0099"),
   Tx_all, Tn_all, mean_climate_Tn = NULL, mean_climate_Tx = NULL,
-  Tx_spline = NULL, Tn_spline = NULL, year_max = 1990, year_min = 1961,
-  leap = TRUE, nmonth = 12, verbose = TRUE, p = 1, type = "none",
-  lag.max = NULL, ic = "AIC", activateVARselect = FALSE,
-  year_max_sim = year_max, year_min_sim = year_min,
-  mean_climate_Tn_sim = NULL, mean_climate_Tx_sim = NULL,
-  Tn_spline_sim = NULL, Tx_spline_sim = NULL, onlygeneration = FALSE,
-  varmodel = NULL, normalize = TRUE, type_quantile = 3, sample = NULL,
+  Tx_spline = NULL, Tn_spline = NULL, year_max = 1990,
+  year_min = 1961, leap = TRUE, nmonth = 12, verbose = TRUE,
+  p = 1, type = "none", lag.max = NULL, ic = "AIC",
+  activateVARselect = FALSE, year_max_sim = year_max,
+  year_min_sim = year_min, mean_climate_Tn_sim = NULL,
+  mean_climate_Tx_sim = NULL, Tn_spline_sim = NULL,
+  Tx_spline_sim = NULL, onlygeneration = FALSE, varmodel = NULL,
+  normalize = TRUE, type_quantile = 3, sample = NULL,
   extremes = TRUE, option = 2, yearly = FALSE, yearly_sim = yearly,
   n_GPCA_iteration = 0, n_GPCA_iteration_residuals = n_GPCA_iteration,
   exogen = NULL, exogen_sim = exogen, is_exogen_gaussian = FALSE,
@@ -122,10 +123,9 @@ vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",
 
 	
 }
-\author{
-Emanuele Cordano, Emanuele Eccel
-}
 \seealso{
 \code{\link{setComprehensiveTemperatureGeneratorParameters}}, \code{\link{generateTemperatureTimeseries}} ,\code{\link{generateTemperatureTimeseries}},\code{\link{splineInterpolateMonthlytoDailyforSeveralYears}}.
 }
-
+\author{
+Emanuele Cordano, Emanuele Eccel
+}

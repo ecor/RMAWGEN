@@ -23,10 +23,9 @@ a vector of values
 \description{
 Generates a new realization of a VAR model
 }
-\author{
-Emanuele Cordano, Emanuele Eccel
-}
 \seealso{
 \code{\link{forecastEV}},\code{\link{forecastResidual}}
 }
-
+\author{
+Emanuele Cordano, Emanuele Eccel
+}

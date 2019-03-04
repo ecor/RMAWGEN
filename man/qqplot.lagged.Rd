@@ -29,4 +29,3 @@ This function creates a Q-Q plot of  the  \code{lag}-lag moving cumulative addit
 \seealso{
 \code{\link{qqplot}}
 }
-

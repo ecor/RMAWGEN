@@ -101,10 +101,9 @@ See the R code for further details.
 \description{
 Computes climatic and correlation information useful for creating an auto-regeressive random generation of maximum and minimun daily temparature. This function is called by  \code{\link{ComprehensiveTemperatureGenerator}}.
 }
-\author{
-Emanuele Cordano, Emanuele Eccel
-}
 \seealso{
 \code{\link{splineInterpolateMonthlytoDailyforSeveralYears}},\code{\link{ComprehensiveTemperatureGenerator}}
 }
-
+\author{
+Emanuele Cordano, Emanuele Eccel
+}

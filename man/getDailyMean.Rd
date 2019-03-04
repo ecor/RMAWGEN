@@ -4,8 +4,8 @@
 \alias{getDailyMean}
 \title{Calculates the daily means of a range of days around each date of a data frame corresponding to a period between \code{year_min} and \code{year_max}  for stations listed in \code{station}}
 \usage{
-getDailyMean(data, year_min = 1961, year_max = 1990, station = c("T0001",
-  "T0010"), origin = "1961-1-1", lag = 5)
+getDailyMean(data, year_min = 1961, year_max = 1990,
+  station = c("T0001", "T0010"), origin = "1961-1-1", lag = 5)
 }
 \arguments{
 \item{data}{a data frame containing daily data.}
@@ -30,10 +30,9 @@ Calculates the daily means of a range of days around each date of a data frame c
 The input data frame \code{data} must have the following fields: \code{year,month,day,variables_ID1,variables_ID2,...} 
 where the fields \code{,variables_ID1,variables_ID2,...} contain the daily variables referred to the respective stations and the field names are replaced with the respective station ID.
 }
-\author{
-Emanuele Cordano, Emanuele Eccel
-}
 \seealso{
 \code{\link{extractyears}}
 }
-
+\author{
+Emanuele Cordano, Emanuele Eccel
+}

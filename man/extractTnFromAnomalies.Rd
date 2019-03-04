@@ -22,4 +22,3 @@ Extracts generated time series of Daily Minimum Temperature from a random multi-
 \author{
 Emanuele Cordano, Emanuele Eccel
 }
-

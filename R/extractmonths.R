@@ -1,10 +1,8 @@
 NULL
-
-
 #' 
 #' Extracts the rows of a matrix corresponding to requested months of a year given the  date (origin) of the first row 
 #' 
-#'  @author  Emanuele Cordano, Emanuele Eccel
+#' @author  Emanuele Cordano, Emanuele Eccel
 #'
 #' @param data an input data matrix where each row corresponds to a daily record
 #' @param when character vactor of months for which the data are required. 
@@ -14,7 +12,7 @@ NULL
 #' @param ndim_max maximum (integer) number of rows in \code{data} where to find \code{when}. 
 #' Default is 100000 and works if \code{data} is missing.
 #' 
-#'  @export    
+#' @export    
 #'   
 #'
 #' @return   a matrix containing the requested rows
@@ -22,8 +20,10 @@ NULL
 #' @note It uses \code{\link{months}} and  \code{\link{julian}}
 #' @seealso \code{\link{extractdays}}
 #' 
+#' @examples 
 #' 
-
+#' extractmonths()
+#' 
 
 
 

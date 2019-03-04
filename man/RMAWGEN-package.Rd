@@ -2,8 +2,8 @@
 % Please edit documentation in R/RMAWGEN-package.R
 \docType{package}
 \name{RMAWGEN-package}
-\alias{RMAWGEN}
 \alias{RMAWGEN-package}
+\alias{RMAWGEN}
 \title{R - Multi-site Autoregressive WEather Generator}
 \description{
 Multi-site autoregressive Models for Daily Weather Generation. The modeling in climate change applications for agricultural or hydrological purposes often requires daily time-series of precipitation and temperature.
@@ -52,11 +52,11 @@ RMAWGEN is free software: you can redistribute it and/or modify
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see \url{http://www.gnu.org/licenses/}.
 }
-\author{
-Emanuele Cordano \email{emanuele.cordano@gmail.org}, Emanuele Eccel \email{emanuele.eccel@fmach.it}
-}
 \references{
 Bernhard Pfaff (2008). VAR, SVAR and SVEC Models: Implementation Within R Package vars. Journal of Statistical Software 27(4). \url{http://www.jstatsoft.org/v27/i04/}
+}
+\author{
+Emanuele Cordano \email{emanuele.cordano@gmail.org}, Emanuele Eccel \email{emanuele.eccel@fmach.it}
 }
 \keyword{auto-regressive}
 \keyword{models,}
@@ -65,4 +65,3 @@ Bernhard Pfaff (2008). VAR, SVAR and SVEC Models: Implementation Within R Packag
 \keyword{temperature,}
 \keyword{time-series}
 \keyword{vector}
-

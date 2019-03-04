@@ -2,8 +2,8 @@
 % Please edit documentation in R/zc1_varest2.R
 \docType{class}
 \name{varest2-class}
-\alias{varest2}
 \alias{varest2-class}
+\alias{varest2}
 \title{varest2-class}
 \description{
 This class derives from a \code{varest} S3 class which is a list of objects describing a Vectorial AutoRegressive Model (see \code{\link{VAR}})
@@ -27,4 +27,3 @@ showClass("varest2")
 Emanuele Cordano
 }
 \keyword{classes}
-

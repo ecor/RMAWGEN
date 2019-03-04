@@ -46,10 +46,9 @@ GPCAn <- GPCA_iteration(dfn,extremes=TRUE)
 
 
 }
-\author{
-Emanuele Cordano
-}
 \seealso{
 \code{\link{GPCA}},\code{\link{GPCA_iteration}},\code{\link{inv_GPCA_iteration}},\code{\link{inv_GPCA}}
 }
-
+\author{
+Emanuele Cordano
+}

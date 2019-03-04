@@ -5,9 +5,9 @@
 \title{Plots daily climatology through one year}
 \usage{
 plotDailyClimate(data, title = "Daily_Avereged_Temperture_in_one_year",
-  origin = "1961-1-1", when = "1979-1-1", ylab = "Temperature [degC]",
-  xlab = "Time [days]", nday = 365, bicolor = FALSE, col = "black",
-  lwd = 1)
+  origin = "1961-1-1", when = "1979-1-1",
+  ylab = "Temperature [degC]", xlab = "Time [days]", nday = 365,
+  bicolor = FALSE, col = "black", lwd = 1)
 }
 \arguments{
 \item{data}{matrix whose columns contain daily-averaged climatic series of variables (e.g. maximum or minum daily averaged temperature obtained by spline interpolation of monthly climatology)}
@@ -31,4 +31,3 @@ Plots daily climatology through one year
 \author{
 Emanuele Cordano, Emanuele Eccel
 }
-

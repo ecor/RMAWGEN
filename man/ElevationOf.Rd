@@ -23,4 +23,3 @@ Extracts the elevation of a meteorological station expressed in meters above a r
 data(trentino)
 ElevationOf("T0099",station_names=STATION_NAMES,elevation=ELEVATION)
 }
-

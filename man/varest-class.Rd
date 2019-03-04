@@ -2,8 +2,8 @@
 % Please edit documentation in R/zc0_varest.R
 \docType{class}
 \name{varest-class}
-\alias{varest}
 \alias{varest-class}
+\alias{varest}
 \title{varest-class}
 \description{
 \code{varest} S3 class (formal definition) see \code{\link{VAR}}
@@ -26,4 +26,3 @@ showClass("varest")
 Bernhard Pfaff
 }
 \keyword{classes}
-

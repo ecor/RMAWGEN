@@ -12,9 +12,7 @@ extractmonths(data = array(1:ndim_max, dim = c(ndim_max, 1)),
 \item{data}{an input data matrix where each row corresponds to a daily record}
 
 \item{ndim_max}{maximum (integer) number of rows in \code{data} where to find \code{when}. 
-Default is 100000 and works if \code{data} is missing.
-
- @export}
+Default is 100000 and works if \code{data} is missing.}
 
 \item{when}{character vactor of months for which the data are required. 
 It must be a subset of \code{c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")}}
@@ -27,12 +25,19 @@ It must be a subset of \code{c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","
 a matrix containing the requested rows
 }
 \description{
-@author  Emanuele Cordano, Emanuele Eccel
+Extracts the rows of a matrix corresponding to requested months of a year given the  date (origin) of the first row
 }
 \note{
 It uses \code{\link{months}} and  \code{\link{julian}}
 }
+\examples{
+
+extractmonths()
+
+}
 \seealso{
 \code{\link{extractdays}}
 }
-
+\author{
+Emanuele Cordano, Emanuele Eccel
+}

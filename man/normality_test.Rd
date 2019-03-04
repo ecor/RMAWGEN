@@ -17,4 +17,3 @@ normality_test(object, ...)
 \seealso{
 \code{\link{normality.test}}
 }
-

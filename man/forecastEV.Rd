@@ -25,4 +25,3 @@ Forecasts the expected value of a VAR realization given the prievious one
    
  @export
 }
-

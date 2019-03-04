@@ -4,8 +4,8 @@
 \alias{inv_GPCA_iteration}
 \title{This function makes an inverse iteration of PCA-Gaussianization process}
 \usage{
-inv_GPCA_iteration(x = GPCA_iter_param$x_next, GPCA_iter_param, type = 3,
-  extremes = TRUE)
+inv_GPCA_iteration(x = GPCA_iter_param$x_next, GPCA_iter_param,
+  type = 3, extremes = TRUE)
 }
 \arguments{
 \item{x}{matrix of gaussian random variale to transform}
@@ -49,4 +49,3 @@ dfn_out <- inv_GPCA_iteration(GPCA_iter_param=GPCAn,extremes=TRUE)
 \seealso{
 \code{\link{GPCA}},\code{\link{GPCA_iteration}},\code{\link{inv_GPCA_iteration}},\code{\link{inv_GPCA}},\code{\link{GPCA-class}} for 'GPCA' S3 class
 }
-

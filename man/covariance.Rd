@@ -4,9 +4,9 @@
 \alias{covariance}
 \title{Calculates the covariance matrix of the normally standardized variables obtained from the columns of \code{x}}
 \usage{
-covariance(x, data = x, cpf = NULL, mean = 0, sd = 1, step = NULL,
-  prec = 10^-4, use = "pairwise.complete.obs", type = 3,
-  extremes = TRUE, sample = NULL, origin_x = NULL,
+covariance(x, data = x, cpf = NULL, mean = 0, sd = 1,
+  step = NULL, prec = 10^-4, use = "pairwise.complete.obs",
+  type = 3, extremes = TRUE, sample = NULL, origin_x = NULL,
   origin_data = origin_x)
 }
 \arguments{
@@ -43,9 +43,6 @@ a matrix with the normalized variable or its inverse
 \description{
 Calculates the covariance matrix of the normally standardized variables obtained from the columns of \code{x}
 }
-\author{
-Emanuele Cordano, Emanuele Eccel
-}
 \seealso{
 \code{\link{normalizeGaussian_severalstations}},\code{\link{normalizeGaussian}}
   
@@ -53,4 +50,6 @@ Emanuele Cordano, Emanuele Eccel
  @note It applies \code{\link{normalizeGaussian_severalstations}} to \code{x} and \code{data} and then calculates the covariances among the column.
 See the R code for further details
 }
-
+\author{
+Emanuele Cordano, Emanuele Eccel
+}

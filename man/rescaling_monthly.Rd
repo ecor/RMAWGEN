@@ -22,13 +22,12 @@ This function adjusts the monthly mean to a daily weather dataset (e. g. spline-
 \note{
 It uses \code{\link{months}} and  \code{\link{julian}}
 }
+\seealso{
+\code{\link{extractdays}}
+}
 \author{
 Emanuele Cordano
 
 
  @export
 }
-\seealso{
-\code{\link{extractdays}}
-}
-

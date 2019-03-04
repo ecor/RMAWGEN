@@ -5,8 +5,8 @@
 \title{Makes a qqplot of measured and simulated data for several stations.}
 \usage{
 qqplotprecWGEN(measured, simulated, xlab = "simulated[mm]",
-  ylab = "measured[mm]", title = "daily precipitation", station = NULL,
-  diff = FALSE, quantile = 0)
+  ylab = "measured[mm]", title = "daily precipitation",
+  station = NULL, diff = FALSE, quantile = 0)
 }
 \arguments{
 \item{measured}{matrix containing measured data (each station corresponds to a column)}
@@ -33,4 +33,3 @@ It uses \code{\link{qqplotWGEN}} and makes a figure for each pair of columns fro
 \author{
 Emanuele Cordano, Emanuele Eccel
 }
-

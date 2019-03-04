@@ -19,10 +19,9 @@ a vector of values
 \description{
 Forecasts the residual value of a VAR realization given the white noise covariance matrix
 }
-\author{
-Emanuele Cordano, Emanuele Eccel
-}
 \seealso{
 \code{\link{forecastEV}},\code{\link{NewVAReventRealization}}
 }
-
+\author{
+Emanuele Cordano, Emanuele Eccel
+}

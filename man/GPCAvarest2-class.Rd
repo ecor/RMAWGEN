@@ -2,8 +2,8 @@
 % Please edit documentation in R/zc2_GPCAvarest2.R
 \docType{class}
 \name{GPCAvarest2-class}
-\alias{GPCAvarest2}
 \alias{GPCAvarest2-class}
+\alias{GPCAvarest2}
 \title{GPCAvarest2-class}
 \description{
 This class inherits \code{varest2} and contains all information about GPCA (\code{\link{GPCA}} transformation.
@@ -29,4 +29,3 @@ showClass("GPCAvarest2")
 Emanuele Cordano
 }
 \keyword{classes}
-

@@ -1,6 +1,4 @@
 NULL
-
-
 #' 
 #' Extracts the rows of a matrix corresponding to the requested days (expressed as dates YYYY-MM-DD) given the  date (origin) of the first row 
 #' 
@@ -20,6 +18,12 @@ NULL
 #'        
 #' 
 #' @return  a matrix containing the requested rows
+#' 
+#' @examples 
+#' 
+#' extractdays()
+#' 
+
 
 
 

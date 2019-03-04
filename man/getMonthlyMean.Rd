@@ -37,4 +37,3 @@ where the fields \code{,variables_ID1,variables_ID2,...} contain the daily varia
 \seealso{
 \code{\link{extractyears}}
 }
-

@@ -5,7 +5,8 @@
 \title{Extracts the rows of a matrix corresponding to the requested days (expressed as dates YYYY-MM-DD) given the  date (origin) of the first row}
 \usage{
 extractdays(data = array(1:ndim_max, dim = c(ndim_max, 1)),
-  ndim_max = 1e+05, when = "1990-1-1", origin = "1961-1-1", nday = 1)
+  ndim_max = 1e+05, when = "1990-1-1", origin = "1961-1-1",
+  nday = 1)
 }
 \arguments{
 \item{data}{an input data matrix where each row corresponds to a daily record}
@@ -28,4 +29,8 @@ Extracts the rows of a matrix corresponding to the requested days (expressed as 
 \note{
 It uses \code{\link{julian}}
 }
+\examples{
 
+extractdays()
+
+}

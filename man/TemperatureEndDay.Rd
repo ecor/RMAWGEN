@@ -26,4 +26,3 @@ TemperatureEndDay("T0099",station_names=STATION_NAMES,end_day=TEMPERATURE_MEASUR
 \author{
 Emanuele Cordano, Emanuele Eccel
 }
-

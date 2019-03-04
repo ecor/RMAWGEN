@@ -32,4 +32,3 @@ Generates several realizations of a VAR model
 \author{
 Emanuele Cordano, Emanuele Eccel
 }
-

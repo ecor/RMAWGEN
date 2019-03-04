@@ -33,10 +33,9 @@ Makes four seasonal qqplots  (winter, spring, summer and autumn) of measured and
 \note{
 Uses \code{\link{qqplotTnTxWGEN}} for each seasons of collected data and saves the output on  pdf files. See the R code for further details.
 }
-\author{
-Emanuele Cordano, Emanuele Eccel
-}
 \seealso{
 \code{\link{qqplotTnTxWGEN}},\code{\link{extractmonths}}
 }
-
+\author{
+Emanuele Cordano, Emanuele Eccel
+}

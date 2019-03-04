@@ -6,7 +6,8 @@
 \usage{
 splineInterpolateMonthlytoDaily(nday = 365, val = as.matrix(cbind(1 *
   (0.5:11.5) * nday/12, 2 * (0.5:11.5) * nday/12)), origin = "1961-1-1",
-  first_row = 1, last_row = nday, no_spline = FALSE, no_mean = FALSE)
+  first_row = 1, last_row = nday, no_spline = FALSE,
+  no_mean = FALSE)
 }
 \arguments{
 \item{nday}{number of days on which the daily data is requested, e.g. number of days in one year}
@@ -30,10 +31,9 @@ a matrix or data frame with interpolated daily data
 \description{
 Interpolates monthly data to daily data using \code{\link{spline}}  and preserving monthly mean values
 }
-\author{
-Emanuele Cordano, Emanuele Eccel
-}
 \seealso{
 \code{\link{spline}},\code{\link{splineInterpolateMonthlytoDailyforSeveralYears}}
 }
-
+\author{
+Emanuele Cordano, Emanuele Eccel
+}

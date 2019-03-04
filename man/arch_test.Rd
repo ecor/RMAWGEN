@@ -4,7 +4,8 @@
 \alias{arch_test}
 \title{\code{arch.test} function for \code{varest2} object}
 \usage{
-arch_test(object, interval = NULL, overlap = 20, list.output = FALSE, ...)
+arch_test(object, interval = NULL, overlap = 20, list.output = FALSE,
+  ...)
 }
 \arguments{
 \item{object}{a \code{varest2} object}
@@ -29,4 +30,3 @@ This function is a wrapper of \code{\link{arch.test}}. It can compute the test a
 \seealso{
 \code{\link{arch.test}}
 }
-

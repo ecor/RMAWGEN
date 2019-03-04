@@ -23,4 +23,3 @@ the precipitation measurement end day given the vectors of station IDs and the p
 data(trentino)
 PrecipitationEndDay("T0099",station_names=STATION_NAMES,end_day=PRECIPITATION_MEASUREMENT_END_DAY) 
 }
-

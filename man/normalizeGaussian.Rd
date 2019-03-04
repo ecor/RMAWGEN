@@ -47,4 +47,3 @@ Converts a random variable \code{x} extracted by a population represented by the
 \author{
 Emanuele Cordano, Emanuele Eccel
 }
-

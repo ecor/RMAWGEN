@@ -17,4 +17,3 @@ serial_test(object, ...)
 \seealso{
 \code{\link{serial.test}}
 }
-

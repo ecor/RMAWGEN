@@ -28,4 +28,3 @@ showClass("GPCA")
 Emanuele Cordano
 }
 \keyword{classes}
-

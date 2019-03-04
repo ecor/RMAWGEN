@@ -20,4 +20,3 @@ Inserts three columns (year,month,day) passing dates  to a matrix or to a datafr
 \seealso{
 \code{\link{findDate}}
 }
-

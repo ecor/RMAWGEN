@@ -25,4 +25,3 @@ when using \code{\link{VAR}} or \code{\link{VARselect}}, all NAs will be removed
 \seealso{
 \code{\link{getVARmodel}}
 }
-

@@ -42,10 +42,9 @@ GPCAn <- GPCA(dfn,n=nIterations,extremes=TRUE)
 
 
 }
-\author{
-Emanuele Cordano
-}
 \seealso{
 \code{\link{GPCA}},\code{\link{GPCA_iteration}},\code{\link{inv_GPCA_iteration}},\code{\link{inv_GPCA}},\code{\link{GPCA-class}} for 'GPCA' S3 class
 }
-
+\author{
+Emanuele Cordano
+}

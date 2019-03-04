@@ -55,4 +55,3 @@ This means that two or more columns may have the same name. Therefore the functi
 \author{
 Emanuele Cordano, Emanuele Eccel
 }
-

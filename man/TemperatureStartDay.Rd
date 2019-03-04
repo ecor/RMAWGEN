@@ -25,4 +25,3 @@ TemperatureStartDay("T0099",station_names=STATION_NAMES,start_day=TEMPERATURE_ME
 \description{
 @author  Emanuele Cordano, Emanuele Eccel
 }
-

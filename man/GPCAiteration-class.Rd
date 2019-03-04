@@ -2,8 +2,8 @@
 % Please edit documentation in R/zc0_GPCAiteration.R
 \docType{class}
 \name{GPCAiteration-class}
-\alias{GPCAiteration}
 \alias{GPCAiteration-class}
+\alias{GPCAiteration}
 \title{GPCAiteration-class}
 \description{
 \code{GPCAiteration} S3 class returned by \code{\link{GPCA_iteration}}
@@ -32,4 +32,3 @@ showClass("GPCAiteration")
 Emanuele Cordano
 }
 \keyword{classes}
-

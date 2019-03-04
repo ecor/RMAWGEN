@@ -7,7 +7,8 @@
 \usage{
 normalizeGaussian_severalstations(x, data = x, cpf = NULL, mean = 0,
   sd = 1, inverse = FALSE, step = NULL, prec = 10^-4, type = 3,
-  extremes = TRUE, sample = NULL, origin_x = NULL, origin_data = NULL)
+  extremes = TRUE, sample = NULL, origin_x = NULL,
+  origin_data = NULL)
 }
 \arguments{
 \item{x}{value to be converted}
@@ -64,10 +65,9 @@ dfi <- normalizeGaussian_severalstations(dfg,data=df,extremes=TRUE,inverse=TRUE)
  
 
 }
-\author{
-Emanuele Cordano, Emanuele Eccel
-}
 \seealso{
 \code{\link{normalizeGaussian}}
 }
-
+\author{
+Emanuele Cordano, Emanuele Eccel
+}
