@@ -12,7 +12,7 @@ NULL
 #' @param mean mean (expected value) of the normalized random variable. Default is 0.
 #' @param sd standard deviation of the normalized random variable. Default is 1.
 #' @param inverse  logical value. If \code{TRUE} the function works inversely (the opposite way). Default is \code{FALSE}.
-#' @param qnull probability of no precipitation occurence. (It can be a matrix in case \code{sample="monthly"}
+#' @param qnull probability of no precipitation occurrence. (It can be a matrix in case \code{sample="monthly"}
 #' @param valmin minimum value of precipitation to consider a wet day
 
 

@@ -9,7 +9,7 @@ continuity_ratio(data, lag = 0, valmin = 0.5)
 \arguments{
 \item{data}{containing daily precipitation time series for several gauges (one gauge time series per column)}
 
-\item{lag}{numeric lag (expressed as number of days) used for computation for "cross" continuity ratio and joint probability of prercipitation (no)occurence.}
+\item{lag}{numeric lag (expressed as number of days) used for computation for "cross" continuity ratio and joint probability of prercipitation (no)occurrence.}
 
 \item{valmin}{threshold precipitation value [mm] for wet/dry day indicator. 
 If precipitation is lower than \code{valmin}, day is considered dry. Default is 0.5 mm.}
@@ -19,15 +19,15 @@ A list containing the following matrices:
 
 \code{continuity_ratio} : \code{lag}-day lagged  continuity ratio , 
 
-\code{occurence}  : joint probability of \code{lag}-day lagged precipitation occurence  
+\code{occurrence}  : joint probability of \code{lag}-day lagged precipitation occurrence  
 
-\code{nooccurence} : joint probability of \code{lag}-day lagged no precipitation occurence.
+\code{nooccurrence} : joint probability of \code{lag}-day lagged no precipitation occurrence.
 
-\code{nooccurence_occurence} : joint probability of \code{lag}-day lagged no precipitation and precipitation occurence respectively.
+\code{nooccurrence_occurrence} : joint probability of \code{lag}-day lagged no precipitation and precipitation occurrence respectively.
 
-\code{occurence_nooccurence} : joint probability of \code{lag}-day lagged precipitation and no precipitation occurence respectively.
+\code{occurrence_nooccurrence} : joint probability of \code{lag}-day lagged precipitation and no precipitation occurrence respectively.
 
-\code{probability_continuity_ratio}: \code{lag}-day lagged ratio about precipitation probability contitioned to no precipitation/preciitation occurence in the other site
+\code{probability_continuity_ratio}: \code{lag}-day lagged ratio about precipitation probability contitioned to no precipitation/preciitation occurrence in the other site
 }
 \description{
 Calculates the continuity ratio of a set of precipitation measured or generated data in several sites as defined by Wilks, 1998 (see reference link)
