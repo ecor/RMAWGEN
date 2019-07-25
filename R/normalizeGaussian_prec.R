@@ -3,7 +3,7 @@ NULL
 
 #'
 #' 
-#' Converts precipitation values to "Gaussinized" normally-distributed values taking into account the probability of no precipitation occurences. values  
+#' Converts precipitation values to "Gaussinized" normally-distributed values taking into account the probability of no precipitation occurrences. values  
 #' or vice versa in case \code{inverse} is \code{TRUE}
 #'    
 #' @param x value or vector of values to be converted 
@@ -12,7 +12,7 @@ NULL
 #' @param mean mean (expected value) of the normalized random variable. Default is 0.
 #' @param sd standard deviation of the normalized random variable. Default is 1.
 #' @param inverse  logical value. If \code{TRUE} the function works inversely (the opposite way). Default is \code{FALSE}.
-#' @param qnull probability of no precipitation occurence
+#' @param qnull probability of no precipitation occurrence
 #' @param valmin minimum value of precipitation to consider a wet day
 #' @param type see \code{\link{quantile}}
 #' @param extremes logical variable. 
@@ -37,17 +37,17 @@ NULL
 #' @examples 
 #' library(RMAWGEN)
 #' NDATA <- 1000
-#' occurence <- as.logical(runif(NDATA)>0.5)
+#' occurrence <- as.logical(runif(NDATA)>0.5)
 #' prec <- rexp(NDATA,rate=1/3)
-#' prec[!occurence] <- 0
+#' prec[!occurrence] <- 0
 #' valmin <- 0.5 #0.01
 #' x <- normalizeGaussian_prec(x=prec,valmin=valmin)
 #' prec2 <- normalizeGaussian_prec(x=x,data=prec,valmin=valmin,inverse=TRUE)
 #' qqplot(prec,prec2)
 #'
-#' occurence3 <- as.logical(runif(NDATA)>0.5)
+#' occurrence3 <- as.logical(runif(NDATA)>0.5)
 #' prec3 <- rexp(NDATA,rate=1/3)
-#' prec3[!occurence3] <- 0
+#' prec3[!occurrence3] <- 0
 #' x3 <- normalizeGaussian_prec(x=prec3,valmin=valmin) 
 #' 
 #' qqplot(x,x3)

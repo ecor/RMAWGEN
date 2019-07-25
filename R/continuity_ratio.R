@@ -3,7 +3,7 @@ NULL
 #'  Calculates the continuity ratio of a set of precipitation measured or generated data in several sites as defined by Wilks, 1998 (see reference link)
 #' 
 #' @param data containing daily precipitation time series for several gauges (one gauge time series per column)
-#' @param lag numeric lag (expressed as number of days) used for computation for "cross" continuity ratio and joint probability of prercipitation (no)occurence. 
+#' @param lag numeric lag (expressed as number of days) used for computation for "cross" continuity ratio and joint probability of prercipitation (no)occurrence. 
 #' @param valmin threshold precipitation value [mm] for wet/dry day indicator. 
 #' If precipitation is lower than \code{valmin}, day is considered dry. Default is 0.5 mm.
 #' 
@@ -19,15 +19,15 @@ NULL
 #' 
 #' \code{continuity_ratio} : \code{lag}-day lagged  continuity ratio , 
 #'
-#' \code{occurence}  : joint probability of \code{lag}-day lagged precipitation occurence  
+#' \code{occurrence}  : joint probability of \code{lag}-day lagged precipitation occurrence  
 #' 
-#' \code{nooccurence} : joint probability of \code{lag}-day lagged no precipitation occurence.
+#' \code{nooccurrence} : joint probability of \code{lag}-day lagged no precipitation occurrence.
 #' 
-#' \code{nooccurence_occurence} : joint probability of \code{lag}-day lagged no precipitation and precipitation occurence respectively.
+#' \code{nooccurrence_occurrence} : joint probability of \code{lag}-day lagged no precipitation and precipitation occurrence respectively.
 #' 
-#' \code{occurence_nooccurence} : joint probability of \code{lag}-day lagged precipitation and no precipitation occurence respectively.
+#' \code{occurrence_nooccurrence} : joint probability of \code{lag}-day lagged precipitation and no precipitation occurrence respectively.
 #' 
-#' \code{probability_continuity_ratio}: \code{lag}-day lagged ratio about precipitation probability contitioned to no precipitation/preciitation occurence in the other site
+#' \code{probability_continuity_ratio}: \code{lag}-day lagged ratio about precipitation probability contitioned to no precipitation/preciitation occurrence in the other site
 #' 
 #' 
 #' 
@@ -70,10 +70,10 @@ continuity_ratio <- function(data,lag=0,valmin=0.5) {
 	out <- new.env()
 	out$continuity_ratio <- array(NA,c(ncols,ncols))
 	out$probability_continuity_ratio <- array(NA,c(ncols,ncols))
-	out$occurence <- array(NA,c(ncols,ncols))
-	out$nooccurence <- array(NA,c(ncols,ncols))
-	out$nooccurence_occurence <- array(NA,c(ncols,ncols))
-	out$occurence_nooccurence <- array(NA,c(ncols,ncols))
+	out$occurrence <- array(NA,c(ncols,ncols))
+	out$nooccurrence <- array(NA,c(ncols,ncols))
+	out$nooccurrence_occurrence <- array(NA,c(ncols,ncols))
+	out$occurrence_nooccurrence <- array(NA,c(ncols,ncols))
 	lagp <- abs(lag)
 	for (i in 1:ncols) {
 		for (j in 1:ncols) {
@@ -92,10 +92,10 @@ continuity_ratio <- function(data,lag=0,valmin=0.5) {
 			
 			out$continuity_ratio[i,j] <- e2/e1
 			out$probability_continuity_ratio[i,j] <- el2/el1
-			out$occurence[i,j] <- length(d1[d1>=valmin & d2>=valmin & !is.na(d1) & !is.na(d2)])/nrowsa
-			out$nooccurence[i,j] <- length(d1[d1<valmin & d2<valmin & !is.na(d1) & !is.na(d2)])/nrowsa
-			out$nooccurence_occurence[i,j] <- length(d1[d1<valmin & d2>=valmin & !is.na(d1) & !is.na(d2)])/nrowsa
-			out$occurence_nooccurence[i,j] <- length(d1[d1>=valmin & d2<valmin & !is.na(d1) & !is.na(d2)])/nrowsa
+			out$occurrence[i,j] <- length(d1[d1>=valmin & d2>=valmin & !is.na(d1) & !is.na(d2)])/nrowsa
+			out$nooccurrence[i,j] <- length(d1[d1<valmin & d2<valmin & !is.na(d1) & !is.na(d2)])/nrowsa
+			out$nooccurrence_occurrence[i,j] <- length(d1[d1<valmin & d2>=valmin & !is.na(d1) & !is.na(d2)])/nrowsa
+			out$occurrence_nooccurrence[i,j] <- length(d1[d1>=valmin & d2<valmin & !is.na(d1) & !is.na(d2)])/nrowsa
 		}
 		
 	}
@@ -103,10 +103,10 @@ continuity_ratio <- function(data,lag=0,valmin=0.5) {
 		
 		out$continuity_ratio <- t(out$continuity_ratio)
 		out$probability_continuity_ratio <- t(out$probability_continuity_ratio)
-		out$occurence <- t(out$occurence)
-		out$nooccurence <- t(out$nooccurence)
-		out$nooccurence_occurence <- t(out$nooccurence_occurence)
-		out$occurence_nooccurence <- t(out$occurence_nooccurence)
+		out$occurrence <- t(out$occurrence)
+		out$nooccurrence <- t(out$nooccurrence)
+		out$nooccurrence_occurrence <- t(out$nooccurrence_occurrence)
+		out$occurrence_nooccurrence <- t(out$occurrence_nooccurrence)
 		
 	} 
 	return(as.list(out))

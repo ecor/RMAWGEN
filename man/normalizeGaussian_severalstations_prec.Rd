@@ -23,7 +23,7 @@ normalizeGaussian_severalstations_prec(x, data = x, cpf = NULL,
 
 \item{inverse}{logical value. If \code{TRUE} the function works inversely (the opposite way). Default is \code{FALSE}.}
 
-\item{qnull}{probability of no precipitation occurence. (It can be a matrix in case \code{sample="monthly"}}
+\item{qnull}{probability of no precipitation occurrence. (It can be a matrix in case \code{sample="monthly"}}
 
 \item{valmin}{minimum value of precipitation to consider a wet day}
 

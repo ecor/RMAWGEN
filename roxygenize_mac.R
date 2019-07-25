@@ -21,6 +21,7 @@
 library(roxygen2)
 
 path <- "/Users/ecor/Dropbox/R-packages"
+
 pkg_name <- "RMAWGEN"
 pkg_dir <- paste(path,pkg_name,sep="/")
 
