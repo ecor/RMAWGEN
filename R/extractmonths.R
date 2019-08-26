@@ -24,6 +24,12 @@ NULL
 #' 
 #' extractmonths()
 #' 
+#' data(trentino)
+#' dates <- sprintf("%02d-%02d-%02d",TEMPERATURE_MAX$year,TEMPERATURE_MAX$month,TEMPERATURE_MAX$day)
+#' origin <- dates[1]
+#' out <- extractmonths(data=TEMPERATURE_MAX,origin=origin)
+#' 
+#' 
 
 
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/normalizeGaussian_prec.R
 \name{normalizeGaussian_prec}
 \alias{normalizeGaussian_prec}
-\title{Converts precipitation values to "Gaussinized" normally-distributed values taking into account the probability of no precipitation occurences. values  
+\title{Converts precipitation values to "Gaussinized" normally-distributed values taking into account the probability of no precipitation occurrences. values  
 or vice versa in case \code{inverse} is \code{TRUE}}
 \usage{
 normalizeGaussian_prec(x = 0, data = x, cpf = NULL, mean = 0,
@@ -30,7 +30,7 @@ If \code{TRUE} (default) the probability or frequency is multiplied by \deqn{\fr
 \item{sample}{a character string or \code{NULL} containing sample or probability distribution information. 
 Default is \code{NULL}}
 
-\item{qnull}{probability of no precipitation occurence}
+\item{qnull}{probability of no precipitation occurrence}
 
 \item{valmin}{minimum value of precipitation to consider a wet day}
 }
@@ -38,7 +38,7 @@ Default is \code{NULL}}
 the normalized variable or its inverse
 }
 \description{
-Converts precipitation values to "Gaussinized" normally-distributed values taking into account the probability of no precipitation occurences. values  
+Converts precipitation values to "Gaussinized" normally-distributed values taking into account the probability of no precipitation occurrences. values  
 or vice versa in case \code{inverse} is \code{TRUE}
 }
 \note{
@@ -47,17 +47,17 @@ In the version 1.2.5 of \pkg{RMAWGEN} This function is deprecated and not used.
 \examples{
 library(RMAWGEN)
 NDATA <- 1000
-occurence <- as.logical(runif(NDATA)>0.5)
+occurrence <- as.logical(runif(NDATA)>0.5)
 prec <- rexp(NDATA,rate=1/3)
-prec[!occurence] <- 0
+prec[!occurrence] <- 0
 valmin <- 0.5 #0.01
 x <- normalizeGaussian_prec(x=prec,valmin=valmin)
 prec2 <- normalizeGaussian_prec(x=x,data=prec,valmin=valmin,inverse=TRUE)
 qqplot(prec,prec2)
 
-occurence3 <- as.logical(runif(NDATA)>0.5)
+occurrence3 <- as.logical(runif(NDATA)>0.5)
 prec3 <- rexp(NDATA,rate=1/3)
-prec3[!occurence3] <- 0
+prec3[!occurrence3] <- 0
 x3 <- normalizeGaussian_prec(x=prec3,valmin=valmin) 
 
 qqplot(x,x3)
