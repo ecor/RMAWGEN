@@ -26,7 +26,7 @@ options(repos = c(CRAN="http://cran.r-project.org"))
 
 
 path <- "/home/ecor/Dropbox/R-packages" 
-#path <- '/STORAGE/projects/R-Packages'
+path <- '/STORAGE/projects/R-Packages'
 pkg_name <- "RMAWGEN"
 pkg_dir <- paste(path,pkg_name,sep="/")
 cran_pkg_path <- paste(path,"toCran",sep="/")

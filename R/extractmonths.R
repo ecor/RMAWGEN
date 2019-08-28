@@ -46,9 +46,9 @@ function(data=array(1:ndim_max,dim=c(ndim_max,1)),ndim_max=100000,when=c("Dec","
 			years <- years(as.chron(as.POSIXct(origin,tz="GMT")+1:ndata-1))
 			
 			if (is.null(year)) {
-				out <- (data[which(months(1:ndata+start-1,abbreviate=TRUE) %in% when) ,])
+				out <- (data[which(months_f(1:ndata+start-1,abbreviate=TRUE) %in% when) ,])
 			} else {
-				out <- (data[which((months(1:ndata+start-1,abbreviate=TRUE) %in% when) & (years %in% year)) ,])
+				out <- (data[which((months_f(1:ndata+start-1,abbreviate=TRUE) %in% when) & (years %in% year)) ,])
 			}
 	} else {
 		
@@ -57,10 +57,10 @@ function(data=array(1:ndim_max,dim=c(ndim_max,1)),ndim_max=100000,when=c("Dec","
 			start <- as.integer(julian(as.POSIXct(origin),tz="GMT"))
 		
 			if (is.null(year)) {
-				out <-  (data[which(months(1:ndata+start-1,abbreviate=TRUE) %in% when) ])
+				out <-  (data[which(months_f(1:ndata+start-1,abbreviate=TRUE) %in% when) ])
 			} else {
 			
-				out <- (data[which((months(1:ndata+start-1,abbreviate=TRUE) %in% when) & (year %in% years)) ])
+				out <- (data[which((months_f(1:ndata+start-1,abbreviate=TRUE) %in% when) & (year %in% years)) ])
 			}
 	}
 	

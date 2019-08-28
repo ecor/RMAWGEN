@@ -82,7 +82,7 @@ function(x,
 
 	} else if (sample=="monthly") {
 		
-		months <- months((0.5:11.5)*365/12,abbreviate=TRUE)
+		months <- months_f((0.5:11.5)*365/12,abbreviate=TRUE)
 		
 		for (m in 1:length(months)) {
 			

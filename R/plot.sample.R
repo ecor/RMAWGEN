@@ -177,7 +177,7 @@ plot_sample <- function(x,
 	
 	} else if (sample=="monthly") {
 		
-		months <- months((0.5:11.5)*365/12,abbreviate=TRUE)
+		months <- months_f((0.5:11.5)*365/12,abbreviate=TRUE)
 		i_months_x <- extractmonths(data=1:length(x),when=months[1],origin=origin_x)
 		
 		if (length(col)==1) {

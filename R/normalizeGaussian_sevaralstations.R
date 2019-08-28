@@ -49,7 +49,7 @@ NULL
 #' y <- x+rnorm(N)
 #' df <- data.frame(x=x,y=y)
 #' 
-#' dfgm <- normalizeGaussian_severalstations(df,data=df,extremes=TRUE,inverse=FALSE,origin_x=origin,origin_data=origin_data,sample="monthly")
+#' dfgm <- normalizeGaussian_severalstations(df,data=df,extremes=TRUE,inverse=FALSE,origin_x=origin,origin_data=origin,sample="monthly")
 #' 
 #' dfim <- normalizeGaussian_severalstations(dfg,data=df,extremes=TRUE,inverse=TRUE,origin_x=origin,origin_data=origin,sample="monthly")
 #'  
@@ -97,7 +97,7 @@ function(x,
 
 	} else if (sample=="monthly") {
 		
-		months <- months((0.5:11.5)*365/12,abbreviate=TRUE)
+		months <- months_f((0.5:11.5)*365/12,abbreviate=TRUE)
 		
 		for (m in 1:length(months)) {
 			
