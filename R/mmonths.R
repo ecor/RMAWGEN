@@ -1,6 +1,7 @@
 NULL
 #' months REPLACEMANT
 #' 
+#' @param  x an object. See \code{\link{months}}
 #' @param ... arguments
 #' 
 #' @importFrom utils sessionInfo
@@ -10,15 +11,22 @@ NULL
 #' 
 #' 
 
-months_f <- function(...) {
-	
+months_f <- function(x,...) {
+###	print('cisao')
 	ss <- sessionInfo()
 	spkgs <-  c(ss$basePkgs,names(ss$otherPkgs))
-	if ("lubridaate" %in% spkgs) {
+	####spkgs__ <<- spkgs
+	if ("lubridate" %in% spkgs) {
 		
-		stop("lubridate loaded!")
+		if (is.numeric(x)) {
+			
+			x <- as.Date("1990-01-01")+x-1
+			
+		}
+		out <- months(x=x,...)
+		##stop("lubridate loaded!")
 	} else {
-		out <- months(...)
+		out <- months(x=x,...)
 	}
 	
 	return(out)

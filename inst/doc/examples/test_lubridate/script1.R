@@ -1,5 +1,12 @@
+rm(list=ls())
+
 library(RMAWGEN) 
+
+##source('/STORAGE/projects/R-Packages/RMAWGEN/R/mmonths.R') 
+
 ##library(lubridate)
+set.seed(1234)
+
  N <- 30
 x <- rexp(N)
 y <- x+rnorm(N)

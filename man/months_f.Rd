@@ -4,9 +4,11 @@
 \alias{months_f}
 \title{months REPLACEMANT}
 \usage{
-months_f(...)
+months_f(x, ...)
 }
 \arguments{
+\item{x}{an object. See \code{\link{months}}}
+
 \item{...}{arguments}
 }
 \description{
