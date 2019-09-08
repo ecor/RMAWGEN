@@ -33,7 +33,7 @@ rescaling_monthly <- function(data,val,origin="1961-1-1"){
 	out <- adddate(as.data.frame(data),origin=origin)
 	
 	years <-  unique(out$year) #as.numeric(as.character(years(as.chron(as.POSIXct(origin,tz="GMT")+1:ndata-1))))
-	months <- months((0.5:11.5)*365/12,abbreviate=TRUE)
+	months <- months_f((0.5:11.5)*365/12,abbreviate=TRUE)
 	
 	
 	for (m in 1:length(months)) {

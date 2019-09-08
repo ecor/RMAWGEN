@@ -16,6 +16,10 @@ NULL
 adddate <- function(data,origin="1961-1-1") {
 	
 	
+	
+	if (!is.data.frame(data)) data <- as.data.frame(data)	
+		
+	
 	dates <- findDate(1:nrow(data),origin=origin,data.frame=TRUE,decimal=FALSE,character=FALSE)
 	
 	out <- cbind(dates,data)

@@ -50,7 +50,7 @@ function(nday=365,val=as.matrix(cbind(1*(0.5:11.5)*nday/12,2*(0.5:11.5)*nday/12)
 		out1 <- as.vector(out$y) # insert monthds correctly!!!
 		out2 <- out1
 		
-		months <- months((0.5:11.5)*365/12,abbreviate=TRUE)
+		months <- months_f((0.5:11.5)*365/12,abbreviate=TRUE)
 
 		for (m in 1:length(months)) {
 			
