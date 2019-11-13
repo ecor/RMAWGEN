@@ -66,11 +66,11 @@ plot_sample(x, y = normalizeGaussian_severalstations(x =
 
 \item{valmin}{numerical threshold value for \code{valmin_y} and \code{valmin_x} if there are not specified.}
 
-\item{abline}{arguments for  \code{\link{abline}} function. Default is \code{c(0,1)}. If it is \code{NULL}, \code{\link{abline}} is disabled and not called.
+\item{abline}{arguments for  \code{\link{abline}} function. Default is \code{c(0,1)}. If it is \code{NULL}, \code{\link{abline}} is disabled and not called.}
 
+\item{...}{see graphical parametes on \code{\link{plot.default}} 
 
- @usage
- plot_sample(x,
+ @usage plot_sample(x,
  y = normalizeGaussian_severalstations(x = as.data.frame(x), 
   data = as.data.frame(data), origin_x = origin_x, origin_data = origin_data, 
   sample = sample, step = step, prec = prec)[, 1],
@@ -85,8 +85,6 @@ plot_sample(x, y = normalizeGaussian_severalstations(x =
  xlab = "", ylab = "", color = FALSE, gray = TRUE,
  sort = FALSE, valmin_x = valmin, valmin_y = valmin,
  valmin = -9999, abline = c(0, 1), ...)}
-
-\item{...}{see graphical parametes on \code{\link{plot.default}}}
 }
 \value{
 0 in case of success
@@ -99,7 +97,9 @@ It makes a plot betwee \code{x} and \code{y} and shows thair respective probibil
 If \code{y} is missing, it is automatically calculated as one-dimensional Gaussianization of \code{x} through the function \code{\link{normalizeGaussian_severalstations}}.
 }
 \examples{
+
 library(RMAWGEN)
+library(lubridate)
 data(trentino)
 plot_sample(x=TEMPERATURE_MIN$T0090,sample="monthly",
  origin="1958-1-1",axes=FALSE,xlab="Tn [ degC]",
