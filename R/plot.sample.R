@@ -28,10 +28,9 @@ NULL
 #' @param valmin_y numerical threshold value over which the variable \code{y} is plotted. It is enabled only if \code{sort} is set \code{TRUE}.
 #' @param valmin numerical threshold value for \code{valmin_y} and \code{valmin_x} if there are not specified.
 #' @param abline arguments for  \code{\link{abline}} function. Default is \code{c(0,1)}. If it is \code{NULL}, \code{\link{abline}} is disabled and not called.
+#' @param ...  see graphical parametes on \code{\link{plot.default}} 
 #' 
-#' 
-#'  @usage
-#'  plot_sample(x,
+#'  @usage plot_sample(x,
 #'  y = normalizeGaussian_severalstations(x = as.data.frame(x), 
 #'   data = as.data.frame(data), origin_x = origin_x, origin_data = origin_data, 
 #'   sample = sample, step = step, prec = prec)[, 1],
@@ -50,7 +49,7 @@ NULL
 #' 
 #' 
 #' 
-#' @param ...  see graphical parametes on \code{\link{plot.default}} 
+
 #' 
 #' @note It makes a plot betwee \code{x} and \code{y} and shows thair respective probibilty histograms. 
 #' If \code{y} is missing, it is automatically calculated as one-dimensional Gaussianization of \code{x} through the function \code{\link{normalizeGaussian_severalstations}}.
@@ -60,7 +59,9 @@ NULL
 #' @seealso \code{\link{plot.default}},\code{\link{extractmonths}}, see \code{\link{normalizeGaussian_severalstations}}
 #' @export
 #' @examples 
+#' 
 #' library(RMAWGEN)
+#' library(lubridate)
 #' data(trentino)
 #' plot_sample(x=TEMPERATURE_MIN$T0090,sample="monthly",
 #'  origin="1958-1-1",axes=FALSE,xlab="Tn [ degC]",

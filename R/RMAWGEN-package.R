@@ -49,7 +49,7 @@
 #' @author Emanuele Cordano \email{emanuele.cordano@@gmail.org}, Emanuele Eccel \email{emanuele.eccel@@fmach.it}
 #' @references Bernhard Pfaff (2008). VAR, SVAR and SVEC Models: Implementation Within R Package vars. Journal of Statistical Software 27(4). \url{http://www.jstatsoft.org/v27/i04/}
 #' 
-#' @note RMAWGEN has been created in the frame of ACE-SAP (\url{http://www.ace-sap.it/}) and ENVIROCHANGE (\url{http://www.envirochange.eu/}) projects 
+#' @note First release of RMAWGEN was created in the frame of ACE-SAP (\url{http://www.ace-sap.it/}) and ENVIROCHANGE (\url{http://www.envirochange.cc/}) projects 
 #' funded by Provincia Autonoma di Trento (\url{http://www.provincia.tn.it/}).
 #' 
 #' RMAWGEN is free software: you can redistribute it and/or modify

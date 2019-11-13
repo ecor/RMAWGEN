@@ -16,11 +16,11 @@ Version: 1.3.6
 Repository: http://cran.r-project.org
 Date/Publication: 2011-08-12 14:30:10
 Packaged: 2011-08-12 07:38:22 UTC; ecor
-Date: 2019-08-30
+Date: 2019-11-13
 Depends:
     R (>= 2.10),chron,date,vars,methods
 Suggests:
-    RgoogleMaps
+    RgoogleMaps,lubridate
 URL: https://github.com/ecor/RMAWGEN,
     https://docs.google.com/file/d/0B66otCUk3Bv6V3RPbm1mUG4zVHc/edit,
     http://presentations.copernicus.org/EGU2012-14026_presentation.pdf,
