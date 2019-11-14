@@ -54,9 +54,9 @@ The user can easily use the package with his/her own data after replacing the va
 Data frames and vectors
 }
 \source{
-Original data are provided by Provincia Autonoma di Trento (\url{http://www.meteotrentino.it/}), Fondazione Edmund Mach (\url{www.fmach.it}),
+Original data are provided by Provincia Autonoma di Trento (\url{https://www.meteotrentino.it/}), Fondazione Edmund Mach (\url{https://www.fmach.it}),
 Provincia Autonama di Bolzano/Autome Provinz Bozen (\url{http://www.provincia.bz.it/meteo}),
-ARPA Lombardia (\url{www.arpalombardia.it/}), ARPA Veneto (\url{www.arpa.veneto.it/meteo.htm}).
+ARPA Lombardia (\url{https://www.arpalombardia.it/}), ARPA Veneto (\url{https://www.arpa.veneto.it/previsioni/it/html/index.php}).
 
 This dataset is intended for research purposes only, being distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
 }

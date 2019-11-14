@@ -97,8 +97,8 @@ It makes a plot betwee \code{x} and \code{y} and shows thair respective probibil
 If \code{y} is missing, it is automatically calculated as one-dimensional Gaussianization of \code{x} through the function \code{\link{normalizeGaussian_severalstations}}.
 }
 \examples{
+\dontrun{
 
-library(RMAWGEN)
 library(lubridate)
 data(trentino)
 plot_sample(x=TEMPERATURE_MIN$T0090,sample="monthly",
@@ -109,7 +109,7 @@ set.seed(123456)
 z <- rexp(10000,rate=0.5) 
 x <- normalizeGaussian(x=z,data=z) 
 plot_sample(x=z,xlab="z",ylab="x")
-
+}
 
 }
 \seealso{
