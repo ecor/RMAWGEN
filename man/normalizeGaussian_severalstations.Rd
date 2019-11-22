@@ -51,6 +51,7 @@ See the R code for further details
 }
 \examples{
 
+\dontrun{ 
 library(RMAWGEN) 
 
 set.seed(1234)
@@ -78,7 +79,6 @@ inverse=TRUE,origin_x=origin,origin_data=origin,sample="monthly")
  
 ## Compatibility with 'lubridate' package
 
-library(lubridate)
 
 library(lubridate)
 
@@ -103,6 +103,9 @@ inverse=FALSE,origin_x=origin,origin_data=origin,sample="monthly")
  
 dfim <- normalizeGaussian_severalstations(dfg,data=df,extremes=TRUE,
 inverse=TRUE,origin_x=origin,origin_data=origin,sample="monthly")
+}  
+  
+
 
 
 }

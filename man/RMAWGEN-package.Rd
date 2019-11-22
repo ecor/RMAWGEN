@@ -26,8 +26,8 @@ Example script files about package usage are available on \url{https://github.co
 \tabular{ll}{
 Package: \tab RMAWGEN\cr
 Type: \tab Package\cr
-Version: \tab 1.2.6\cr
-Date: \tab   2014-04-27\cr
+Version: \tab 1.3.6\cr
+Date: \tab   2019-11-13\cr
 License: \tab GPL (>= 2)
 
 \cr
@@ -53,15 +53,16 @@ RMAWGEN is free software: you can redistribute it and/or modify
    along with this program.  If not, see \url{http://www.gnu.org/licenses/}.
 }
 \references{
-Bernhard Pfaff (2008). VAR, SVAR and SVEC Models: Implementation Within R Package vars. Journal of Statistical Software 27(4). \url{http://www.jstatsoft.org/v27/i04/}
+Cordano E. and Eccel E. (2016), Tools for stochastic weather series generation in R environment, Italian Journal of Agrometeorology doi:10.19199/2016.3.2038-5625.031 \url{https://doi.org/10.19199/2016.3.2038-5625.031}
+Pfaff B. (2008). VAR, SVAR and SVEC Models: Implementation Within R Package vars. Journal of Statistical Software 27(4). \url{https://www.jstatsoft.org/v27/i04/}(doi:10.18637/jss.v027.i04)
 }
 \author{
 Emanuele Cordano \email{emanuele.cordano@gmail.org}, Emanuele Eccel \email{emanuele.eccel@fmach.it}
 }
-\keyword{auto-regressive}
-\keyword{models,}
-\keyword{package,}
-\keyword{precipitation,}
-\keyword{temperature,}
+\keyword{auto-regression}
+\keyword{models}
+\keyword{package}
+\keyword{precipitation}
+\keyword{temperature}
 \keyword{time-series}
 \keyword{vector}
