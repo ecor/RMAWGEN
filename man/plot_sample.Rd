@@ -4,18 +4,40 @@
 \alias{plot_sample}
 \title{It makes a plot by sampling (e.g. monthly) the variables \code{x} and \code{y}}
 \usage{
-plot_sample(x, y = normalizeGaussian_severalstations(x =
-  as.data.frame(x), data = as.data.frame(data), origin_x = origin_x,
-  origin_data = origin_data, sample = sample, step = step, prec = prec)[,
-  1], xlim = range(x, na.rm = TRUE), legend_position = "topleft",
-  ylim = range(y, na.rm = TRUE), pch = 1, col = 1, col_max = 0.9,
-  col_min = 0.1, origin, sample = NULL, xhist = hist(x, breaks =
-  breaks, plot = FALSE), yhist = hist(y, breaks = breaks, plot = FALSE),
-  axes = FALSE, step = NULL, prec = 1e-04, breaks = 50,
-  origin_x = origin, origin_data = origin, data = x, xlab = "",
-  ylab = "", color = FALSE, gray = TRUE, sort = FALSE,
-  valmin_x = valmin, valmin_y = valmin, valmin = -9999,
-  abline = c(0, 1), ...)
+plot_sample(
+  x,
+  y = normalizeGaussian_severalstations(x = as.data.frame(x), data =
+    as.data.frame(data), origin_x = origin_x, origin_data = origin_data, sample = sample,
+    step = step, prec = prec)[, 1],
+  xlim = range(x, na.rm = TRUE),
+  legend_position = "topleft",
+  ylim = range(y, na.rm = TRUE),
+  pch = 1,
+  col = 1,
+  col_max = 0.9,
+  col_min = 0.1,
+  origin,
+  sample = NULL,
+  xhist = hist(x, breaks = breaks, plot = FALSE),
+  yhist = hist(y, breaks = breaks, plot = FALSE),
+  axes = FALSE,
+  step = NULL,
+  prec = 1e-04,
+  breaks = 50,
+  origin_x = origin,
+  origin_data = origin,
+  data = x,
+  xlab = "",
+  ylab = "",
+  color = FALSE,
+  gray = TRUE,
+  sort = FALSE,
+  valmin_x = valmin,
+  valmin_y = valmin,
+  valmin = -9999,
+  abline = c(0, 1),
+  ...
+)
 }
 \arguments{
 \item{x}{vector of input data}

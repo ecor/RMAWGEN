@@ -4,8 +4,7 @@
 \alias{arch_test}
 \title{\code{arch.test} function for \code{varest2} object}
 \usage{
-arch_test(object, interval = NULL, overlap = 20, list.output = FALSE,
-  ...)
+arch_test(object, interval = NULL, overlap = 20, list.output = FALSE, ...)
 }
 \arguments{
 \item{object}{a \code{varest2} object}

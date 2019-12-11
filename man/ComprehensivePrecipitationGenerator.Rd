@@ -4,19 +4,44 @@
 \alias{ComprehensivePrecipitationGenerator}
 \title{The comprehensive Precipitation Generator}
 \usage{
-ComprehensivePrecipitationGenerator(station = c("T0001", "T0010",
-  "T0099"), prec_all, mean_climate_prec = NULL, year_max = 1990,
-  year_min = 1961, leap = TRUE, nmonth = 12, cpf = NULL,
-  verbose = TRUE, p = 1, type = "none", lag.max = NULL,
-  ic = "AIC", activateVARselect = FALSE, exogen = NULL,
-  exogen_sim = NULL, is_exogen_gaussian = FALSE,
-  year_max_sim = year_max, year_min_sim = year_min,
-  mean_climate_prec_sim = NULL, onlygeneration = FALSE,
-  varmodel = NULL, type_quantile = 3, qnull = NULL, valmin = 0.5,
-  step = 0, n_GPCA_iteration = 0,
-  n_GPCA_iteration_residuals = n_GPCA_iteration, sample = NULL,
-  extremes = TRUE, exogen_all = NULL, exogen_all_col = station,
-  no_spline = FALSE, nscenario = 1, seed = NULL, noise = NULL)
+ComprehensivePrecipitationGenerator(
+  station = c("T0001", "T0010", "T0099"),
+  prec_all,
+  mean_climate_prec = NULL,
+  year_max = 1990,
+  year_min = 1961,
+  leap = TRUE,
+  nmonth = 12,
+  cpf = NULL,
+  verbose = TRUE,
+  p = 1,
+  type = "none",
+  lag.max = NULL,
+  ic = "AIC",
+  activateVARselect = FALSE,
+  exogen = NULL,
+  exogen_sim = NULL,
+  is_exogen_gaussian = FALSE,
+  year_max_sim = year_max,
+  year_min_sim = year_min,
+  mean_climate_prec_sim = NULL,
+  onlygeneration = FALSE,
+  varmodel = NULL,
+  type_quantile = 3,
+  qnull = NULL,
+  valmin = 0.5,
+  step = 0,
+  n_GPCA_iteration = 0,
+  n_GPCA_iteration_residuals = n_GPCA_iteration,
+  sample = NULL,
+  extremes = TRUE,
+  exogen_all = NULL,
+  exogen_all_col = station,
+  no_spline = FALSE,
+  nscenario = 1,
+  seed = NULL,
+  noise = NULL
+)
 }
 \arguments{
 \item{station}{character vector of the IDs of the considered meteorological stations}

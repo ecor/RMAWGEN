@@ -4,9 +4,16 @@
 \alias{qqplotWGEN}
 \title{Makes a qqplot and Wilcoxon test between the two columns of \code{val}}
 \usage{
-qqplotWGEN(val, xlab = "simulated", ylab = "measured",
-  main = "title", ylim = c(min(val), max(val)), xlim = c(min(val),
-  max(val)), diff = FALSE, quantile = 0)
+qqplotWGEN(
+  val,
+  xlab = "simulated",
+  ylab = "measured",
+  main = "title",
+  ylim = c(min(val), max(val)),
+  xlim = c(min(val), max(val)),
+  diff = FALSE,
+  quantile = 0
+)
 }
 \arguments{
 \item{val}{a matrix with two columns containing the two samples to be compared}

@@ -4,8 +4,11 @@
 \alias{addsuffixes}
 \title{Adds suffixes for daily maximum and minimum temperature to the names of a column data frame}
 \usage{
-addsuffixes(names = c("T0001", "T0099", "T0001", "T0099"),
-  suffix = c("_Tx", "_Tn"), sep = "")
+addsuffixes(
+  names = c("T0001", "T0099", "T0001", "T0099"),
+  suffix = c("_Tx", "_Tn"),
+  sep = ""
+)
 }
 \arguments{
 \item{names}{a character string vector with column names}

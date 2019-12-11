@@ -4,11 +4,22 @@
 \alias{getVARmodel}
 \title{Either creates a VAR model or chooses a VAR model by using VAR or VARselect commands of \code{vars} package}
 \usage{
-getVARmodel(data, suffix = c("_Tx", "_Tn"), sep = "", p = 1,
-  type = "none", season = NULL, exogen = NULL, lag.max = NULL,
-  ic = "AIC", activateVARselect = FALSE, na.rm = TRUE,
-  n_GPCA_iteration = 0, n_GPCA_iteration_residuals = n_GPCA_iteration,
-  extremes = TRUE)
+getVARmodel(
+  data,
+  suffix = c("_Tx", "_Tn"),
+  sep = "",
+  p = 1,
+  type = "none",
+  season = NULL,
+  exogen = NULL,
+  lag.max = NULL,
+  ic = "AIC",
+  activateVARselect = FALSE,
+  na.rm = TRUE,
+  n_GPCA_iteration = 0,
+  n_GPCA_iteration_residuals = n_GPCA_iteration,
+  extremes = TRUE
+)
 }
 \arguments{
 \item{data}{see \code{\link{VAR}} and \code{\link{addsuffixes}}}

@@ -5,9 +5,15 @@
 \alias{splineInterpolateMonthlytoDailyforSeveralYears}
 \title{Interpolates monthly data to daily data using \code{\link{splineInterpolateMonthlytoDaily}}  for several years}
 \usage{
-splineInterpolateMonthlytoDailyforSeveralYears(val, start_year = 2010,
-  nyear = 1, leap = TRUE, offset = 2, no_spline = FALSE,
-  yearly = FALSE)
+splineInterpolateMonthlytoDailyforSeveralYears(
+  val,
+  start_year = 2010,
+  nyear = 1,
+  leap = TRUE,
+  offset = 2,
+  no_spline = FALSE,
+  yearly = FALSE
+)
 }
 \arguments{
 \item{val}{matrix containing monthly mean data for one year}
