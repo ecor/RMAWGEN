@@ -4,12 +4,8 @@
 \alias{extractyears}
 \title{Extracts the elements of a data frame corresponding to a period between \code{year_min} and \code{year_max}  for the stations listed in \code{station}}
 \usage{
-extractyears(
-  data,
-  year_min = 1961,
-  year_max = 1990,
-  station = c("T0001", "T0014", "T0129")
-)
+extractyears(data, year_min = 1961, year_max = 1990,
+  station = c("T0001", "T0014", "T0129"))
 }
 \arguments{
 \item{data}{a dataframe containing daily data.}

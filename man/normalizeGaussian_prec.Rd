@@ -5,19 +5,9 @@
 \title{Converts precipitation values to "Gaussinized" normally-distributed values taking into account the probability of no precipitation occurrences. values  
 or vice versa in case \code{inverse} is \code{TRUE}}
 \usage{
-normalizeGaussian_prec(
-  x = 0,
-  data = x,
-  cpf = NULL,
-  mean = 0,
-  sd = 1,
-  inverse = FALSE,
-  type = 3,
-  extremes = TRUE,
-  sample = NULL,
-  qnull = 0,
-  valmin = 1
-)
+normalizeGaussian_prec(x = 0, data = x, cpf = NULL, mean = 0,
+  sd = 1, inverse = FALSE, type = 3, extremes = TRUE,
+  sample = NULL, qnull = 0, valmin = 1)
 }
 \arguments{
 \item{x}{value or vector of values to be converted}

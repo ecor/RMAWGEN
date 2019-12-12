@@ -5,21 +5,10 @@
 \title{Converts several samples \code{x} random variable  extracted by populations represented by the columns of \code{data} respectively or \code{sample}
  to a normally-distributed samples with assinged mean and standard deviation or vice versa in case \code{inverse} is \code{TRUE}}
 \usage{
-normalizeGaussian_severalstations(
-  x,
-  data = x,
-  cpf = NULL,
-  mean = 0,
-  sd = 1,
-  inverse = FALSE,
-  step = NULL,
-  prec = 10^-4,
-  type = 3,
-  extremes = TRUE,
-  sample = NULL,
-  origin_x = NULL,
-  origin_data = NULL
-)
+normalizeGaussian_severalstations(x, data = x, cpf = NULL, mean = 0,
+  sd = 1, inverse = FALSE, step = NULL, prec = 10^-4, type = 3,
+  extremes = TRUE, sample = NULL, origin_x = NULL,
+  origin_data = NULL)
 }
 \arguments{
 \item{x}{value to be converted}

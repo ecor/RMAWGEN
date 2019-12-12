@@ -4,12 +4,8 @@
 \alias{inv_GPCA_iteration}
 \title{This function makes an inverse iteration of PCA-Gaussianization process}
 \usage{
-inv_GPCA_iteration(
-  x = GPCA_iter_param$x_next,
-  GPCA_iter_param,
-  type = 3,
-  extremes = TRUE
-)
+inv_GPCA_iteration(x = GPCA_iter_param$x_next, GPCA_iter_param,
+  type = 3, extremes = TRUE)
 }
 \arguments{
 \item{x}{matrix of gaussian random variale to transform}

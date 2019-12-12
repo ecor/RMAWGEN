@@ -4,25 +4,11 @@
 \alias{setComprehensiveTemperatureGeneratorParameters}
 \title{Computes climatic and correlation information useful for creating an auto-regeressive random generation of maximum and minimun daily temparature. This function is called by  \code{\link{ComprehensiveTemperatureGenerator}}.}
 \usage{
-setComprehensiveTemperatureGeneratorParameters(
-  station,
-  Tx_all,
-  Tn_all,
-  mean_climate_Tn = NULL,
-  mean_climate_Tx = NULL,
-  Tx_spline = NULL,
-  Tn_spline = NULL,
-  year_max = 1990,
-  year_min = 1961,
-  leap = TRUE,
-  nmonth = 12,
-  verbose = FALSE,
-  cpf = NULL,
-  normalize = TRUE,
-  sample = NULL,
-  option = 2,
-  yearly = FALSE
-)
+setComprehensiveTemperatureGeneratorParameters(station, Tx_all, Tn_all,
+  mean_climate_Tn = NULL, mean_climate_Tx = NULL, Tx_spline = NULL,
+  Tn_spline = NULL, year_max = 1990, year_min = 1961, leap = TRUE,
+  nmonth = 12, verbose = FALSE, cpf = NULL, normalize = TRUE,
+  sample = NULL, option = 2, yearly = FALSE)
 }
 \arguments{
 \item{station}{character vector of the IDs of the considered meteorological stations}

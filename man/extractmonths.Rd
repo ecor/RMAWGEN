@@ -4,13 +4,9 @@
 \alias{extractmonths}
 \title{Extracts the rows of a matrix corresponding to requested months of a year given the  date (origin) of the first row}
 \usage{
-extractmonths(
-  data = array(1:ndim_max, dim = c(ndim_max, 1)),
-  ndim_max = 1e+05,
-  when = c("Dec", "Jan", "Feb"),
-  year = NULL,
-  origin = "1961-1-1"
-)
+extractmonths(data = array(1:ndim_max, dim = c(ndim_max, 1)),
+  ndim_max = 1e+05, when = c("Dec", "Jan", "Feb"), year = NULL,
+  origin = "1961-1-1")
 }
 \arguments{
 \item{data}{an input data matrix where each row corresponds to a daily record}

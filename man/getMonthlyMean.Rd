@@ -4,15 +4,9 @@
 \alias{getMonthlyMean}
 \title{Calculates the monthly means of a data frame corresponding to a period between \code{year_min} and \code{year_max}  for stations listed in \code{station}}
 \usage{
-getMonthlyMean(
-  data,
-  year_min = 1961,
-  year_max = 1990,
-  station = names(data),
-  no_date = FALSE,
-  origin = "1961-1-1",
-  yearly = FALSE
-)
+getMonthlyMean(data, year_min = 1961, year_max = 1990,
+  station = names(data), no_date = FALSE, origin = "1961-1-1",
+  yearly = FALSE)
 }
 \arguments{
 \item{data}{a dataframe containing daily data.}

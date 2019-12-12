@@ -4,7 +4,8 @@
 \alias{is.monthly.climate}
 \title{Verifies if 'climate' represents the monthly climatology in one year, i.e  'climate' is monthly.climate type matrix whose rows represent months and each column represents a station. It is also used in \code{\link{setComprehensiveTemperatureGeneratorParameters}}.}
 \usage{
-is.monthly.climate(climate, nstation = 3, nmonth = 12, verbose = TRUE)
+is.monthly.climate(climate, nstation = 3, nmonth = 12,
+  verbose = TRUE)
 }
 \arguments{
 \item{climate}{matrix containing the 'monthly climatology' data}

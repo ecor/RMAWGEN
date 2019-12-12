@@ -5,19 +5,9 @@
 \title{Converts a random variable \code{x} extracted by a population represented by the sample \code{data} or \code{sample}
  to a normally-distributed variable with assigned mean and standard deviation or vice versa in case \code{inverse} is \code{TRUE}}
 \usage{
-normalizeGaussian(
-  x = 0,
-  data = x,
-  cpf = NULL,
-  mean = 0,
-  sd = 1,
-  inverse = FALSE,
-  step = NULL,
-  prec = 10^-4,
-  type = 3,
-  extremes = TRUE,
-  sample = NULL
-)
+normalizeGaussian(x = 0, data = x, cpf = NULL, mean = 0, sd = 1,
+  inverse = FALSE, step = NULL, prec = 10^-4, type = 3,
+  extremes = TRUE, sample = NULL)
 }
 \arguments{
 \item{x}{value or vector of values to be converted}
