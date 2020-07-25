@@ -59,8 +59,8 @@ NULL
 #' @seealso \code{\link{plot.default}},\code{\link{extractmonths}}, see \code{\link{normalizeGaussian_severalstations}}
 #' @export
 #' @examples 
+#' \dontrun{
 #' 
-#' library(RMAWGEN)
 #' library(lubridate)
 #' data(trentino)
 #' plot_sample(x=TEMPERATURE_MIN$T0090,sample="monthly",
@@ -71,7 +71,7 @@ NULL
 #' z <- rexp(10000,rate=0.5) 
 #' x <- normalizeGaussian(x=z,data=z) 
 #' plot_sample(x=z,xlab="z",ylab="x")
-#' 
+#' }
 #' 
 
 

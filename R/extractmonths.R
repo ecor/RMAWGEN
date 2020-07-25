@@ -39,7 +39,7 @@ extractmonths <-
 function(data=array(1:ndim_max,dim=c(ndim_max,1)),ndim_max=100000,when=c("Dec","Jan","Feb"),year=NULL,origin="1961-1-1"){
 	
 	out <- NULL
-	if (class(data)=="matrix" | class(data)=="data.frame" ) {
+	if (any(class(data)=="matrix") | any(class(data)=="data.frame")) {
 			ndata=nrow(data) 
 	
 			start <- as.integer(julian(as.POSIXct(origin,tz="GMT")))

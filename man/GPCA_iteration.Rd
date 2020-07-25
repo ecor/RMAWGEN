@@ -26,7 +26,7 @@ A \code{GPCA_iteration} S3 object which contains the following objects:
 This function makes an iteration of PCA-Gaussianization process
 }
 \note{
-This function is based on equation (1) of "PCA Gaussianization for One-Class Remote Sensing Image" by V. Laparra et al.,  \url{www.uv.es/lapeva/papers/SPIE09_one_class.pdf} and  \url{http://ieeexplore.ieee.org/document/5413808/}
+This function is based on equation (1) of "PCA Gaussianization for One-Class Remote Sensing Image" by V. Laparra et al.,  \url{https://www.uv.es/lapeva/papers/SPIE09_one_class.pdf} and  \url{http://ieeexplore.ieee.org/document/5413808/}
 }
 \examples{
 library(RMAWGEN)
