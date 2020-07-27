@@ -4,10 +4,21 @@
 \alias{covariance}
 \title{Calculates the covariance matrix of the normally standardized variables obtained from the columns of \code{x}}
 \usage{
-covariance(x, data = x, cpf = NULL, mean = 0, sd = 1,
-  step = NULL, prec = 10^-4, use = "pairwise.complete.obs",
-  type = 3, extremes = TRUE, sample = NULL, origin_x = NULL,
-  origin_data = origin_x)
+covariance(
+  x,
+  data = x,
+  cpf = NULL,
+  mean = 0,
+  sd = 1,
+  step = NULL,
+  prec = 10^-4,
+  use = "pairwise.complete.obs",
+  type = 3,
+  extremes = TRUE,
+  sample = NULL,
+  origin_x = NULL,
+  origin_data = origin_x
+)
 }
 \arguments{
 \item{x}{variable}

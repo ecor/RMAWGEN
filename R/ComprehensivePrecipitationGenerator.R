@@ -260,9 +260,9 @@ function(
 		
 		for (kk in 1:nscenario) {
 		
-			# DA METTERE A POSTO!!
-    		data_prec_gen <- newVARmultieventRealization(var,exogen=exogen_sim,nrealization=nrow(prec_spline_sim),extremes=extremes,type=type_quantile) 
-			colnames(data_prec_gen) <- names(prec_spline_sim)
+			### 20200727 
+    		data_prec_gen <- newVARmultieventRealization(var,exogen=exogen_sim,nrealization=nrow(prec_spline_sim2),extremes=extremes,type=type_quantile) 
+			colnames(data_prec_gen) <- names(prec_spline_sim2)### 20200727 end
 	#		ntn_rows <- 1:nrow()
 			
 	#		prec_mes_rescaled <- prec_mes/prec_spline*prec_spline_sim	

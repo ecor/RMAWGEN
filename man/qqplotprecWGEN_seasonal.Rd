@@ -4,10 +4,16 @@
 \alias{qqplotprecWGEN_seasonal}
 \title{Makes four seasonal qqplots  (winter, spring, summer and autumn) of measured and simulated data for several stations.}
 \usage{
-qqplotprecWGEN_seasonal(measured, simulated, origin = "1961-1-1",
-  xlab = "simulated[mm]", ylab = "measured[mm]",
-  title = "daily_precipitation", directorypdf,
-  station = names(simulated))
+qqplotprecWGEN_seasonal(
+  measured,
+  simulated,
+  origin = "1961-1-1",
+  xlab = "simulated[mm]",
+  ylab = "measured[mm]",
+  title = "daily_precipitation",
+  directorypdf,
+  station = names(simulated)
+)
 }
 \arguments{
 \item{measured}{matrix containing measured data (each station corresponds to a column)}

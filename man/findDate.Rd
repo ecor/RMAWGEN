@@ -4,8 +4,13 @@
 \alias{findDate}
 \title{Finds the date  corresponding a row index of a matrix given the  date (origin) of the first row}
 \usage{
-findDate(k, origin = "1961-1-1", data.frame = TRUE, decimal = FALSE,
-  character = FALSE)
+findDate(
+  k,
+  origin = "1961-1-1",
+  data.frame = TRUE,
+  decimal = FALSE,
+  character = FALSE
+)
 }
 \arguments{
 \item{k}{integer or decimal value corresponding to number of days since \code{origin}}

@@ -4,10 +4,26 @@
 \alias{generateTemperatureTimeseries}
 \title{Returns time series of Daily Maximum and Minimum with a random multi-realization obtained by using \code{\link{newVARmultieventRealization}}. This function is called by  \code{\link{ComprehensiveTemperatureGenerator}}.}
 \usage{
-generateTemperatureTimeseries(std_tn, std_tx, SplineTx, SplineTn, SplineTm,
-  SplineDeltaT, std_tm, var = NULL, exogen = NULL, normalize = TRUE,
-  type = 3, extremes = TRUE, sample = NULL, option = 1,
-  original_data, origin_x = NULL, origin_data = NULL, noise = NULL)
+generateTemperatureTimeseries(
+  std_tn,
+  std_tx,
+  SplineTx,
+  SplineTn,
+  SplineTm,
+  SplineDeltaT,
+  std_tm,
+  var = NULL,
+  exogen = NULL,
+  normalize = TRUE,
+  type = 3,
+  extremes = TRUE,
+  sample = NULL,
+  option = 1,
+  original_data,
+  origin_x = NULL,
+  origin_data = NULL,
+  noise = NULL
+)
 }
 \arguments{
 \item{std_tn}{vector containing standard deviation of daily minimum temperature anomalies. \code{stdTn} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.}

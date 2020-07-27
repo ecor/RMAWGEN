@@ -289,7 +289,7 @@ function(
 		
 		# TO BE PARALLELIZED SOMEHOW
 		
-		for (kk in 2:nscenario) {
+		for (kk in 1:nscenario) { ## 20200727
 			results_temp <- generateTemperatureTimeseries(std_tn=param[['stdTn']],std_tx=param[['stdTx']],SplineTx=Tx_spline_sim,SplineTn=Tn_spline_sim,SplineTm=SplineAdvTm_sim,SplineDeltaT=SplineAdvDeltaT_sim,std_tm=param[['stdTm']],var=var,normalize=normalize,type=type_quantile,sample=sample,option=option,original_data=param[['data_original']],origin_x=origin_sim,origin_data=origin,exogen=exogen_sim,extremes=extremes)	
 			Tx_index <- sprintf("Tx_gen%05d",kk)
 			Tn_index <- sprintf("Tn_gen%05d",kk)
