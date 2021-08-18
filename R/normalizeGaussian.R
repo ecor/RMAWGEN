@@ -55,7 +55,7 @@ function(x=0,data=x,cpf=NULL,mean=0,sd=1,inverse=FALSE,step=NULL,prec=10^-4,type
 		qx <- pnorm(x[!is.na(x)])/f # check the extermes!! extremes are 
 		
 		qx[qx>1] <- 1
-		outt <<- out ; qxx <<- qx; dataa <<- data ; xx <<- x
+	##	outt <<- out ; qxx <<- qx; dataa <<- data ; xx <<- x
 		
 		out[!is.na(x)] <- quantile(x=data,probs=qx,na.rm=TRUE,names=FALSE,type=type)
 		

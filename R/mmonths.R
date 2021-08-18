@@ -14,7 +14,7 @@ NULL
 months_f <- function(x,...) {
 ###	print('cisao')
 	ss <- sessionInfo()
-	spkgs <-  c(ss$basePkgs,names(ss$otherPkgs))
+	spkgs <-  c(ss$basePkgs,names(ss$otherPkgs),names(ss$loadedOnly))
 	####spkgs__ <<- spkgs
 	if ("lubridate" %in% spkgs) {
 		
