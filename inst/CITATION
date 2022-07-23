@@ -34,7 +34,7 @@ citEntry(entry ="article",
     note = "R package",
     url = "https://CRAN.R-project.org/package=RGENERATE",
     textVersion="Emanuele Cordano (2017). RGENERATE: Tools To Generate Vector Time Series. R package, https://CRAN.R-project.org/package=RGENERATE",
-    DOI: 10.5281/zenodo.6891938
+    doi="10.5281/zenodo.6891938"
   )
 
   
@@ -57,7 +57,7 @@ citEntry(entry ="article",
     note = "R package",
     url="https://CRAN.R-project.org/package=RMAWGEN , https://doi.org/10.5281/zenodo.6891890",
     textVersion= "Emanuele Cordano and Emanuele Eccel (2017). RMAWGEN: Multi-Site Auto-Regressive Weather GENerator. R Package, https://CRAN.R-project.org/package=RMAWGEN",
-     doi ="10.5281/zenodo.6891890"
+     doi ="10.5281/zenodo.6891949"
     
 )
   
