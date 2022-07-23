@@ -105,7 +105,7 @@ function(x,
 		extremes=TRUE,
 		sample=NULL,
 		origin_x=NULL,
-		origin_data=NULL
+		origin_data=origin_x
 		
 
 
@@ -134,13 +134,14 @@ function(x,
 		months <- months_f((0.5:11.5)*365/12,abbreviate=TRUE)
 		
 		for (m in 1:length(months)) {
-			
+			print(months[m]) ## EC 20220511
 			i_months_x <- extractmonths(data=1:nrow(x),when=months[m],origin=origin_x)
-		
+			print(head(i_months_x)) ## EC 20220511
 			i_months_data <- extractmonths(data=1:nrow(data),when=months[m],origin=origin_data)
-		
+			print(head(i_months_x)) ## EC 20220511
 			for (i in 1:ncol(x)) {
-				
+			  print(x[i_months_x,i])
+			  print(data[i_months_data,i])
 				out[i_months_x,i] <- normalizeGaussian(x=x[i_months_x,i],data=data[i_months_data,i],cpf=cpf,mean=mean,sd=sd,inverse=inverse,step=step,prec=prec,type=type,extremes=extremes,sample=NULL) 	
 					
 			}

@@ -66,9 +66,9 @@ function(x=0,data=x,cpf=NULL,mean=0,sd=1,inverse=FALSE,step=NULL,prec=10^-4,type
 		
 		
 		
-		
-		
-		if (is.null(cpf)) cpf <- ecdf(data)
+		print("aa")
+		print(data) ## EC 20220511
+		if (is.null(cpf)) cpf <- ecdf(data[which(!is.na(data))]) ## EC 20220511
 		qx <- cpf(x)*f
 		# > spline(x=x,y=e(x),xout=y)$y
 		
