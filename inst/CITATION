@@ -33,8 +33,8 @@ citEntry(entry ="article",
     year = "2017",
     note = "R package",
     url = "https://CRAN.R-project.org/package=RGENERATE",
-    textVersion="Emanuele Cordano (2017). RGENERATE: Tools To Generate Vector Time Series. R package, https://CRAN.R-project.org/package=RGENERATE"
-    
+    textVersion="Emanuele Cordano (2017). RGENERATE: Tools To Generate Vector Time Series. R package, https://CRAN.R-project.org/package=RGENERATE",
+    DOI: 10.5281/zenodo.6891938
   )
 
   
@@ -44,8 +44,10 @@ citEntry(entry ="article",
     year = "2017",
     note = "R package",
     url = "https://CRAN.R-project.org/package=RGENERATEPREC",
-    textVersion="Emanuele Cordano (2017). RGENERATEPREC: Tools to Generate Daily-Precipitation Time Series. R package, https://CRAN.R-project.org/package=RGENERATEPREC"
-    
+    textVersion="Emanuele Cordano (2017). RGENERATEPREC: Tools to Generate Daily-Precipitation Time Series. R package, https://CRAN.R-project.org/package=RGENERATEPREC",
+    doi="10.5281/zenodo.6891940"
+
+
 )
   
  citEntry(entry ="manual",
