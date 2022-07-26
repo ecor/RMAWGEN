@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/25865140.svg)](https://zenodo.org/badge/latestdoi/25865140)
+
 RMAWGEN
 =======
 
