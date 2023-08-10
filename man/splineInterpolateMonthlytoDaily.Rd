@@ -27,8 +27,7 @@ splineInterpolateMonthlytoDaily(
 
 \item{no_spline}{logical value. If \code{TRUE} no spline interpolation is calculated and the daily value corresponds to the monthly average value. Default is \code{FALSE}.}
 
-\item{no_mean}{logical value. Default is \code{FALSE}. If \code{TRUE} the function output is not rescaled in order to maintain observed mean monthly values. 
-@export}
+\item{no_mean}{logical value. Default is \code{FALSE}. If \code{TRUE} the function output is not rescaled in order to maintain observed mean monthly values.}
 }
 \value{
 a matrix or data frame with interpolated daily data

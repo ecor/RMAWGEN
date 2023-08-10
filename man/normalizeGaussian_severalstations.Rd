@@ -18,7 +18,7 @@ normalizeGaussian_severalstations(
   extremes = TRUE,
   sample = NULL,
   origin_x = NULL,
-  origin_data = NULL
+  origin_data = origin_x
 )
 }
 \arguments{
@@ -40,7 +40,7 @@ normalizeGaussian_severalstations(
 
 \item{type}{see \code{\link{quantile}}}
 
-\item{extremes}{logical variable. 
+\item{extremes}{logical variable.
 If \code{TRUE} (default) the probability or frequency is multiplied by \deqn{\frac{N}{N+1}} where \eqn{N} is the length of \code{data}}
 
 \item{sample}{information on how to sample \code{x} and \code{data}. Default is \code{NULL}, this means that the values of each column of \code{x} and \code{data} belong to the same sample. If \code{x} and \code{data} are sampled for each month seperately, it is set to \code{monthly}.}
@@ -62,8 +62,8 @@ See the R code for further details
 }
 \examples{
 
-\dontrun{ 
-library(RMAWGEN) 
+\dontrun{
+library(RMAWGEN)
 
 set.seed(1234)
 N <- 30
@@ -86,8 +86,8 @@ inverse=FALSE,origin_x=origin,origin_data=origin,sample="monthly")
 
 dfim <- normalizeGaussian_severalstations(dfg,data=df,extremes=TRUE,
 inverse=TRUE,origin_x=origin,origin_data=origin,sample="monthly")
- 
- 
+
+
 ## Compatibility with 'lubridate' package
 
 
@@ -98,24 +98,24 @@ N <- 30
 x <- rexp(N)
 y <- x+rnorm(N)
 df <- data.frame(x=x,y=y)
- 
+
 dfg <- normalizeGaussian_severalstations(df,data=df,extremes=TRUE,inverse=FALSE)
- 
+
 dfi <- normalizeGaussian_severalstations(dfg,data=df,extremes=TRUE,inverse=TRUE)
- 
+
 N <- 365*2
 origin <- "1981-01-01"
 x <- rexp(N)
 y <- x+rnorm(N)
 df <- data.frame(x=x,y=y)
- 
+
 dfgm <- normalizeGaussian_severalstations(df,data=df,extremes=TRUE,
 inverse=FALSE,origin_x=origin,origin_data=origin,sample="monthly")
- 
+
 dfim <- normalizeGaussian_severalstations(dfg,data=df,extremes=TRUE,
 inverse=TRUE,origin_x=origin,origin_data=origin,sample="monthly")
-}  
-  
+}
+
 
 
 

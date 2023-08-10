@@ -38,16 +38,16 @@ normalizeGaussian(
 
 \item{type}{see \code{\link{quantile}}}
 
-\item{extremes}{logical variable. 
+\item{extremes}{logical variable.
 If \code{TRUE} (default) the probability or frequency is multiplied by \deqn{\frac{N}{N+1}} where \eqn{N} is the length of \code{data}}
 
-\item{sample}{a character string or \code{NULL} containing sample or probability distribution information. 
+\item{sample}{a character string or \code{NULL} containing sample or probability distribution information.
 Default is \code{NULL}}
 }
 \value{
-the normalized variable or its inverse   
-  
-    
+the normalized variable or its inverse
+
+
  @note This function makes a Marginal Gaussianization. See the R code for further details
 }
 \description{

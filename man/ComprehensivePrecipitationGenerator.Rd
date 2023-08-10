@@ -90,7 +90,7 @@ ComprehensivePrecipitationGenerator(
 
 \item{sample, extremes, qnull, valmin}{see \code{\link{normalizeGaussian_severalstations}}}
 
-\item{exogen_all}{data frame containing exogenous variable formatted like \code{prec_all}. Default is \code{NULL}. 
+\item{exogen_all}{data frame containing exogenous variable formatted like \code{prec_all}. Default is \code{NULL}.
 It is alternative to \code{exogen} and if it not \code{NULL},\code{is_exogen_gaussian} is automatically set \code{FALSE}}
 
 \item{exogen_all_col}{vector of considered  columns of \code{exogen_all}. Default is \code{station}.}
@@ -104,7 +104,7 @@ It is alternative to \code{exogen} and if it not \code{NULL},\code{is_exogen_gau
 \item{noise}{stochastic noise to add for variabile generation. Default is \code{NULL}. See \code{\link{newVARmultieventRealization}}. Not used in case that \code{nscenario>1}.}
 }
 \value{
-A list of the following variables: 
+A list of the following variables:
 
 
 \code{prec_mes}        matrix containing measured daily precipitation (the data is copied by the measured data given as input for the period and the station considered for \code{varmodel} estimation)
@@ -146,17 +146,18 @@ year_min_sim <- 1981
 n_GPCA_iter <- 2
 p <- 1
 nscenario=1
-station <- c("T0090","T0083")  
-## Not Run: the call to ComprehensivePrecipitationGenerator may elapse too 
-## long time (more than 5 eseconds) and is not executed  by CRAN check.  
-## Please uncomment the following line to run the example on your own PC. 
-# generation00 <- ComprehensivePrecipitationGenerator(station=station,
-# prec_all=PRECIPITATION,year_min=year_min,year_max=year_max,
-# year_min_sim=year_min_sim,year_max_sim=year_max_sim,p=p,
-# n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=0,
-# sample="monthly",nscenario=nscenario,no_spline=TRUE)
+station <- c("T0090","T0083")
+\donttest{
+## Not Run: the call to ComprehensivePrecipitationGenerator may elapse too
+## long time (more than 5 eseconds) and is not executed  by default CRAN check.
+## Please uncomment the following line to run the example on your own PC.
+generation00 <- ComprehensivePrecipitationGenerator(station=station,
+prec_all=PRECIPITATION,year_min=year_min,year_max=year_max,
+year_min_sim=year_min_sim,year_max_sim=year_max_sim,p=p,
+n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=0,
+sample="monthly",nscenario=nscenario,no_spline=TRUE)
 
-#
+}
 
 }
 \seealso{
