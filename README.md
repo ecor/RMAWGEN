@@ -16,3 +16,8 @@ install_github("ecor/RMAWGEN")
 # Documentation 
 
 See documentation and details on https://ecor.github.io/RMAWGEN/ or https://CRAN.R-project.org/package=RMAWGEN (CRAN Version)
+
+# Further Information 
+
+https://ecor.github.io/RGENERATE/articles/stochastic_generation.html 
+
