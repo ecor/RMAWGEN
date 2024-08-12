@@ -123,7 +123,7 @@ qqplot_RMAWGEN_prec(
 It makes the Q-Q plots observed vs generated time series of daily maximum, minimum temperature and daily thermal range for a list of collected stochastic generations
 }
 \note{
-\code{Tx_gen},{Tn_gen} and \code{main} must have an even number of elements.
+\code{Tx_gen},\code{Tn_gen} and \code{main} must have an even number of elements.
 }
 \author{
 Emanuele Cordano

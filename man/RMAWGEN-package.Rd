@@ -57,6 +57,16 @@ RMAWGEN is free software: you can redistribute it and/or modify
 Cordano E. and Eccel E. (2016), Tools for stochastic weather series generation in R environment, Italian Journal of Agrometeorology doi:10.19199/2016.3.2038-5625.031 \url{https://doi.org/10.19199/2016.3.2038-5625.031}
 Pfaff B. (2008). VAR, SVAR and SVEC Models: Implementation Within R Package vars. Journal of Statistical Software 27(4). \url{https://www.jstatsoft.org/v27/i04/}(doi:10.18637/jss.v027.i04)
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/ecor/RMAWGEN}
+  \item \url{https://docs.google.com/file/d/0B66otCUk3Bv6V3RPbm1mUG4zVHc/edit}
+  \item \url{http://presentations.copernicus.org/EGU2012-14026_presentation.pdf}
+  \item \url{http://presentations.copernicus.org/EGU2012-5404_presentation.pdf}
+}
+
+}
 \author{
 Emanuele Cordano \email{emanuele.cordano@gmail.org}, Emanuele Eccel \email{emanuele.eccel@fmach.it}
 }

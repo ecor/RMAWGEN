@@ -94,7 +94,7 @@ ComprehensiveTemperatureGenerator(
 
 \item{is_exogen_gaussian}{logical value, If \code{TRUE}, \code{exogen_sim} and \code{exogen} are given as already normalized variables, otherwhise they are not normalized. Default is \code{FALSE}}
 
-\item{exogen_all}{data frame containing exogenous variable formatted like \code{Tx_all} and {Tn_all}. Default is \code{NULL}. 
+\item{exogen_all}{data frame containing exogenous variable formatted like \code{Tx_all} and \code{Tn_all}. Default is \code{NULL}.
 It is alternative to \code{exogen} and if it not \code{NULL},\code{is_exogen_gaussian} is automatically set to \code{FALSE}}
 
 \item{exogen_all_col}{vector of considered  columns of \code{exogen_all}. Default is \code{station}.}
@@ -106,7 +106,7 @@ It is alternative to \code{exogen} and if it not \code{NULL},\code{is_exogen_gau
 \item{noise}{stochastic noise to add for variabile generation. Default is \code{NULL}. See \code{\link{newVARmultieventRealization}}. Not used in case that \code{nscenario>1}.}
 }
 \value{
-A list of the following variables: 
+A list of the following variables:
 
 \code{input}   list of variables returned by  \code{\link{setComprehensiveTemperatureGeneratorParameters}}
 
@@ -131,16 +131,16 @@ year_max <- 1990
 year_min_sim <- 1982
 year_max_sim <- 1983
 
-n_GPCA_iter <- 5 
+n_GPCA_iter <- 5
 n_GPCA_iteration_residuals <- 5
 p <- 1
 vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",
  "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",
 "T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",
 "T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",
-"T0211","T0327","T0367","T0373")		
-## Not Run: the call to ComprehensiveTemperatureGenerator may elapse 
-## too long time (more than 5 eseconds) and is not executed  by CRAN check.  
+"T0211","T0327","T0367","T0373")
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.
 ## Please uncomment the following line to run the example on your own PC.
 # generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],
 # Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,
@@ -150,7 +150,7 @@ vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",
 
 
 
-	
+
 }
 \seealso{
 \code{\link{setComprehensiveTemperatureGeneratorParameters}}, \code{\link{generateTemperatureTimeseries}} ,\code{\link{generateTemperatureTimeseries}},\code{\link{splineInterpolateMonthlytoDailyforSeveralYears}}.

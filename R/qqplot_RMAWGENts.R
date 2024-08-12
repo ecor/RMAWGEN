@@ -41,7 +41,7 @@ NULL
 #' @param lag lag (current index included) on whose value  the precipitation addition is made. See \code{\link{qqplot.lagged}}.
 #'
 #'
-#' @note \code{Tx_gen},{Tn_gen} and \code{main} must have an even number of elements.
+#' @note \code{Tx_gen},\code{Tn_gen} and \code{main} must have an even number of elements.
 #'
 #' @rdname qqplot_RMAWGEN_Tx
 #' @export
