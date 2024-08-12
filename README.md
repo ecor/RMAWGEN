@@ -19,5 +19,8 @@ See documentation and details on https://ecor.github.io/RMAWGEN/ or https://CRAN
 
 # Further Information 
 
-https://ecor.github.io/RGENERATE/articles/stochastic_generation.html 
+
+**RGENERATE** package vignette:  https://ecor.github.io/RGENERATE/articles/stochastic_generation.html 
+
+
 
