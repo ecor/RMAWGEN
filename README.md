@@ -3,7 +3,7 @@
 RMAWGEN
 =======
 
-Github version on RMAWGEN package (http://cran.r-project.org/web/packages/RMAWGEN/index.html)
+Github version on RMAWGEN package ([http://cran.r-project.org/web/packages/RMAWGEN/index.html](https://CRAN.R-project.org/package=RMAWGEN] )
 
 # Installation notes from R Console: 
 
@@ -13,4 +13,6 @@ library(devtools)
 install_github("ecor/RMAWGEN")
 
 
+# Documentation 
 
+See documentation and details on https://ecor.github.io/RMAWGEN/ or https://CRAN.R-project.org/package=RMAWGEN (CRAN Version)
