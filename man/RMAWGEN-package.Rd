@@ -60,7 +60,7 @@ Pfaff B. (2008). VAR, SVAR and SVEC Models: Implementation Within R Package vars
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/ecor/RMAWGEN}
+  \item \url{https://ecor.github.io/RMAWGEN/,https://github.com/ecor/RMAWGEN}
   \item \url{https://docs.google.com/file/d/0B66otCUk3Bv6V3RPbm1mUG4zVHc/edit}
   \item \url{http://presentations.copernicus.org/EGU2012-14026_presentation.pdf}
   \item \url{http://presentations.copernicus.org/EGU2012-5404_presentation.pdf}

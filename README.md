@@ -15,7 +15,22 @@ install_github("ecor/RMAWGEN")
 
 # Documentation 
 
-See documentation and details on https://ecor.github.io/RMAWGEN/ or https://CRAN.R-project.org/package=RMAWGEN (CRAN Version)
+See documentation and details on 
+
+https://docs.google.com/file/d/0B66otCUk3Bv6V3RPbm1mUG4zVHc/edit ;
+
+http://presentations.copernicus.org/EGU2012-14026_presentation.pdf ;
+
+http://presentations.copernicus.org/EGU2012-5404_presentation.pdf  .
+
+On github: 
+
+https://ecor.github.io/RMAWGEN/  (source: https://github.com/ecor/RMAWGEN )
+https://ecor.github.io/RMAWGEN/ 
+
+On CRAN: 
+
+https://CRAN.R-project.org/package=RMAWGEN (CRAN Version)
 
 # Further Information 
 

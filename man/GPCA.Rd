@@ -14,7 +14,7 @@ GPCA(x_prev, n = 30, extremes = TRUE)
 \item{extremes}{see \code{\link{normalizeGaussian_severalstations}}}
 }
 \value{
-A  \code{\link{GPCA-class}} S3 object returned by \code{\link{GPCA_iteration}} at each iteration 
+A  \code{\link{GPCA-class}} S3 object returned by \code{\link{GPCA_iteration}} at each iteration
 			and the final results of the G-PCA procedure (matrix \code{final_results})
 }
 \description{
