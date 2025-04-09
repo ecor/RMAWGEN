@@ -20,7 +20,7 @@ Replaces each entry of the rows containing NA values with NA
 }
 \note{
 In \code{\link{getVARmodel}}, 
-when using \code{\link{VAR}} or \code{\link{VARselect}}, all NAs will be removed
+when using \code{\link[vars]{VAR}} or \code{\link[vars]{VARselect}}, all NAs will be removed
 }
 \seealso{
 \code{\link{getVARmodel}}

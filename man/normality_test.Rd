@@ -15,5 +15,5 @@ normality_test(object, ...)
 \code{normality.test} method for \code{varest2} object
 }
 \seealso{
-\code{\link{normality.test}}
+\code{\link[vars]{normality.test}}
 }

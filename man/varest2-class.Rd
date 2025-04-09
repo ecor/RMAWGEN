@@ -6,11 +6,11 @@
 \alias{varest2}
 \title{varest2-class}
 \description{
-This class derives from a \code{varest} S3 class which is a list of objects describing a Vectorial AutoRegressive Model (see \code{\link{VAR}})
+This class derives from a \code{varest} S3 class which is a list of objects describing a Vectorial AutoRegressive Model (see \code{\link[vars]{VAR}})
 }
 \details{
 \describe{
-    \item{\code{VAR}:}{a \code{varest} S3 object created by \code{\link{VAR}} }
+    \item{\code{VAR}:}{a \code{varest} S3 object created by \code{\link[vars]{VAR}} }
  }
 }
 \note{

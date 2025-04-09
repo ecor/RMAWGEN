@@ -4,7 +4,7 @@
 \alias{GPCA}
 \title{This function makes a Gaussianization procedure based on PCA iteration ( see \code{\link{GPCA_iteration}})}
 \usage{
-GPCA(x_prev, n = 30, extremes = TRUE)
+GPCA(x_prev, n = 30, extremes = TRUE, nearPD = FALSE)
 }
 \arguments{
 \item{x_prev}{previous set of the random variable \code{x}. If it is a \code{varest} object, the residuals are taken into account.}
@@ -12,6 +12,8 @@ GPCA(x_prev, n = 30, extremes = TRUE)
 \item{n}{number of reiterations}
 
 \item{extremes}{see \code{\link{normalizeGaussian_severalstations}}}
+
+\item{nearPD}{logical. Default is \code{FALSE}. If \code{TRUE} covariance matrix is corrected through Nearest Positive Definite Matrix procedure, i.e. \code{\link[Matrix]{nearPD}}}
 }
 \value{
 A  \code{\link{GPCA-class}} S3 object returned by \code{\link{GPCA_iteration}} at each iteration

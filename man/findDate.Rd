@@ -30,7 +30,7 @@ the date(s) corresponding to \code{k} under different formats
 Finds the date  corresponding a row index of a matrix given the  date (origin) of the first row
 }
 \note{
-It uses functions of  \code{\link{time}} package. It works like an  inverse functions of \code{\link{extractdays}}. 
+It uses functions of  \code{\link{time}} package. It works like an  inverse functions of \code{\link{extractdays}}.
 If \code{k} is a vector, the function returns several dates for each element of \code{k}
 }
 \examples{
@@ -39,5 +39,5 @@ findDate <- findDate(100,origin="1961-1-1",data.frame=FALSE,character=TRUE)
 
 }
 \seealso{
-\code{\link{date.mdy}},\code{\link{extractdays}}
+\code{\link[date]{date.mdy}},\code{\link{extractdays}}
 }

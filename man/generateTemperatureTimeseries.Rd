@@ -40,9 +40,9 @@ generateTemperatureTimeseries(
 
 \item{std_tm}{vector containing standard deviation of daily "mean" temperature anomalies. \code{stdTn} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.}
 
-\item{var}{A VAR model represented by a \code{varest} object as returned by \code{\link{getVARmodel}} or \code{\link{VAR}}}
+\item{var}{A VAR model represented by a \code{varest} object as returned by \code{\link{getVARmodel}} or \code{\link[vars]{VAR}}}
 
-\item{exogen}{see \code{\link{VAR}}}
+\item{exogen}{see \code{\link[vars]{VAR}}}
 
 \item{normalize}{logical variable If \code{TRUE} \code{\link{normalizeGaussian_severalstations}} is used, otherwise not. If \code{option} is 2, it is always \code{TRUE}.}
 

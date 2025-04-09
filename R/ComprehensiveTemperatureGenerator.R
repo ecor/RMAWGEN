@@ -32,6 +32,7 @@ NULL
 #' @param yearly  logical value. If \code{TRUE} the monthly mean values are calculated for each year from \code{year_min} to \code{year_max} separately. Default is \code{FALSE}.
 #' @param yearly_sim logical value. If \code{TRUE} the monthly mean values are calculated for each year from \code{year_min_sim} to \code{year_max_sim} separately. Default is \code{yearly}.
 #' @param seed seed for stochastic random generation see \code{\link{set.seed}}
+#' @param nearPD logical. Default is \code{FALSE}. See \code{\link{getVARmodel}}.
 #' @param noise stochastic noise to add for variabile generation. Default is \code{NULL}. See \code{\link{newVARmultieventRealization}}. Not used in case that \code{nscenario>1}.
 #'
 #'
@@ -130,7 +131,8 @@ function(
 		exogen_all_col=station,
 		nscenario=1,
 		seed=NULL,
-		noise=NULL
+		noise=NULL,
+		nearPD=FALSE
 
 ) {
 
@@ -175,7 +177,7 @@ function(
 
 
 		}
-		var <- getVARmodel(data=param[['data_for_var']],suffix=c("_T1","_T2"),sep="",p=p,type=type,lag.max=lag.max,ic=ic,activateVARselect=activateVARselect,exogen=exogen,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,n_GPCA_iteration=n_GPCA_iteration,extremes=extremes)
+		var <- getVARmodel(data=param[['data_for_var']],suffix=c("_T1","_T2"),sep="",p=p,type=type,lag.max=lag.max,ic=ic,activateVARselect=activateVARselect,exogen=exogen,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,n_GPCA_iteration=n_GPCA_iteration,extremes=extremes,nearPD=nearPD)
 
 		if (activateVARselect) return(list(input=param,varselect=var))
 

@@ -2,11 +2,11 @@ NULL
 
 
 #'   
-#' This class derives from a \code{varest} S3 class which is a list of objects describing a Vectorial AutoRegressive Model (see \code{\link{VAR}})
+#' This class derives from a \code{varest} S3 class which is a list of objects describing a Vectorial AutoRegressive Model (see \code{\link[vars]{VAR}})
 #' 
 
 #' 	\describe{
-#'     \item{\code{VAR}:}{a \code{varest} S3 object created by \code{\link{VAR}} }
+#'     \item{\code{VAR}:}{a \code{varest} S3 object created by \code{\link[vars]{VAR}} }
 #'  }
 
 #' 
@@ -37,7 +37,7 @@ NULL
 #' 
 
 
-# @slot VAR a \code{list} object derived by a \code{varest} list object created by \code{\link{VAR}} 
+# @slot VAR a \code{list} object derived by a \code{varest} list object created by \code{\link[vars]{VAR}} 
 
 
 

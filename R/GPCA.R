@@ -5,6 +5,7 @@ NULL
 #' @param x_prev previous set of the random variable \code{x}. If it is a \code{varest} object, the residuals are taken into account.
 #' @param n number of reiterations
 #' @param extremes  see \code{\link{normalizeGaussian_severalstations}}
+#' @param nearPD logical. Default is \code{FALSE}. If \code{TRUE} covariance matrix is corrected through Nearest Positive Definite Matrix procedure, i.e. \code{\link[Matrix]{nearPD}}
 #' @author Emanuele Cordano
 #'
 #' @export
@@ -39,9 +40,13 @@ NULL
 
 
 
-GPCA <- function (x_prev,n=30,extremes=TRUE) {
+GPCA <- function (x_prev,n=30,extremes=TRUE,nearPD=FALSE) {
 
 	if (inherits(x_prev,'varest2')  | inherits(x_prev,'GPCAvarest2') | inherits(x_prev,'varest') ) {
+
+
+
+
 
 		x_prev <- residuals(x_prev@VAR)
 
@@ -54,7 +59,10 @@ GPCA <- function (x_prev,n=30,extremes=TRUE) {
 		return(out)
 	}
 	for (i in 1:n) {
-		DT <- GPCA_iteration(x_prev=x_prev,extremes=extremes)
+
+
+
+		DT <- GPCA_iteration(x_prev=x_prev,extremes=extremes,nearPD=nearPD)
 		x_prev <- DT$x_next
 		out[[i]] <- DT
 	}

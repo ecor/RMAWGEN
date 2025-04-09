@@ -12,8 +12,8 @@ NULL
 #' @param SplineTm matrix containing the averaged daily "mean" temperature   obtained by a spline interpolation of monthly means . \code{SplineAdvTm} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.
 #' @param SplineDeltaT matrix containing the rescaled averaged daily temperature range obtained by a spline interpolation of monthly means. \code{SplineAdvDelta_T_sim/SplineAdvDelta_T} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.
 #' @param std_tm vector containing standard deviation of daily "mean" temperature anomalies. \code{stdTn} is default, see \code{\link{setComprehensiveTemperatureGeneratorParameters}}.
-#' @param var A VAR model represented by a \code{varest} object as returned by \code{\link{getVARmodel}} or \code{\link{VAR}}
-#' @param exogen see \code{\link{VAR}}
+#' @param var A VAR model represented by a \code{varest} object as returned by \code{\link{getVARmodel}} or \code{\link[vars]{VAR}}
+#' @param exogen see \code{\link[vars]{VAR}}
 #' @param normalize logical variable If \code{TRUE} \code{\link{normalizeGaussian_severalstations}} is used, otherwise not. If \code{option} is 2, it is always \code{TRUE}.
 #' @param sample,origin_x,origin_data,extremes see \code{\link{normalizeGaussian_severalstations}}
 #' @param type see \code{\link{quantile}}

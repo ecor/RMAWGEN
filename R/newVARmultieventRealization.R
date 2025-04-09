@@ -78,6 +78,7 @@ function(var,xprev=rnorm(var@VAR$K*var@VAR$p),exogen=NULL,nrealization=10,B=t(ch
 		}
 
 		x <- NewVAReventRealization(var=var@VAR,xprev=xprev,exogen=exogen_data,noise=as.vector(t(noise[i,])),B=B)
+		### CORRECTION HERE nearPDx inverse ? x %<>% ... 2025 02 28
 		out[i,] <- x
 
 

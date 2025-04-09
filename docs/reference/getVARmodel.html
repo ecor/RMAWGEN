@@ -64,7 +64,8 @@
 <span>  na.rm <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  n_GPCA_iteration <span class="op">=</span> <span class="fl">0</span>,</span>
 <span>  n_GPCA_iteration_residuals <span class="op">=</span> <span class="va">n_GPCA_iteration</span>,</span>
-<span>  extremes <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  extremes <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  nearPD <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -127,6 +128,10 @@
 <dt id="arg-extremes">extremes<a class="anchor" aria-label="anchor" href="#arg-extremes"></a></dt>
 <dd><p>see <code><a href="normalizeGaussian_severalstations.html">normalizeGaussian_severalstations</a></code> and <code><a href="GPCA.html">GPCA</a></code></p></dd>
 
+
+<dt id="arg-nearpd">nearPD<a class="anchor" aria-label="anchor" href="#arg-nearpd"></a></dt>
+<dd><p>logical (experimental) and passed to <code><a href="GPCA.html">GPCA</a></code>. Default is <code>FALSE</code>. If <code>TRUE</code> covariance matrix is corrected through Nearest Positive Definite Matrix procedure, i.e. <code><a href="https://rdrr.io/pkg/Matrix/man/nearPD.html" class="external-link">nearPD</a></code></p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
@@ -145,6 +150,35 @@ This means that two or more columns may have the same name. Therefore the functi
     <p>Emanuele Cordano, Emanuele Eccel</p>
     </div>
 
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">122</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">NSTEP</span> <span class="op">&lt;-</span> <span class="fl">1000</span></span></span>
+<span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">NSTEP</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">+</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">NSTEP</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">z</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>,<span class="va">y</span><span class="op">[</span><span class="op">-</span><span class="fl">1</span><span class="op">]</span><span class="op">+</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">NSTEP</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">x</span>,y<span class="op">=</span><span class="va">y</span>,z<span class="op">=</span><span class="va">z</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">exogen</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">x</span><span class="op">+</span><span class="fl">5</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">only_var</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/vars/man/VAR.html" class="external-link">VAR</a></span><span class="op">(</span><span class="va">df</span>,type<span class="op">=</span><span class="st">"none"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">gpcavar</span> <span class="op">&lt;-</span> <span class="fu">getVARmodel</span><span class="op">(</span>data<span class="op">=</span><span class="va">df</span>,suffix<span class="op">=</span><span class="cn">NULL</span>,p<span class="op">=</span><span class="fl">3</span>,n_GPCA_iteration<span class="op">=</span><span class="fl">5</span>,</span></span>
+<span class="r-in"><span>                       n_GPCA_iteration_residuals<span class="op">=</span><span class="fl">5</span>,exogen<span class="op">=</span><span class="va">exogen</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>No column names supplied in exogen, using: exo1 , instead.</span>
+<span class="r-in"><span><span class="va">exogen</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">x</span><span class="op">+</span><span class="fl">5</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">data_for_var</span> <span class="op">&lt;-</span> <span class="va">gpcavar</span><span class="op">@</span><span class="va">GPCA_data</span><span class="op">$</span><span class="va">final_results</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">collinear_dataset</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">gpcavar_coll</span> <span class="op">&lt;-</span> <span class="fu">getVARmodel</span><span class="op">(</span>data<span class="op">=</span><span class="va">collinear_dataset</span>,suffix<span class="op">=</span><span class="cn">NULL</span>,p<span class="op">=</span><span class="fl">3</span>,n_GPCA_iteration<span class="op">=</span><span class="fl">5</span>,</span></span>
+<span class="r-in"><span>                       n_GPCA_iteration_residuals<span class="op">=</span><span class="fl">0</span>,exogen<span class="op">=</span><span class="cn">NULL</span>,nearPD<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span> <span class="co">## use nearPD==TRUE</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span></span></span>
+</code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
@@ -157,7 +191,7 @@ This means that two or more columns may have the same name. Therefore the functi
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
       </footer></div>

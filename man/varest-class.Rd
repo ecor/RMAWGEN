@@ -6,11 +6,11 @@
 \alias{varest}
 \title{varest-class}
 \description{
-\code{varest} S3 class (formal definition) see \code{\link{VAR}}
+\code{varest} S3 class (formal definition) see \code{\link[vars]{VAR}}
 }
 \details{
 \describe{
-    The details of the class are reported on \code{\link{VAR}} documentation in "vars" package
+    The details of the class are reported on \code{\link[vars]{VAR}} documentation in "vars" package
  }
 }
 \note{

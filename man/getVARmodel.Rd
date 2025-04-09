@@ -18,29 +18,30 @@ getVARmodel(
   na.rm = TRUE,
   n_GPCA_iteration = 0,
   n_GPCA_iteration_residuals = n_GPCA_iteration,
-  extremes = TRUE
+  extremes = TRUE,
+  nearPD = FALSE
 )
 }
 \arguments{
-\item{data}{see \code{\link{VAR}} and \code{\link{addsuffixes}}}
+\item{data}{see \code{\link[vars]{VAR}} and \code{\link{addsuffixes}}}
 
 \item{suffix}{see  \code{\link{addsuffixes}}}
 
 \item{sep}{separator element. See \code{\link{addsuffixes}}).}
 
-\item{p}{lag considered for the auto-regression   see \code{\link{VAR}}}
+\item{p}{lag considered for the auto-regression   see \code{\link[vars]{VAR}}}
 
-\item{type}{see \code{\link{VAR}}}
+\item{type}{see \code{\link[vars]{VAR}}}
 
-\item{season}{see \code{\link{VAR}}}
+\item{season}{see \code{\link[vars]{VAR}}}
 
-\item{exogen}{see \code{\link{VAR}}}
+\item{exogen}{see \code{\link[vars]{VAR}}}
 
-\item{lag.max}{see \code{\link{VARselect}}}
+\item{lag.max}{see \code{\link[vars]{VARselect}}}
 
-\item{ic}{see \code{\link{VAR}}}
+\item{ic}{see \code{\link[vars]{VAR}}}
 
-\item{activateVARselect}{logical variables. If \code{TRUE}, the function \code{\link{VARselect}} is run. Default and recommended use is \code{FALSE}.}
+\item{activateVARselect}{logical variables. If \code{TRUE}, the function \code{\link[vars]{VARselect}} is run. Default and recommended use is \code{FALSE}.}
 
 \item{na.rm}{logical variables. If \code{TRUE} (default), it takes into account \code{NA} values}
 
@@ -49,6 +50,8 @@ getVARmodel(
 \item{n_GPCA_iteration_residuals}{number of iterations of Gaussianization process for data. Default is 0 (no Gaussianization)}
 
 \item{extremes}{see \code{\link{normalizeGaussian_severalstations}} and \code{\link{GPCA}}}
+
+\item{nearPD}{logical (experimental) and passed to \code{\link{GPCA}}. Default is \code{FALSE}. If \code{TRUE} covariance matrix is corrected through Nearest Positive Definite Matrix procedure, i.e. \code{\link[Matrix]{nearPD}}}
 }
 \value{
 a \code{varest2} or \code{GPCAvarest2} object representing a VAR model or a \code{GPCA-varest} object which also contains the GPCA transformation parameters
@@ -57,11 +60,37 @@ a \code{varest2} or \code{GPCAvarest2} object representing a VAR model or a \cod
 Either creates a VAR model or chooses a VAR model by using VAR or VARselect commands of \code{vars} package
 }
 \note{
-It inherits input parameters of \code{\link{VAR}}, \code{\link{VARselect}} and \code{\link{addsuffixes}}. The variable \code{data} contains the measured data on which the vector auto-regressive models is estimated.
+It inherits input parameters of \code{\link[vars]{VAR}}, \code{\link[vars]{VARselect}} and \code{\link{addsuffixes}}. The variable \code{data} contains the measured data on which the vector auto-regressive models is estimated.
  It is a matrix where each row is a realization of the vector random variable.
 	In some application of this package, the random variables may be the daily maximum and minimum temperature anomalies for different stations.
 	Often the the columns of \code{data} are called with the IDs of the stations whithout specifying the type of variable (e.g. minimun or maximum temperature anomalies).
 This means that two or more columns may have the same name. Therefore the function \code{\link{addsuffixes}}, which is called from this function, adds suitable suffixes to the column names.
+}
+\examples{
+
+set.seed(122)
+NSTEP <- 1000
+x <- rnorm(NSTEP)
+y <- x+rnorm(NSTEP)
+z <- c(rnorm(1),y[-1]+rnorm(NSTEP-1))
+df <- data.frame(x=x,y=y,z=z)
+
+exogen <- as.data.frame(x+5)
+only_var <- VAR(df,type="none")
+
+gpcavar <- getVARmodel(data=df,suffix=NULL,p=3,n_GPCA_iteration=5,
+                       n_GPCA_iteration_residuals=5,exogen=exogen)
+exogen <- as.data.frame(x+5)
+
+data_for_var <- gpcavar@GPCA_data$final_results
+
+data(collinear_dataset)
+gpcavar_coll <- getVARmodel(data=collinear_dataset,suffix=NULL,p=3,n_GPCA_iteration=5,
+                       n_GPCA_iteration_residuals=0,exogen=NULL,nearPD=TRUE) ## use nearPD==TRUE
+
+
+
+
 }
 \author{
 Emanuele Cordano, Emanuele Eccel

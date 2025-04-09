@@ -46,7 +46,8 @@ ComprehensiveTemperatureGenerator(
   exogen_all_col = station,
   nscenario = 1,
   seed = NULL,
-  noise = NULL
+  noise = NULL,
+  nearPD = FALSE
 )
 }
 \arguments{
@@ -104,6 +105,8 @@ It is alternative to \code{exogen} and if it not \code{NULL},\code{is_exogen_gau
 \item{seed}{seed for stochastic random generation see \code{\link{set.seed}}}
 
 \item{noise}{stochastic noise to add for variabile generation. Default is \code{NULL}. See \code{\link{newVARmultieventRealization}}. Not used in case that \code{nscenario>1}.}
+
+\item{nearPD}{logical. Default is \code{FALSE}. See \code{\link{getVARmodel}}.}
 }
 \value{
 A list of the following variables:

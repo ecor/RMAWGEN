@@ -7,7 +7,7 @@ NULL
 #'
 #'
 #' @export
-#' @seealso \code{\link{serial.test}}
+#' @seealso \code{\link[vars]{serial.test}}
 #'
 
 serial_test <- function(object,...) {

@@ -7,7 +7,7 @@
 forecastResidual(var, xprev = NULL, B = NULL)
 }
 \arguments{
-\item{var}{A VAR model represented by a \code{varest} object as returned by \code{\link{getVARmodel}} or \code{\link{VAR}}}
+\item{var}{A VAR model represented by a \code{varest} object as returned by \code{\link{getVARmodel}} or \code{\link[vars]{VAR}}}
 
 \item{xprev}{previous status of the random variable, in this case the "current instant"white-noise". Default is \code{NULL} and then randomly generated.}
 

@@ -23,7 +23,7 @@ NULL
 #' @return  the matrix \code{data} with the modified rows of NA values
 #' 
 #' @note  In \code{\link{getVARmodel}}, 
-#' when using \code{\link{VAR}} or \code{\link{VARselect}}, all NAs will be removed
+#' when using \code{\link[vars]{VAR}} or \code{\link[vars]{VARselect}}, all NAs will be removed
 #' 
 #' 
 

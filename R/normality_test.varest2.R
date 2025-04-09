@@ -7,7 +7,7 @@ NULL
 #'
 #' @export
 #'
-#' @seealso \code{\link{normality.test}}
+#' @seealso \code{\link[vars]{normality.test}}
 #'
 
 normality_test <- function(object,...) {

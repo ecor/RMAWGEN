@@ -2,7 +2,7 @@
 % Please edit documentation in R/VAR_mod.R
 \name{VAR_mod}
 \alias{VAR_mod}
-\title{Modified version of \code{\link{VAR}} function allowing to describe white-noise as VAR-(0) model (i. e. \code{varest} objects)}
+\title{Modified version of \code{\link[vars]{VAR}} function allowing to describe white-noise as VAR-(0) model (i. e. \code{varest} objects)}
 \usage{
 VAR_mod(
   y,
@@ -15,11 +15,11 @@ VAR_mod(
 )
 }
 \arguments{
-\item{y, p, type, season, exogen, lag.max, ic}{see \code{\link{VAR}} function}
+\item{y, p, type, season, exogen, lag.max, ic}{see \code{\link[vars]{VAR}} function}
 }
 \value{
 a Vector Auto-Regeressive model (VAR) as \code{varest} object
 }
 \description{
-Modified version of \code{\link{VAR}} function allowing to describe white-noise as VAR-(0) model (i. e. \code{varest} objects)
+Modified version of \code{\link[vars]{VAR}} function allowing to describe white-noise as VAR-(0) model (i. e. \code{varest} objects)
 }

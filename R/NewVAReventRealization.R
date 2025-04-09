@@ -8,7 +8,7 @@ NULL
 #'  
 #'  
 #'
-#' @param var A VAR model represented by a \code{varest} object as returned by \code{\link{getVARmodel}} or \code{\link{VAR}}
+#' @param var A VAR model represented by a \code{varest} object as returned by \code{\link{getVARmodel}} or \code{\link[vars]{VAR}}
 #' @param xprev previous status of the random variable
 #' @param noise uncorrelated or white noise (residual). Default is \code{rnorm(length(xprev))} (or \code{rnorm(ncol(B)})
 #' @param exogen vector containing the values of the "exogen" variables (predictor) for the generation

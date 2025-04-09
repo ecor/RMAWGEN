@@ -33,6 +33,7 @@ NULL
 #' @param no_spline logical value. See \code{\link{splineInterpolateMonthlytoDailyforSeveralYears}}. Default is \code{TRUE}.
 #' @param nscenario number of generated scenarios for daily maximum and minimum temperature
 #' @param seed seed for stochastic random generation see \code{\link{set.seed}}.
+#' @param nearPD logical. Default is \code{FALSE}. See \code{\link{getVARmodel}}.
 #' @param noise stochastic noise to add for variabile generation. Default is \code{NULL}. See \code{\link{newVARmultieventRealization}}. Not used in case that \code{nscenario>1}.
 #'
 #'
@@ -152,7 +153,8 @@ function(
 		no_spline=FALSE,
 		nscenario=1,
 		seed=NULL,
-		noise=NULL
+		noise=NULL,
+	  nearPD=FALSE
 
 ) {
 
@@ -198,7 +200,7 @@ function(
 		}
 
 
-		var <- getVARmodel(data=data_prec,suffix=NULL,sep="",p=p,type=type,exogen=exogen,lag.max=lag.max,ic=ic,activateVARselect=activateVARselect,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,n_GPCA_iteration=n_GPCA_iteration,extremes=extremes)
+		var <- getVARmodel(data=data_prec,suffix=NULL,sep="",p=p,type=type,exogen=exogen,lag.max=lag.max,ic=ic,activateVARselect=activateVARselect,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,n_GPCA_iteration=n_GPCA_iteration,extremes=extremes,nearPD=nearPD)
 
 		if (activateVARselect) return(var)
 

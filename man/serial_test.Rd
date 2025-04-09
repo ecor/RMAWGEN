@@ -15,5 +15,5 @@ serial_test(object, ...)
 \code{serial.test} function for \code{varest2} object
 }
 \seealso{
-\code{\link{serial.test}}
+\code{\link[vars]{serial.test}}
 }

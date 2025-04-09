@@ -1,9 +1,9 @@
 NULL 
 
 #'
-#' Modified version of \code{\link{VAR}} function allowing to describe white-noise as VAR-(0) model (i. e. \code{varest} objects)
+#' Modified version of \code{\link[vars]{VAR}} function allowing to describe white-noise as VAR-(0) model (i. e. \code{varest} objects)
 #'
-#'@param y,p,type,season,exogen,lag.max,ic see \code{\link{VAR}} function
+#'@param y,p,type,season,exogen,lag.max,ic see \code{\link[vars]{VAR}} function
 #'
 #' @export 
 #'

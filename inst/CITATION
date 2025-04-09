@@ -43,11 +43,11 @@ citEntry(entry ="article",
  citEntry(entry ="manual",
     title = "RMAWGEN: Multi-Site Auto-Regressive Weather GENerator",
     author = "Emanuele Cordano and Emanuele Eccel",
-    year = "2017",
+    year = "2025",
     note = "R package",
     url="https://CRAN.R-project.org/package=RMAWGEN , https://doi.org/10.5281/zenodo.6891890",
-    textVersion= "Emanuele Cordano and Emanuele Eccel (2017). RMAWGEN: Multi-Site Auto-Regressive Weather GENerator. R Package, https://CRAN.R-project.org/package=RMAWGEN",
-     doi ="10.5281/zenodo.6891949"
+    textVersion= "Emanuele Cordano and Emanuele Eccel (2025). RMAWGEN: Multi-Site Auto-Regressive Weather GENerator. R Package, https://CRAN.R-project.org/package=RMAWGEN",
+     doi ="10.5281/zenodo.6891949","10.32614/CRAN.package.RMAWGEN"
 
 )
 

@@ -15,17 +15,17 @@ arch_test(object, interval = NULL, overlap = 20, list.output = FALSE, ...)
 
 \item{list.output}{logical value. If \code{TRUE} the function returns a list of the test results of each interval. It is used if \code{interval} is not \code{NULL}. Default is \code{FALSE}.}
 
-\item{...}{further arguments  for \code{\link{arch.test}}}
+\item{...}{further arguments  for \code{\link[vars]{arch.test}}}
 }
 \value{
-One object or a list of objects with class attribute \code{varcheck} as reported in \code{\link{arch.test}}
+One object or a list of objects with class attribute \code{varcheck} as reported in \code{\link[vars]{arch.test}}
 }
 \description{
 \code{arch.test} function for \code{varest2} object
 }
 \details{
-This function is a wrapper of \code{\link{arch.test}}. It can compute the test also for some subsets (intervals) of the time-series or for all the time-series divided in overlapping intervals. The intervals considered for the ARCH test are defined with the argument \code{interval}. If \code{interval} is an integer number instead of a vector, it indicates the length of the intervals in which the time-series is split. If \code{interval} is set to \code{NULL}, the test is done on the comprehensive residual time-series without splitting.
+This function is a wrapper of \code{\link[vars]{arch.test}}. It can compute the test also for some subsets (intervals) of the time-series or for all the time-series divided in overlapping intervals. The intervals considered for the ARCH test are defined with the argument \code{interval}. If \code{interval} is an integer number instead of a vector, it indicates the length of the intervals in which the time-series is split. If \code{interval} is set to \code{NULL}, the test is done on the comprehensive residual time-series without splitting.
 }
 \seealso{
-\code{\link{arch.test}}
+\code{\link[vars]{arch.test}}
 }

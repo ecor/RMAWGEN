@@ -16,9 +16,10 @@ Version: 1.3.9.3
 Repository: http://cran.r-project.org
 Date/Publication: 2011-08-12 14:30:10
 Packaged: 2011-08-12 07:38:22 UTC; ecor
-Date: 2025-02-18
+Date: 2025-04-08
 Depends:
     R (>= 2.10),chron,date,vars,methods
+Imports: Matrix 
 Suggests:
    lubridate
 URL: https://ecor.github.io/RMAWGEN/,https://github.com/ecor/RMAWGEN,
