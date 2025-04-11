@@ -23,7 +23,7 @@ A  \code{\link{GPCA-class}} S3 object returned by \code{\link{GPCA_iteration}} a
 This function makes a Gaussianization procedure based on PCA iteration ( see \code{\link{GPCA_iteration}})
 }
 \note{
-This function re-iterates the equation (1) of "PCA Gaussianization for One-Class Remote Sensing Image" by V. Laparra et al., \url{http://www.uv.es/lapeva/papers/SPIE09_one_class.pdf},\url{http://www.uv.es/vista/vistavalencia/papers/SPIE_09_Gaussianization_presentation.pdf}
+This function re-iterates the equation (1) of "PCA Gaussianization for One-Class Remote Sensing Image" by V. Laparra et al., \url{https://www.uv.es/lapeva/papers/SPIE09_one_class.pdf},\url{https://www.uv.es/vista/vistavalencia/papers/SPIE_09_Gaussianization_presentation.pdf}
 }
 \examples{
 library(RMAWGEN)

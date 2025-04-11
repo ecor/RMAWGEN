@@ -3,7 +3,7 @@
 RMAWGEN
 =======
 
-Github version on RMAWGEN package ([http://cran.r-project.org/web/packages/RMAWGEN/index.html](https://CRAN.R-project.org/package=RMAWGEN] )
+Github version on RMAWGEN package (https://CRAN.R-project.org/package=RMAWGEN)
 
 # Installation notes from R Console: 
 

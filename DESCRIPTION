@@ -3,7 +3,17 @@ Maintainer: Emanuele Cordano <emanuele.cordano@gmail.com>
 License: GPL (>= 2)
 Title: Multi-Site Auto-Regressive Weather GENerator
 Type: Package
-Author: Emanuele Cordano, Emanuele Eccel
+Authors@R: c(person(given = "Emanuele",
+                        family = "Cordano",
+                        role = c("aut", "cre","ctb"),
+                        email = "emanuele.cordano@gmail.com",comment=c(ORCID="0000-0002-3508-5898")),
+                 person(given = "Emanuele",
+                        family = "Eccel",
+                        role = "aut",comment=c(ORCID="0000-0003-3239-828X")),
+                person(given = "Eike",
+                        family = "Luedeling",
+                        role = c("ctb"),
+                        comment = c(ORCID = "0000-0002-7316-3631")))
 Description: S3 and S4 functions are implemented for spatial multi-site
     stochastic generation of daily time series of temperature and
     precipitation. These tools make use of Vector AutoRegressive models (VARs).
@@ -14,8 +24,6 @@ Description: S3 and S4 functions are implemented for spatial multi-site
     series.
 Version: 1.3.9.3
 Repository: http://cran.r-project.org
-Date/Publication: 2011-08-12 14:30:10
-Packaged: 2011-08-12 07:38:22 UTC; ecor
 Date: 2025-04-08
 Depends:
     R (>= 2.10),chron,date,vars,methods
@@ -23,7 +31,5 @@ Imports: Matrix
 Suggests:
    lubridate
 URL: https://ecor.github.io/RMAWGEN/,https://github.com/ecor/RMAWGEN,
-    https://docs.google.com/file/d/0B66otCUk3Bv6V3RPbm1mUG4zVHc/edit,
-    http://presentations.copernicus.org/EGU2012-14026_presentation.pdf,
-    http://presentations.copernicus.org/EGU2012-5404_presentation.pdf
+    https://docs.google.com/file/d/0B66otCUk3Bv6V3RPbm1mUG4zVHc/edit
 RoxygenNote: 7.3.2

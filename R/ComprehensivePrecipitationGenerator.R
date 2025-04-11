@@ -49,7 +49,7 @@ NULL
 #'
 #'
 #'
-#' @note It pre-processes and generates a multi-site precipitation fields. It uses \code{\link{getVARmodel}}. Detailed examples can be viewed of this function in \href{https://docs.google.com/file/d/0B8xDtMCnW3dJU2JIemVqMnpKTHc/edit}{this presentation}.
+#' @note It pre-processes and generates a multi-site precipitation fields. It uses \code{\link{getVARmodel}}. Detailed examples can be viewed of this function in \href{https://docs.google.com/file/d/0B66otCUk3Bv6V3RPbm1mUG4zVHc/edit}{this presentation}.
 #' Unfortunately, using this approach, the spatial correlations are underestimated. This is due to the persinstence of zeros in the precipitation records.
 #' This problem is known in literature and can be solved in the future versions of RMAWGEN.
 #' See the R code for further details

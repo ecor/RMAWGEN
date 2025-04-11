@@ -44,7 +44,7 @@ NULL
 #'
 #'
 #'
-#' @note It pre-processes series and generates multi-site temperature fields by using \code{\link{setComprehensiveTemperatureGeneratorParameters}},\code{\link{getVARmodel}} and \code{\link{generateTemperatureTimeseries}}. Detailed examples can be viewed of this function in \href{https://docs.google.com/file/d/0B8xDtMCnW3dJU2JIemVqMnpKTHc/edit}{this presentation}.
+#' @note It pre-processes series and generates multi-site temperature fields by using \code{\link{setComprehensiveTemperatureGeneratorParameters}},\code{\link{getVARmodel}} and \code{\link{generateTemperatureTimeseries}}. Detailed examples can be viewed of this function in \href{https://docs.google.com/file/d/0B66otCUk3Bv6V3RPbm1mUG4zVHc/edit}{this presentation}.
 #'
 #'
 #' @return  A list of the following variables:
