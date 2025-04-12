@@ -13,8 +13,14 @@ NULL
 #'
 #' @note If \code{lag==0} the function returns the continuity ratio and joint probability as described by Wilks, 1998. Otherwise the precipitation values for each couple of rain gauges are taken with \code{lag}-day lag.
 #'
-#' @references  see the following URL references:  \url{https://rmets.onlinelibrary.wiley.com/doi/abs/10.1002/joc.2305}
-#'   and \url{https://www.sciencedirect.com/science/article/pii/S0022169498001863}
+#' @references
+#'  Mhanna, M. and Bauwens, W. (2012), A stochastic space-time model for the generation of daily rainfall in the Gaza Strip. Int. J. Climatol., 32: 1098-1112. \doi{10.1002/joc.2305}
+#'
+#'  D.S. Wilks (1998),Multisite generalization of a daily stochastic precipitation generation model,Journal of Hydrology, \doi{10.1016/S0022-1694(98)00186-3}
+#
+#'
+#'
+#'
 #' @return A list containing the following matrices:
 #'
 #' \code{continuity_ratio} : \code{lag}-day lagged  continuity ratio ,
@@ -60,8 +66,8 @@ NULL
 #'
 
 
-
-
+####see the following URL references:  \url{https://rmets.onlinelibrary.wiley.com/doi/abs/10.1002/joc.2305}
+####and \url{https://www.sciencedirect.com/science/article/pii/S0022169498001863}
 
 continuity_ratio <- function(data,lag=0,valmin=0.5) {
 

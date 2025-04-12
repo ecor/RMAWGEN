@@ -64,6 +64,7 @@ continuity_ratio1 <-continuity_ratio(data=prec_mes,lag=-1,valmin=0.5)
 
 }
 \references{
-see the following URL references:  \url{https://rmets.onlinelibrary.wiley.com/doi/abs/10.1002/joc.2305}
-  and \url{https://www.sciencedirect.com/science/article/pii/S0022169498001863}
+Mhanna, M. and Bauwens, W. (2012), A stochastic space-time model for the generation of daily rainfall in the Gaza Strip. Int. J. Climatol., 32: 1098-1112. \doi{10.1002/joc.2305}
+
+ D.S. Wilks (1998),Multisite generalization of a daily stochastic precipitation generation model,Journal of Hydrology, \doi{10.1016/S0022-1694(98)00186-3}
 }

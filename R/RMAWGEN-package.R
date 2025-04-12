@@ -46,7 +46,8 @@
 #' @title R - Multi-site Autoregressive WEather Generator
 #' @author Emanuele Cordano \email{emanuele.cordano@@gmail.org}, Emanuele Eccel \email{emanuele.eccel@@fmach.it}
 #' @references
-#' Cordano E. and Eccel E. (2016), Tools for stochastic weather series generation in R environment, Italian Journal of Agrometeorology doi:10.19199/2016.3.2038-5625.031 \url{https://doi.org/10.19199/2016.3.2038-5625.031}
+#' Cordano E. and Eccel E. (2016), Tools for stochastic weather series generation in R environment, Italian Journal of Agrometeorology \doi{10.19199/2016.3.2038-5625.031}
+#'
 #' Pfaff B. (2008). VAR, SVAR and SVEC Models: Implementation Within R Package vars. Journal of Statistical Software 27(4). \url{https://www.jstatsoft.org/v27/i04/}(doi:10.18637/jss.v027.i04)
 #'
 #' @note First release of RMAWGEN was created in the frame of ACE-SAP and ENVIROCHANGE  projects
@@ -72,4 +73,4 @@
 NULL
 
 
-###### @docType package
+###### @docType package https://doi.org/10.19199/2016.3.2038-5625.031
