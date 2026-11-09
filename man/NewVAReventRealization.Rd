@@ -4,7 +4,7 @@
 \alias{NewVAReventRealization}
 \title{Generates a new realization of a VAR model}
 \usage{
-NewVAReventRealization(var, xprev, noise, exogen = NULL, B = NULL)
+NewVAReventRealization(var, xprev, noise, exogen = NULL, B = NULL, cvar = NULL)
 }
 \arguments{
 \item{var}{A VAR model represented by a \code{varest} object as returned by \code{\link{getVARmodel}} or \code{\link[vars]{VAR}}}
@@ -16,6 +16,8 @@ NewVAReventRealization(var, xprev, noise, exogen = NULL, B = NULL)
 \item{exogen}{vector containing the values of the "exogen" variables (predictor) for the generation}
 
 \item{B}{matrix of coefficients for the vectorial white-noise component}
+
+\item{cvar}{matrix of the VAR coefficients passed to \code{\link{forecastEV}}. Default is \code{NULL}.}
 }
 \value{
 a vector of values

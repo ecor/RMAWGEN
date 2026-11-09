@@ -13,6 +13,7 @@ NULL
 #' @param noise uncorrelated or white noise (residual). Default is \code{rnorm(length(xprev))} (or \code{rnorm(ncol(B)})
 #' @param exogen vector containing the values of the "exogen" variables (predictor) for the generation
 #' @param B matrix of coefficients for the vectorial white-noise component
+#' @param cvar matrix of the VAR coefficients passed to \code{\link{forecastEV}}. Default is \code{NULL}.
 #' 
 #'       
 #' 
@@ -29,14 +30,14 @@ NULL
 
 
 NewVAReventRealization <-
-function(var,xprev,noise,exogen=NULL,B=NULL) {
+function(var,xprev,noise,exogen=NULL,B=NULL,cvar=NULL) {
 	
 	
 	
 	out <- NULL 
 	
 	
-	out <- forecastEV(var=var,xprev=xprev,exogen=exogen)+forecastResidual(var=var,xprev=noise,B=B)
+	out <- forecastEV(var=var,xprev=xprev,exogen=exogen,cvar=cvar)+forecastResidual(var=var,xprev=noise,B=B)
 	
 
 	
