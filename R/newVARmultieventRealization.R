@@ -65,6 +65,7 @@ function(var,xprev=rnorm(var@VAR$K*var@VAR$p),exogen=NULL,nrealization=10,B=t(ch
 		}#if (nexogen!=ncol(exogen)) names
 
 	out <- array(NA,c(nrealization,K))
+	cvar <- coefmatrixEV(var@VAR) ## computed once (it was recomputed at each time step)
 
 
 	x <-xprev[1:K]
@@ -82,7 +83,7 @@ function(var,xprev=rnorm(var@VAR$K*var@VAR$p),exogen=NULL,nrealization=10,B=t(ch
 			exogen_data <- as.vector(t(exogen[i,]))
 		}
 
-		x <- NewVAReventRealization(var=var@VAR,xprev=xprev,exogen=exogen_data,noise=as.vector(t(noise[i,])),B=B)
+		x <- NewVAReventRealization(var=var@VAR,xprev=xprev,exogen=exogen_data,noise=as.vector(t(noise[i,])),B=B,cvar=cvar)
 		### CORRECTION HERE nearPDx inverse ? x %<>% ... 2025 02 28
 		out[i,] <- x
 

@@ -1,0 +1,88 @@
+--- a/R/forecastEV.R	2026-11-08 14:13:47.074483908 +0100
++++ b/R/forecastEV.R	2026-11-09 12:29:07.443080781 +0100
+@@ -24,7 +24,7 @@
+ 
+ 
+ forecastEV <-
+-function(var,xprev=NULL,exogen=NULL) {
++function(var,xprev=NULL,exogen=NULL,cvar=NULL) {
+ 
+ 	
+ #	class(var) <- "varest"
+@@ -33,17 +33,23 @@
+ 
+ 	if (!is.null(exogen)) xprev <- c(xprev,exogen)
+ 
+-	cvar <- coef(var)
+-	out <- array(NA,length(cvar))
+-	for (i in 1:length(out)) {
+-	
+-		out[i] <- as.double(cvar[[i]][,"Estimate"] %*% xprev)
+-		
+-		
+-	}
++	## cvar: coefficient matrix (K x number of regressors), computed once by the caller.
++	## Recomputing coef(var) at each step calls summary.lm() on all K equations.
++	if (is.null(cvar)) cvar <- coefmatrixEV(var)
++	out <- as.vector(cvar %*% xprev)
+ 	
+ 	
+ 	return(out)
+ 	
+ }
+ 
++
++
++#' Coefficient matrix of the VAR equations ("Estimate" column of \code{coef(var)}), one row per equation
++#' @param var a \code{varest} object
++#' @export
++#' @noRd
++coefmatrixEV <- function(var) {
++	cv <- coef(var)
++	do.call(rbind, lapply(cv, function(x) x[, "Estimate"]))
++}
+--- a/R/NewVAReventRealization.R	2026-11-08 14:13:47.074483908 +0100
++++ b/R/NewVAReventRealization.R	2026-11-09 12:29:07.443189200 +0100
+@@ -29,14 +29,14 @@
+ 
+ 
+ NewVAReventRealization <-
+-function(var,xprev,noise,exogen=NULL,B=NULL) {
++function(var,xprev,noise,exogen=NULL,B=NULL,cvar=NULL) {
+ 	
+ 	
+ 	
+ 	out <- NULL 
+ 	
+ 	
+-	out <- forecastEV(var=var,xprev=xprev,exogen=exogen)+forecastResidual(var=var,xprev=noise,B=B)
++	out <- forecastEV(var=var,xprev=xprev,exogen=exogen,cvar=cvar)+forecastResidual(var=var,xprev=noise,B=B)
+ 	
+ 
+ 	
+--- a/R/newVARmultieventRealization.R	2026-11-08 14:13:47.074483908 +0100
++++ b/R/newVARmultieventRealization.R	2026-11-09 12:29:07.443776476 +0100
+@@ -60,6 +60,7 @@
+ 		}#if (nexogen!=ncol(exogen)) names
+ 
+ 	out <- array(NA,c(nrealization,K))
++	cvar <- coefmatrixEV(var@VAR) ## computed once (it was recomputed at each time step)
+ 
+ 
+ 	x <-xprev[1:K]
+@@ -77,7 +78,7 @@
+ 			exogen_data <- as.vector(t(exogen[i,]))
+ 		}
+ 
+-		x <- NewVAReventRealization(var=var@VAR,xprev=xprev,exogen=exogen_data,noise=as.vector(t(noise[i,])),B=B)
++		x <- NewVAReventRealization(var=var@VAR,xprev=xprev,exogen=exogen_data,noise=as.vector(t(noise[i,])),B=B,cvar=cvar)
+ 		### CORRECTION HERE nearPDx inverse ? x %<>% ... 2025 02 28
+ 		out[i,] <- x
+ 
+--- a/NAMESPACE	2026-11-08 14:13:47.073080256 +0100
++++ b/NAMESPACE	2026-11-09 12:29:07.448236140 +0100
+@@ -99,3 +99,4 @@
+ importFrom(stats,spline)
+ importFrom(stats,wilcox.test)
+ importFrom(utils,sessionInfo)
++export(coefmatrixEV)
