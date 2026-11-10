@@ -33,7 +33,8 @@ NULL
 #' @param no_spline logical value. See \code{\link{splineInterpolateMonthlytoDailyforSeveralYears}}. Default is \code{TRUE}.
 #' @param nscenario number of generated scenarios for daily maximum and minimum temperature
 #' @param seed seed for stochastic random generation see \code{\link{set.seed}}.
-#' @param garch logical. Default is \code{FALSE}. If \code{TRUE} a diagonal GARCH(1,1) model is fitted on the GPCA residuals. See \code{\link{getVARmodel}} and \code{\link{fitGARCH}}.
+#' @param garch logical. Default is \code{FALSE}. If \code{TRUE} a diagonal GARCH model is fitted on the GPCA residuals. See \code{\link{getVARmodel}} and \code{\link{fitGARCH}}.
+#' @param garch_order,garch_type order and type of the GARCH model. See \code{\link{fitGARCH}}.
 #' @param nearPD logical. Default is \code{FALSE}. See \code{\link{getVARmodel}}.
 #' @param noise stochastic noise to add for variabile generation. Default is \code{NULL}. See \code{\link{newVARmultieventRealization}}. Not used in case that \code{nscenario>1}.
 #'
@@ -156,7 +157,7 @@ function(
 		seed=NULL,
 		noise=NULL,
 	  nearPD=FALSE,
-	  garch=FALSE
+	  garch=FALSE,garch_order=c(arch=1,garch=1),garch_type="standard"
 
 ) {
 
@@ -202,7 +203,7 @@ function(
 		}
 
 
-		var <- getVARmodel(data=data_prec,suffix=NULL,sep="",p=p,type=type,exogen=exogen,lag.max=lag.max,ic=ic,activateVARselect=activateVARselect,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,n_GPCA_iteration=n_GPCA_iteration,extremes=extremes,nearPD=nearPD,garch=garch)
+		var <- getVARmodel(data=data_prec,suffix=NULL,sep="",p=p,type=type,exogen=exogen,lag.max=lag.max,ic=ic,activateVARselect=activateVARselect,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,n_GPCA_iteration=n_GPCA_iteration,extremes=extremes,nearPD=nearPD,garch=garch,garch_order=garch_order,garch_type=garch_type)
 
 		if (activateVARselect) return(var)
 

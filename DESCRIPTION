@@ -33,3 +33,4 @@ Suggests:
 URL: https://ecor.github.io/RMAWGEN/,https://github.com/ecor/RMAWGEN,
     https://docs.google.com/file/d/0B66otCUk3Bv6V3RPbm1mUG4zVHc/edit
 Config/roxygen2/version: 8.0.0
+RoxygenNote: 7.3.1

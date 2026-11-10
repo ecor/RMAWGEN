@@ -2,14 +2,24 @@
 % Please edit documentation in R/zc3_GPCAvarest2garch.R
 \name{fitGARCH}
 \alias{fitGARCH}
-\title{Fits a diagonal (orthogonal) GARCH(1,1) model on the residuals of a \code{GPCAvarest2} object}
+\title{Fits a diagonal (orthogonal) GARCH model on the residuals of a \code{GPCAvarest2} object}
 \usage{
-fitGARCH(object, max_persistence = 0.995, ...)
+fitGARCH(
+  object,
+  garch_order = c(arch = 1, garch = 1),
+  garch_type = c("standard", "component"),
+  max_persistence = 0.995,
+  ...
+)
 }
 \arguments{
 \item{object}{a \code{\link{GPCAvarest2-class}} object (e.g. returned by \code{\link{getVARmodel}} with \code{n_GPCA_iteration>0} or \code{n_GPCA_iteration_residuals>0})}
 
-\item{max_persistence}{maximum allowed value of \eqn{\alpha+\beta} for each component. Default is 0.995.}
+\item{garch_order}{integer vector of length 2: number of ARCH terms (\eqn{q}) and of GARCH terms (\eqn{p}). It may be named \code{c(arch=q,garch=p)}. Default is \code{c(arch=1,garch=1)}. Used only if \code{garch_type=="standard"}.}
+
+\item{garch_type}{\code{"standard"} (GARCH(\eqn{q},\eqn{p}), default) or \code{"component"} (component GARCH of Engle and Lee, 1999). See \code{\link{GPCAvarest2garch-class}}.}
+
+\item{max_persistence}{maximum allowed persistence for each component: \eqn{\sum\alpha_i+\sum\beta_k} for \code{"standard"}, \eqn{\rho} for \code{"component"}. Default is 0.995.}
 
 \item{...}{further arguments for \code{\link{optim}}}
 }
@@ -17,12 +27,14 @@ fitGARCH(object, max_persistence = 0.995, ...)
 a \code{\link{GPCAvarest2garch-class}} object
 }
 \description{
-Fits a diagonal (orthogonal) GARCH(1,1) model on the residuals of a \code{GPCAvarest2} object
+Fits a diagonal (orthogonal) GARCH model on the residuals of a \code{GPCAvarest2} object
 }
 \details{
 Residuals \eqn{u_t} (in GPCA space, see \code{\link{residuals.varest2}}) are decorrelated through
 the inverse of the Cholesky factor \eqn{B} of their covariance matrix (the same matrix used by default by \code{\link{newVARmultieventRealization}}).
-A GARCH(1,1) model is then fitted on each decorrelated component.
+A univariate GARCH model is then fitted on each decorrelated component by Gaussian maximum likelihood.
+The ARCH and GARCH coefficients are constrained to be non-negative, which guarantees positive conditional variances.
+The slot \code{GARCH} also contains log-likelihood, AIC and BIC of each component, which can be used to select the order.
 }
 \examples{
 data(trentino)
@@ -37,13 +49,16 @@ data <- cbind(Tx,Tn)
 data <- (data-matrix(colMeans(data,na.rm=TRUE),nrow(data),ncol(data),byrow=TRUE))
 \donttest{
 var <- getVARmodel(data=data,suffix=NULL,p=1,n_GPCA_iteration=2)
-vargarch <- fitGARCH(var)
-vargarch@GARCH$coef
+vg11 <- fitGARCH(var)
+vg12 <- fitGARCH(var,garch_order=c(arch=1,garch=2))
+vgc <- fitGARCH(var,garch_type="component")
+rbind(G11=vg11@GARCH$BIC,G12=vg12@GARCH$BIC,CGARCH=vgc@GARCH$BIC)
+vgc@GARCH$coef
 }
 
 }
 \seealso{
-\code{\link{arch_test}},\code{\link{getVARmodel}}
+\code{\link{arch_test}},\code{\link{getVARmodel}},\code{\link{garch_standardize}}
 }
 \author{
 Emanuele Cordano

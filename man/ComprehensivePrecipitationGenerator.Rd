@@ -42,7 +42,9 @@ ComprehensivePrecipitationGenerator(
   seed = NULL,
   noise = NULL,
   nearPD = FALSE,
-  garch = FALSE
+  garch = FALSE,
+  garch_order = c(arch = 1, garch = 1),
+  garch_type = "standard"
 )
 }
 \arguments{
@@ -107,7 +109,9 @@ It is alternative to \code{exogen} and if it not \code{NULL},\code{is_exogen_gau
 
 \item{nearPD}{logical. Default is \code{FALSE}. See \code{\link{getVARmodel}}.}
 
-\item{garch}{logical. Default is \code{FALSE}. If \code{TRUE} a diagonal GARCH(1,1) model is fitted on the GPCA residuals. See \code{\link{getVARmodel}} and \code{\link{fitGARCH}}.}
+\item{garch}{logical. Default is \code{FALSE}. If \code{TRUE} a diagonal GARCH model is fitted on the GPCA residuals. See \code{\link{getVARmodel}} and \code{\link{fitGARCH}}.}
+
+\item{garch_order, garch_type}{order and type of the GARCH model. See \code{\link{fitGARCH}}.}
 }
 \value{
 A list of the following variables:

@@ -9,22 +9,35 @@ The class \code{GPCAvarest2garch}
 }
 \details{
 Extension of \code{\link{GPCAvarest2-class}} in which the (GPCA-Gaussianized) VAR residuals
-are modelled with a diagonal GARCH(1,1) process after decorrelation
-(orthogonal GARCH approach). Each decorrelated residual component \eqn{w_{j,t}} follows
-\deqn{w_{j,t}=\sqrt{h_{j,t}}\,z_{j,t},\qquad h_{j,t}=\omega_j+\alpha_j w_{j,t-1}^2+\beta_j h_{j,t-1}}
-with \eqn{z_{j,t}} i.i.d. standard normal. The residuals in GPCA space are \eqn{u_t=B w_t}
-where \eqn{B} is the lower-triangular Cholesky factor of their covariance matrix.
+are modelled, after decorrelation, with independent univariate GARCH processes
+(orthogonal GARCH approach). The residuals in GPCA space are \eqn{u_t=B w_t},
+where \eqn{B} is the lower-triangular Cholesky factor of their covariance matrix, and each
+decorrelated component is \eqn{w_{j,t}=\sqrt{h_{j,t}}\,z_{j,t}} with \eqn{z_{j,t}} i.i.d. standard normal.
+
+Two specifications of the conditional variance \eqn{h_{j,t}} are available (see \code{\link{fitGARCH}}):
+\describe{
+\item{\code{"standard"}}{GARCH(\eqn{q},\eqn{p}) (Bollerslev, 1986) with \eqn{q} ARCH and \eqn{p} GARCH terms:
+\deqn{h_t=\omega+\sum_{i=1}^{q}\alpha_i w_{t-i}^2+\sum_{k=1}^{p}\beta_k h_{t-k}}}
+\item{\code{"component"}}{component GARCH (Engle and Lee, 1999), with a long-run component \eqn{q_t}:
+\deqn{q_t=\omega+\rho\, q_{t-1}+\phi\,(w_{t-1}^2-h_{t-1})}
+\deqn{h_t=q_t+\alpha\,(w_{t-1}^2-q_{t-1})+\beta\,(h_{t-1}-q_{t-1})}}
+}
 }
 \section{Slots}{
 
 \describe{
-\item{\code{GARCH}}{a list with elements \code{B} (Cholesky factor), \code{coef} (matrix of GARCH(1,1) coefficients, one row per component),
-\code{h_last} and \code{w_last} (conditional variance and decorrelated residual at the last time step, used to initialize generation)
-and \code{loglik}, \code{convergence}.}
+\item{\code{GARCH}}{a list with elements \code{type}, \code{order}, \code{B} (Cholesky factor), \code{coef} (matrix of coefficients, one row per component),
+\code{h} and \code{w} (fitted conditional variances and decorrelated residuals), \code{qlr} (long-run component, only for \code{"component"}),
+\code{loglik}, \code{npar}, \code{BIC}, \code{AIC} and \code{convergence} (one value per component).}
 }}
 
+\references{
+Bollerslev T. (1986) Generalized autoregressive conditional heteroskedasticity. Journal of Econometrics 31, 307-327.
+
+Engle R.F., Lee G.G.J. (1999) A long-run and short-run component model of stock return volatility. In: Engle R.F., White H. (eds.), Cointegration, Causality, and Forecasting, Oxford University Press, 475-497.
+}
 \seealso{
-\code{\link{fitGARCH}}, \code{\link{getVARmodel}}, \code{\link{newVARmultieventRealization}}
+\code{\link{fitGARCH}}, \code{\link{garch_noise}}, \code{\link{garch_standardize}}, \code{\link{getVARmodel}}, \code{\link{newVARmultieventRealization}}
 }
 \author{
 Emanuele Cordano

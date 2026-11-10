@@ -2,7 +2,7 @@
 % Please edit documentation in R/zc3_GPCAvarest2garch.R
 \name{garch_noise}
 \alias{garch_noise}
-\title{Generates decorrelated GARCH(1,1) noise for a \code{GPCAvarest2garch} object}
+\title{Generates decorrelated GARCH noise for a \code{GPCAvarest2garch} object}
 \usage{
 garch_noise(object, nrealization = 10, init = c("last", "unconditional"))
 }
@@ -11,13 +11,13 @@ garch_noise(object, nrealization = 10, init = c("last", "unconditional"))
 
 \item{nrealization}{number of time steps}
 
-\item{init}{initialization of the conditional variance: \code{"last"} (last fitted value) or \code{"unconditional"}}
+\item{init}{initialization of the recursion: \code{"last"} (last fitted values) or \code{"unconditional"} (unconditional variance)}
 }
 \value{
-a \code{nrealization x K} matrix of noise with time-varying conditional variance (unit unconditional variance for each component, approximately)
+a \code{nrealization x K} matrix of noise with time-varying conditional variance
 }
 \description{
-Generates decorrelated GARCH(1,1) noise for a \code{GPCAvarest2garch} object
+Generates decorrelated GARCH noise for a \code{GPCAvarest2garch} object
 }
 \seealso{
 \code{\link{newVARmultieventRealization}}
