@@ -47,7 +47,8 @@ ComprehensiveTemperatureGenerator(
   nscenario = 1,
   seed = NULL,
   noise = NULL,
-  nearPD = FALSE
+  nearPD = FALSE,
+  garch = FALSE
 )
 }
 \arguments{
@@ -107,6 +108,8 @@ It is alternative to \code{exogen} and if it not \code{NULL},\code{is_exogen_gau
 \item{noise}{stochastic noise to add for variabile generation. Default is \code{NULL}. See \code{\link{newVARmultieventRealization}}. Not used in case that \code{nscenario>1}.}
 
 \item{nearPD}{logical. Default is \code{FALSE}. See \code{\link{getVARmodel}}.}
+
+\item{garch}{logical. Default is \code{FALSE}. If \code{TRUE} a diagonal GARCH(1,1) model is fitted on the GPCA residuals. See \code{\link{getVARmodel}} and \code{\link{fitGARCH}}.}
 }
 \value{
 A list of the following variables:

@@ -21,6 +21,7 @@ NULL
 #' @param n_GPCA_iteration number of iterations of Gaussianization process for data. Default is 0 (no Gaussianization)
 #' @param n_GPCA_iteration_residuals number of iterations of Gaussianization process for data. Default is 0 (no Gaussianization)
 #' @param extremes  see \code{\link{normalizeGaussian_severalstations}} and \code{\link{GPCA}}
+#' @param garch logical (experimental). Default is \code{FALSE}. If \code{TRUE} and the model is a \code{GPCAvarest2} object, a diagonal (orthogonal) GARCH(1,1) model is fitted on the residuals through \code{\link{fitGARCH}} and a \code{\link{GPCAvarest2garch-class}} object is returned.
 #' @param nearPD logical (experimental) and passed to \code{\link{GPCA}}. Default is \code{FALSE}. If \code{TRUE} covariance matrix is corrected through Nearest Positive Definite Matrix procedure, i.e. \code{\link[Matrix]{nearPD}}
 #' @import vars
 #' @export
@@ -65,7 +66,7 @@ NULL
 
 getVARmodel <-
 function (data,suffix=c("_Tx","_Tn"),sep="",p=1,type="none",season=NULL,exogen=NULL,lag.max=NULL,ic="AIC",activateVARselect=FALSE,na.rm=TRUE,
-		n_GPCA_iteration=0,n_GPCA_iteration_residuals=n_GPCA_iteration,extremes=TRUE,nearPD=FALSE) {
+		n_GPCA_iteration=0,n_GPCA_iteration_residuals=n_GPCA_iteration,extremes=TRUE,nearPD=FALSE,garch=FALSE) {
 
 	if (!is.null(suffix)) names(data) <- addsuffixes(names=names(data),suffix=suffix,sep=sep)
 
@@ -140,6 +141,15 @@ function (data,suffix=c("_Tx","_Tn"),sep="",p=1,type="none",season=NULL,exogen=N
 		out@GPCA_residuals <- xob
 
 
+	}
+
+	if (garch) {
+
+		if (inherits(out,"GPCAvarest2")) {
+			out <- fitGARCH(out)
+		} else {
+			warning("getVARmodel: garch=TRUE requires n_GPCA_iteration>0 or n_GPCA_iteration_residuals>0. GARCH not fitted!")
+		}
 	}
 
 	# TO GO ON !!!

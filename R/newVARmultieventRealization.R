@@ -13,6 +13,7 @@ NULL
 #' @param nrealization number of realization (e.g. days to simulate). If \code{exogen} is not \code{NULL} and it is a matrix, it must be lower or equal to the number of rows of \code{exogen}
 #' @param B matrix of coefficients for the vector white-noise component
 #' @param extremes,type  see \code{\link{inv_GPCA}}
+#' @param garch_init initialization of the GARCH conditional variance, used only if \code{var} is a \code{\link{GPCAvarest2garch-class}} object. See \code{\link{garch_noise}}.
 #' @param noise stochastic noise to add for variabile generation. Default is \code{NULL} and it is automatically randomly genereted accordind to matrix \code{B}. If  the VAR model (\code{var} argument) does not fit well the residuals (e.g. non-normality, non-serialty or heteroskesticity) and the white noise is manually inserted, in this case argument \code{B} is not taken into account.
 #' @export
 #'
@@ -25,7 +26,7 @@ NULL
 
 # B=t(chol(summary(var@VAR)$covres)) OLD DEfault  t(chol(cov(residuals(var))))
 newVARmultieventRealization <-
-function(var,xprev=rnorm(var@VAR$K*var@VAR$p),exogen=NULL,nrealization=10,B=t(chol(cov(residuals(var)))),extremes=TRUE,type=3,noise=NULL) {
+function(var,xprev=rnorm(var@VAR$K*var@VAR$p),exogen=NULL,nrealization=10,B=t(chol(cov(residuals(var)))),extremes=TRUE,type=3,noise=NULL,garch_init="last") {
 
 
 
@@ -35,7 +36,11 @@ function(var,xprev=rnorm(var@VAR$K*var@VAR$p),exogen=NULL,nrealization=10,B=t(ch
 
 	nexogen <- ncol(var@VAR$datamat)-K*(p+1)
 	if (is.null(noise)) {
-		noise <- array(rnorm(K*nrealization),c(nrealization,K))
+		if (inherits(var,"GPCAvarest2garch")) {
+			noise <- garch_noise(var,nrealization=nrealization,init=garch_init)
+		} else {
+			noise <- array(rnorm(K*nrealization),c(nrealization,K))
+		}
 
 
 		if (inherits(var,"GPCAvarest2")) {

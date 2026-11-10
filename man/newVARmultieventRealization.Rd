@@ -12,7 +12,8 @@ newVARmultieventRealization(
   B = t(chol(cov(residuals(var)))),
   extremes = TRUE,
   type = 3,
-  noise = NULL
+  noise = NULL,
+  garch_init = "last"
 )
 }
 \arguments{
@@ -29,6 +30,8 @@ newVARmultieventRealization(
 \item{extremes, type}{see \code{\link{inv_GPCA}}}
 
 \item{noise}{stochastic noise to add for variabile generation. Default is \code{NULL} and it is automatically randomly genereted accordind to matrix \code{B}. If  the VAR model (\code{var} argument) does not fit well the residuals (e.g. non-normality, non-serialty or heteroskesticity) and the white noise is manually inserted, in this case argument \code{B} is not taken into account.}
+
+\item{garch_init}{initialization of the GARCH conditional variance, used only if \code{var} is a \code{\link{GPCAvarest2garch-class}} object. See \code{\link{garch_noise}}.}
 }
 \value{
 a matrix of values

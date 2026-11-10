@@ -19,7 +19,8 @@ getVARmodel(
   n_GPCA_iteration = 0,
   n_GPCA_iteration_residuals = n_GPCA_iteration,
   extremes = TRUE,
-  nearPD = FALSE
+  nearPD = FALSE,
+  garch = FALSE
 )
 }
 \arguments{
@@ -52,6 +53,8 @@ getVARmodel(
 \item{extremes}{see \code{\link{normalizeGaussian_severalstations}} and \code{\link{GPCA}}}
 
 \item{nearPD}{logical (experimental) and passed to \code{\link{GPCA}}. Default is \code{FALSE}. If \code{TRUE} covariance matrix is corrected through Nearest Positive Definite Matrix procedure, i.e. \code{\link[Matrix]{nearPD}}}
+
+\item{garch}{logical (experimental). Default is \code{FALSE}. If \code{TRUE} and the model is a \code{GPCAvarest2} object, a diagonal (orthogonal) GARCH(1,1) model is fitted on the residuals through \code{\link{fitGARCH}} and a \code{\link{GPCAvarest2garch-class}} object is returned.}
 }
 \value{
 a \code{varest2} or \code{GPCAvarest2} object representing a VAR model or a \code{GPCA-varest} object which also contains the GPCA transformation parameters
