@@ -7,7 +7,7 @@
 fitGARCH(
   object,
   garch_order = c(arch = 1, garch = 1),
-  garch_type = c("standard", "component"),
+  garch_type = c("standard", "component", "common", "common_idio"),
   max_persistence = 0.995,
   ...
 )
@@ -15,11 +15,12 @@ fitGARCH(
 \arguments{
 \item{object}{a \code{\link{GPCAvarest2-class}} object (e.g. returned by \code{\link{getVARmodel}} with \code{n_GPCA_iteration>0} or \code{n_GPCA_iteration_residuals>0})}
 
-\item{garch_order}{integer vector of length 2: number of ARCH terms (\eqn{q}) and of GARCH terms (\eqn{p}). It may be named \code{c(arch=q,garch=p)}. Default is \code{c(arch=1,garch=1)}. Used only if \code{garch_type=="standard"}.}
+\item{garch_order}{integer vector of length 2: number of ARCH terms (\eqn{q}) and of GARCH terms (\eqn{p}). It may be named \code{c(arch=q,garch=p)}. Default is \code{c(arch=1,garch=1)}. Used if \code{garch_type} is \code{"standard"} or \code{"common_idio"} (idiosyncratic part).}
 
-\item{garch_type}{\code{"standard"} (GARCH(\eqn{q},\eqn{p}), default) or \code{"component"} (component GARCH of Engle and Lee, 1999). See \code{\link{GPCAvarest2garch-class}}.}
+\item{garch_type}{\code{"standard"} (GARCH(\eqn{q},\eqn{p}) for each component, default), \code{"component"} (component GARCH of Engle and Lee, 1999, for each component),
+\code{"common"} (one scalar GARCH(1,1) volatility factor shared by all components) or \code{"common_idio"} (common factor times an idiosyncratic GARCH(\eqn{q},\eqn{p}) of each component). See \code{\link{GPCAvarest2garch-class}}.}
 
-\item{max_persistence}{maximum allowed persistence for each component: \eqn{\sum\alpha_i+\sum\beta_k} for \code{"standard"}, \eqn{\rho} for \code{"component"}. Default is 0.995.}
+\item{max_persistence}{maximum allowed persistence: \eqn{\sum\alpha_i+\sum\beta_k} for \code{"standard"} and for the common factor, \eqn{\rho} for \code{"component"}. Default is 0.995.}
 
 \item{...}{further arguments for \code{\link{optim}}}
 }
@@ -32,9 +33,11 @@ Fits a diagonal (orthogonal) GARCH model on the residuals of a \code{GPCAvarest2
 \details{
 Residuals \eqn{u_t} (in GPCA space, see \code{\link{residuals.varest2}}) are decorrelated through
 the inverse of the Cholesky factor \eqn{B} of their covariance matrix (the same matrix used by default by \code{\link{newVARmultieventRealization}}).
-A univariate GARCH model is then fitted on each decorrelated component by Gaussian maximum likelihood.
+The GARCH model is then fitted on the decorrelated components by Gaussian maximum likelihood.
 The ARCH and GARCH coefficients are constrained to be non-negative, which guarantees positive conditional variances.
-The slot \code{GARCH} also contains log-likelihood, AIC and BIC of each component, which can be used to select the order.
+With independent GARCH processes for each component (\code{"standard"}, \code{"component"}), volatility clustering is partially averaged out when the components are
+mixed back through \eqn{B}; a common factor (\code{"common"}, \code{"common_idio"}) scales all components at the same time and preserves clustering shared by stations and variables.
+The slot \code{GARCH} also contains log-likelihood, AIC and BIC, which can be used to compare specifications.
 }
 \examples{
 data(trentino)
@@ -52,8 +55,10 @@ var <- getVARmodel(data=data,suffix=NULL,p=1,n_GPCA_iteration=2)
 vg11 <- fitGARCH(var)
 vg12 <- fitGARCH(var,garch_order=c(arch=1,garch=2))
 vgc <- fitGARCH(var,garch_type="component")
-rbind(G11=vg11@GARCH$BIC,G12=vg12@GARCH$BIC,CGARCH=vgc@GARCH$BIC)
-vgc@GARCH$coef
+vcom <- fitGARCH(var,garch_type="common")
+vci <- fitGARCH(var,garch_type="common_idio")
+sapply(list(G11=vg11,G12=vg12,CGARCH=vgc,COMMON=vcom,COMMON_IDIO=vci),function(x) sum(x@GARCH$BIC))
+vcom@GARCH$coef_common
 }
 
 }

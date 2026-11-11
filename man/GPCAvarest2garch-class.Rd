@@ -21,6 +21,11 @@ Two specifications of the conditional variance \eqn{h_{j,t}} are available (see 
 \item{\code{"component"}}{component GARCH (Engle and Lee, 1999), with a long-run component \eqn{q_t}:
 \deqn{q_t=\omega+\rho\, q_{t-1}+\phi\,(w_{t-1}^2-h_{t-1})}
 \deqn{h_t=q_t+\alpha\,(w_{t-1}^2-q_{t-1})+\beta\,(h_{t-1}-q_{t-1})}}
+\item{\code{"common"}}{a scalar volatility factor \eqn{g_t} shared by all components (\eqn{h_{j,t}=g_t}):
+\deqn{g_t=\omega+\alpha\,\bar{w^2}_{t-1}+\beta\,g_{t-1},\qquad \bar{w^2}_{t}=\frac{1}{K}\sum_{j=1}^{K}w_{j,t}^2}
+Since \eqn{\bar{w^2}_t=u_t^T\Sigma^{-1}u_t/K}, the model does not depend on the choice of \eqn{B}: the whole residual covariance matrix is scaled by \eqn{g_t}.}
+\item{\code{"common_idio"}}{common factor and an idiosyncratic GARCH(\eqn{q},\eqn{p}) of each component:
+\eqn{h_{j,t}=g_t\,d_{j,t}}, where \eqn{d_{j,t}} is a standard GARCH of \eqn{x_{j,t}=w_{j,t}/\sqrt{g_t}}. Estimated in two steps (first \eqn{g_t}, then \eqn{d_{j,t}}).}
 }
 }
 \section{Slots}{
@@ -28,7 +33,8 @@ Two specifications of the conditional variance \eqn{h_{j,t}} are available (see 
 \describe{
 \item{\code{GARCH}}{a list with elements \code{type}, \code{order}, \code{B} (Cholesky factor), \code{coef} (matrix of coefficients, one row per component),
 \code{h} and \code{w} (fitted conditional variances and decorrelated residuals), \code{qlr} (long-run component, only for \code{"component"}),
-\code{loglik}, \code{npar}, \code{BIC}, \code{AIC} and \code{convergence} (one value per component).}
+\code{loglik}, \code{npar}, \code{BIC}, \code{AIC} and \code{convergence} (one value per component; for \code{"common"} and \code{"common_idio"} they are totals over all components),
+\code{coef_common} and \code{g} (coefficients and series of the common factor, only for \code{"common"} and \code{"common_idio"}).}
 }}
 
 \references{
