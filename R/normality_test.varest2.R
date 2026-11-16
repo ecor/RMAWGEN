@@ -36,6 +36,24 @@ NULL
 #' nt_uni <- normality_test(var,multivariate.only=FALSE)
 #' sapply(nt_uni$jb.uni,function(t) {t$p.value})
 #'
+#' ## Second example: 'GPCAvarest2' object for daily maximum and minimum temperature
+#' ## (handled as daily mean temperature and daily thermal range, i.e. option=2)
+#' ## of some stations of the 'trentino' dataset
+#' data(trentino)
+#' year_min <- 1961
+#' year_max <- 1990
+#' station <- c("T0001","T0010","T0099")
+#' param <- setComprehensiveTemperatureGeneratorParameters(station=station,
+#'            Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,
+#'            year_min=year_min,year_max=year_max,
+#'            sample="monthly",option=2,verbose=FALSE)
+#' gpcavar_t <- getVARmodel(data=param[['data_for_var']],suffix=c("_T1","_T2"),p=1,
+#'                          n_GPCA_iteration=5,n_GPCA_iteration_residuals=5)
+#'
+#' normality_test(gpcavar_t)
+#' nt_t <- normality_test(gpcavar_t)
+#' sapply(nt_t$jb.mul,function(t) {t$p.value})
+#'
 
 normality_test <- function(object,...) {
 
