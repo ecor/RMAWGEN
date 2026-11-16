@@ -68,15 +68,17 @@ param <- setComprehensiveTemperatureGeneratorParameters(station=station,
            Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,
            year_min=year_min,year_max=year_max,
            sample="monthly",option=2,verbose=FALSE)
-gpcavar_t <- getVARmodel(data=param[['data_for_var']],suffix=c("_T1","_T2"),p=1,
+gpcavar_t <- getVARmodel(data=param[['data_for_var']],suffix=c("_T1","_T2"),p=5,
                          n_GPCA_iteration=5,n_GPCA_iteration_residuals=5)
 
 ## ARCH test on the whole residual time series
 arch_test(gpcavar_t)
 
+\donttest{
 ## ARCH test on overlapping one-year-long intervals
 at_t <- arch_test(gpcavar_t,interval=365,overlap=20,list.output=TRUE)
 summary(sapply(at_t,function(t) {t$arch.mul$p.value}))
+}
 
 }
 \seealso{
