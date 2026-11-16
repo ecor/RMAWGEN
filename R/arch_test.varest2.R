@@ -17,6 +17,38 @@ NULL
 #'
 #' @seealso \code{\link[vars]{arch.test}}
 #' @return One object or a list of objects with class attribute \code{varcheck} as reported in \code{\link[vars]{arch.test}}
+#'
+#' @examples
+#'
+#' set.seed(122)
+#' NSTEP <- 1000
+#' x <- rnorm(NSTEP)
+#' y <- x+rnorm(NSTEP)
+#' z <- c(rnorm(1),y[-1]+rnorm(NSTEP-1))
+#' df <- data.frame(x=x,y=y,z=z)
+#'
+#' ## VAR model ('varest2' object) and VAR model with GPCA ('GPCAvarest2' object)
+#' var <- getVARmodel(data=df,suffix=NULL,p=3)
+#' gpcavar <- getVARmodel(data=df,suffix=NULL,p=3,n_GPCA_iteration=5,
+#'                        n_GPCA_iteration_residuals=5)
+#'
+#' ## ARCH test on the whole residual time series
+#' arch_test(var)
+#' arch_test(gpcavar,lags.multi=3)
+#'
+#' ## ARCH test on a subset of the residual time series (e.g. the first 365 time steps)
+#' arch_test(var,interval=1:365)
+#'
+#' ## ARCH test on overlapping 200-step-long intervals:
+#' ## the result with the lowest p-value is returned
+#' at_min <- arch_test(var,interval=200,overlap=20)
+#' at_min$arch.mul$p.value
+#'
+#' ## ... or the results of all intervals are returned as a list
+#' at_list <- arch_test(var,interval=200,overlap=20,list.output=TRUE)
+#' names(at_list)
+#' sapply(at_list,function(t) {t$arch.mul$p.value})
+#'
 
 
 
